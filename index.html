@@ -1,0 +1,2735 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>	
+
+    <meta name="viewport" content="user-scalable=no">
+	<meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="path/to/autocomplete.css">
+
+  <!-- Include JavaScript for the autocomplete library -->
+  <script src="path/to/autocomplete.js"></script>
+
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+<defs>
+<style>
+
+ body {
+    background-color: white;
+  }
+
+	
+	
+  /* Dark Mode Styles */
+  body.dark-mode,
+  body.dark-mode * {
+    color: #f2f2f2;
+  }
+
+  body.dark-mode {
+    background-color: #0F0F0E;
+  }
+
+  /* Override specific element styles for dark mode */
+  body.dark-mode table {
+    /* Override table background color */
+    background-color: #333333;
+  }
+
+  body.dark-mode th
+  body.dark-mode td {
+    /* Override table cell text color */
+    color: #f2f2f2;
+  }
+
+ body.dark-mode .metrics-table th {
+  color: #bcbcbc;
+  padding: 9px;
+}
+
+svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+font-size: 12px;
+  }
+
+
+
+  body.dark-mode svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+
+
+  body.dark-mode svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+body.dark-mode button {
+  /* Override button background color */
+  background-color: #333333;
+}
+
+body.dark-mode button,
+body.dark-mode button:focus {
+  /* Override button text color */
+  color: #f2f2f2;
+}
+
+body.dark-mode button:hover {
+  /* Preserve button hover property */
+  color: initial;
+}
+
+body.dark-mode .button-8 {
+  /* Override button background color */
+  background-color: #13293d; /* Dark blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+body.dark-mode .button-8:hover,
+body.dark-mode .button-8:focus {
+  /* Override button hover and focus state */
+  background-color: #3a6ea5; /* Darker blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+body.dark-mode .button-8:hover,
+body.dark-mode .button-8:focus {
+  /* Override button hover and focus state */
+  background-color: #3a6ea5; /* Darker blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 15.3px;
+    left: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    background-color: #e0e0de;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+.dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f467"; /* Unicode value for the moon icon in Ionicons */
+  font-size: 35px; /* Adjust the value as needed */
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+}
+
+
+
+body.dark-mode .dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f3b0"; /* Unicode value for the sun icon in Ionicons */
+  font-size: 24px; /* Adjust the value as needed */
+}
+
+
+
+body.dark-mode .toggle-slider {
+  background-color: #2B2C2E; /* Darker background color for dark mode */
+}
+
+body.dark-mode input:checked + .toggle-slider:before {
+  background-color: #ccc; /* Darker background color for dark mode */
+}
+
+
+body.dark-mode .button-10 {
+  border: 0.1px solid #000000; /* Darker background color for dark mode */
+}
+
+
+	
+ .button-10 {
+
+    position: absolute;
+    top: 65.3px;
+    left: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40.1px;
+    height: 40.1px;
+    border-radius: 50%;
+  background-color: #e0e0de;
+  color: #333;
+  border: 0.1px solid #ccc;
+  cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+.icon2::before {
+  content: "\f118";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+.icon3::before {
+  content: "\f448";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+body.dark-mode #searchInput1 {
+    color: #000; /* Specify the desired text color for dark mode */
+background-color : #999;
+  }
+	
+ body.dark-mode	  #searchInput1::placeholder {
+    color: #fff; /* Specify the desired color for the placeholder text */
+  }
+
+ body.dark-mode	  #searchButton1 {
+    color: #fff !important; /* Specify the desired color for the placeholder text */
+background-color : #333333;
+  }
+
+.button-1 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-1:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-2 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 115px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-2:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-3 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 215px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-3:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-4 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 315px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-4:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+
+.button-5 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 415px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-5:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-6 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 515px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-6:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+.button-9 {
+  align-items: center;
+  background-color: #e0e0de;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0.1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 10px;
+  left: 878px;
+  width: 50px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-9:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+
+
+text {
+  font-family: Arial;
+}
+
+.result-color-blue {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-pink {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-orange {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-green {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+
+
+
+.result-color-bleu {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-rose {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-1 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-2 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-3 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-4 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-5 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-6 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-7 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-8 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-9 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-10 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-11 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-12 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-13 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-14 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-15 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-16 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-17 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-18 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-19 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-20 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-21 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-22 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-23 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-24 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-25 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-26 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-27 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-28 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-29 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-30 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-31 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-32 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-33 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-34 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-35 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-36 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-37 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-38 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-39 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-40 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-41 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-42 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-43 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-44 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-45 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-46 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-47 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-48 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+           
+svg:nth-of-type(1) {
+  position: absolute;
+  top: 290px;
+  left: -26px;
+  width: 758px;
+  height: 758px;
+}
+
+svg:nth-of-type(2) {
+  position: absolute;
+  top: 367px;
+  left: 58px;
+
+}
+
+
+table {
+   border-collapse: collapse;
+  width: 200px;
+  font-family: Arial;
+  border-radius: 10px;
+ ;
+ 
+}
+
+
+
+
+
+
+#searchInput1 {
+  width: 440px;
+height: 35px;
+Margin-left: 5px;
+}
+
+#searchInput1::placeholder {
+    font-size : 18px; /* Specify the desired color for the placeholder text */
+  }
+
+
+#searchButton1 {
+  width: 40px;
+color: black !important;
+height: 39px;
+cursor: pointer;
+}
+
+
+	.name {
+  font-family: Arial, sans-serif !important;
+font-size: 13px;
+position: relative;
+top: 10px;
+  color: black !important;
+cursor: pointer;
+}
+
+.dark-mode .matching-names-container {
+  background-color: grey;
+}
+
+td {
+    font-weight: bold;
+  }
+  th {
+    font-weight: normal;
+  }
+
+
+
+
+
+ .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+position: absolute;
+  top: 976px;
+  left: 590px;
+ width: 120px; 
+    }
+
+    .toggle-label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .toggle-checkbox {
+      width: 40px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .toggle-checkbox input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+    }
+
+    .toggle-slider:before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+	
+.icon::before {
+  content: "\f21c";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}		
+
+
+.metrics-table {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.metrics-table th {
+  color: #000000;
+  padding: 6px 9px;
+font-size: 11px;
+  text-align: center;
+}
+
+.metrics-table td {
+  padding: 4px 11px;
+text-align: center;
+}
+
+
+tr:first-child th:first-child {
+  color: #5b5b5b;
+font-weight: bold;
+font-size: 12px;
+ 
+}
+
+.header {
+  font-family: system-ui;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo {
+    position: relative; /* Add this to make the logo a positioning context */
+}
+
+.header .logo img {
+    /* Styles for the logo image inside the header */
+    width: 40px;
+    height: 40px;
+    opacity: 0.84;
+    position: absolute;
+    top: -10px; /* Adjust top and left values as needed to position the logo image */
+    left: -7px;
+}
+
+
+.header .logo-text {
+  margin-left: 40px;
+  font-size: 20px;
+color: #444444;
+  font-weight: 600;
+}
+
+.header .navigation {
+  display: center;
+  align-items: center;
+      word-spacing: 1.3em; /* Adjust the spacing as needed */	
+
+}
+
+.header .button {
+  margin: 0 10px;
+  padding: 0px 20px;
+  color: #444444;
+  text-decoration: none;
+  border-radius: 0px;
+font-size: 18px;
+}
+
+header a {
+      color: #444444;
+      text-decoration: none;
+
+    }
+
+.header .header-svg {
+    /* Styles for the new SVG inside the header */
+    position: absolute;
+    top: 27px; /* Adjust top and left values as needed to position the new SVG */
+    left: 95%;
+    width: 30px;
+    height: 28px;
+color: #444444;
+}
+
+
+body.dark-mode .header .twitter-link svg {
+  fill: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+
+body.dark-mode header a {
+  color: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+body.dark-mode .header .button  {
+  color: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+
+</style>
+</defs>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+</head>
+
+
+	  <script type="text/javascript">document.body.style.visibility="hidden";</script><div id="SFctr" data-org="31002" data-mfl="64c215764c0b6076026762a3"><div style="clear:both"></div></div><script type="text/javascript" src="https://cdn.membershipworks.com/mfl.js"></script>
+
+
+
+   <div id="parent-container">
+<body>
+<br><br>
+
+  <input type="text" id="searchInput1" class="search-bar" placeholder="Enter name of keeper..." />
+  <input type="button" id="searchButton1" value="+&nbsp;" />
+  <br />
+  <div id="resultsTable"></div>
+<div id="similarPlayersTable"></div>
+<div id="matchingNames"></div>
+
+<div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <div class="toggle-icon"></div>
+  </div>
+ 
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+ <g class="radar_label">
+  <text class="label" data-type="Short%" data-idx="0" transform="translate(163.99 36.45) rotate(-1)">Short%</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Long%" data-idx="6" transform="matrix(0.5, -0.86, 0.86, 0.5, 48.89, 120) rotate(3.87)">Long%</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Passes" data-idx="5" transform="matrix(-0.38, -0.93, 0.93, -0.38, 55.38, 256.78)">Passes</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Exits" data-idx="4" transform="translate(110.19 332.04) rotate(24.87)">Exits</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Aerial" data-idx="3" transform="translate(251.36 340.52) rotate(-26.32)">Aerial</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Def Actions" data-idx="2" transform="translate(350 182.46) rotate(100.11)">Def Actions</text>
+</g>
+
+<g class="radar_label">
+  <text class="label" data-type="Shotstopping" data-idx="1" transform="translate(286.42 60.6) rotate(51.99)">Shot-stopping</text>
+</g>
+    
+  </svg>					
+
+
+<svg width="600" height="600" class="radar"><g transform="translate(280.77,280.77)"><g class="axisWrapper">
+
+
+<circle class="blackCircle" r="280" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
+<circle class="gridCircle" r="280" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="224" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="168" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="112" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="56" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
+
+
+  
+ 
+<!-- Multiply all x and y values by 1.473 -->
+<line x1="0" y1="0" x2="13.72129" y2="279.2078525386" stroke="#D3D3D3" stroke-width="1" transform="translate(-13.72129, -279.2078525386)"></line>
+
+<line x1="0" y1="0" x2="-208.90866346666665" y2="185.88209152" stroke="#D3D3D3" stroke-width="1" transform="translate(208.90866346666665, -185.88209152)"></line>
+<line x1="0" y1="0" x2="-275.54098612266664" y2="-47.46205429333333" stroke="#D3D3D3" stroke-width="1" transform="translate(275.54098612266664, 47.46205429333333)"></line>
+<line x1="0" y1="0" x2="-135.39802988666668" y2="-245.39663354666668" stroke="#D3D3D3" stroke-width="1" transform="translate(135.39802988666668, 245.39663354666668)"></line>
+<line x1="0" y1="0" x2="107.32792554666666" y2="-258.3098914133333" stroke="#D3D3D3" stroke-width="1" transform="translate(-107.32792554666666, 258.3098914133333)"></line>
+<line x1="1" y1="-2" x2="268.7987482368" y2="-77.51274343679999" stroke="#D3D3D3" stroke-width="1" transform="translate(-268.7987482368, 77.51274343679999)"></line>
+
+<line x1="0" y1="0" x2="227.65277226666667" y2="161.769853039" stroke="#D3D3D3" stroke-width="1" transform="translate(-227.65277226666667, -161.769853039)"></line>
+
+
+
+
+
+
+<g class="radarWrapper"></g>
+<g class="radarWrapper2"></g>
+</g>
+
+
+
+
+<script>const names = [
+"A. Moris 22/23,33,Union Saint-Gilloise", "D. Livaković 22/23,28,Dinamo Zagreb", "David de Gea 22/23,32,Man United", "O. Vlachodimos 22/23,29,Benfica", "T. Courtois 22/23,31,Real Madrid", "M. Borjan 22/23,35,Slovan Bratislava", "Rui Patrício 22/23,35,Roma", "N. Guzmán 22/23,37,Tigres UANL", "K. Schmeichel 22/23,36,Nice", "O. Glazer 22/23,27,Crvena Zvezda", "S. Mignolet 22/23,35,Club Brugge", "M. ter Stegen 22/23,31,Barcelona", "L. Hrádecký 22/23,33,Bayer Leverkusen", "E. Horvath 22/23,27,Luton Town", "Alisson 22/23,30,Liverpool", "J. Butez 22/23,27,Antwerp", "G. Donnarumma 22/23,24,PSG", "A. Patterson 22/23,23,Sunderland", "Álex Remiro 22/23,28,Real Sociedad", "F. Nguyen 22/23,30,Công An Nhân Dân", "F. Woodman 22/23,26,Preston North End", "V. Milinković-Savić 22/23,26,Torino", "Diogo Costa 22/23,23,Porto", "S. Dieng 22/23,28,QPR", "A. Nübel 22/23,26,Monaco", "B. Wilson 22/23,30,Coventry City", "K. Trapp 22/23,32,Eintracht Frankfurt", "W. Szczęsny 22/23,33,Juventus", "Ederson 22/23,29,Man City", "G. Ochoa 22/23,38,Salernitana", "M. Hitz 22/23,35,Basel", "A. Lafont 22/23,24,Nantes", "Matheus 22/23,30,Sporting Braga", "Antonio Adán 22/23,36,Sporting CP", "J. Pickford 22/23,29,Everton", "D. Bachmann 22/23,28,Watford", "G. Mamardashvili 22/23,22,Valencia", "Z. Steffen 22/23,28,Man City", "A. Meret 22/23,26,Napoli", "I. Provedel 22/23,29,Lazio", "E. Martínez 22/23,30,Aston Villa", "V. Johansson 22/23,24,Rotherham United", "G. Ochoa 22/23,37,Salernitana", "N. Larsen 22/23,32,Silkeborg", "J. Staněk 22/23,27,Viktoria Plzeň", "B. Radunović 22/23,27,Cagliari", "A. Okonkwo 22/23,21,Sturm Graz", "N. Pope 22/23,31,Newcastle United", "F. Monetti 22/23,34,Lanús", "R. Cota 22/23,36,León", "C. Vargas 22/23,34,Atlas", "Y. Brecher 22/23,30,Zürich", "M. Flekken 22/23,29,Freiburg", "A. Ramsdale 22/23,25,Arsenal", "W. Foderingham 22/23,32,Sheffield United", "Tiago Volpi 22/23,32,Toluca", "P. Terracciano 22/23,33,Fiorentina", "Luiz Júnior 22/23,22,Famalicão", "A. Murić 22/23,24,Burnley", "Y. Bounou 22/23,32,Sevilla", "N. Hedl 22/23,22,Rapid Wien", "R. Allsop 22/23,30,Cardiff City", "J. Ruddy 22/23,36,Birmingham City", "W. Benítez 22/23,30,PSV", "M. Vandevoordt 22/23,21,Genk", "M. Jiménez 22/23,33,Guadalajara", "G. Poluzzi 22/23,35,Südtirol", "J. Oblak 22/23,30,Atlético Madrid", "P. Köhn 22/23,25,Salzburg", "S. Mandanda 22/23,38,Rennes", "Y. Sommer 22/23,34,Bayern München", "M. Schwäbe 22/23,28,Köln", "J. Lumley 22/23,28,Reading", "A. Onana 22/23,27,Internazionale", "C. Früchtl 22/23,23,Austria Wien", "M. Ryan 22/23,31,AZ", "M. Ryan 22/23,31,AZ", "Pau López 22/23,28,Olympique Marseille", "L. Unnerstall 22/23,32,Twente", "A. Bodart 22/23,25,Standard Liège", "Kepa Arrizabalaga 22/23,28,Chelsea", "F. Rønnow 22/23,30,Union Berlin", "R. Laidlaw 22/23,30,Ross County", "G. Bazunu 22/23,21,Southampton", "S. Dimitrievski 22/23,29,Rayo Vallecano", "O. Ustari 22/23,37,Pachuca", "G. Allison 22/23,32,Querétaro", "David Raya 22/23,27,Brentford", "W. Falcone 22/23,28,Lecce", "David Soria 22/23,30,Getafe", "G. Rulli 22/23,31,Ajax", "José Sá 22/23,30,Wolverhampton", "V. Barkas 22/23,29,Utrecht", "M. Silvestri 22/23,32,Udinese", "Ł. Skorupski 22/23,32,Bologna", "M. Sels 22/23,31,Strasbourg", "E. Andrada 22/23,32,Monterrey", "Édgar Badía 22/23,31,Elche", "I. Meslier 22/23,23,Leeds United", "G. Larsonneur 22/23,26,Saint-Étienne", "J. Griffiths 22/23,21,WBA", "L. Montipò 22/23,27,Hellas Verona", "A. Popović 22/23,23,DAC", "Gabriel Batista 22/23,24,Santa Clara", "J. Lössl 22/23,34,Midtjylland", "R. Gagno 22/23,25,Modena", "N. Labrović 22/23,23,Rijeka", "B. Verbruggen 22/23,20,Anderlecht", "M. Dupé 22/23,30,Toulouse", "Lucas Perri 22/23,25,Botafogo", "Éverson 22/23,33,Atlético Mineiro", "B. Leno 22/23,31,Fulham", "H. Lloris 22/23,36,Tottenham", "G. Long 22/23,29,Millwall", "O. Baumann 22/23,32,Hoffenheim", "L. Ati Zigi 22/23,26,St. Gallen", "R. Gurtner 22/23,36,Amiens SC", "M. Di Gregorio 22/23,25,Monza", "Fernando Martínez 22/23,32,Almería", "Marcelo Carné 22/23,33,Marítimo", "Unai Simón 22/23,25,Athletic Bilbao", "L. Cháves 22/23,27,Huracán", "M. Diaw 22/23,29,Clermont", "M. Riemann 22/23,34,Bochum", "B. Samba 22/23,29,Lens", "M. Bizot 22/23,32,Brest", "J. Pavlenka 22/23,31,Werder Bremen", "J. Blaswich 22/23,32,RB Leipzig", "P. Rajković 22/23,27,Mallorca", "K. Grabara 22/23,24,København", "Bento 22/23,24,Athletico Paranaense", "A. Consigli 22/23,36,Sassuolo", "M. O’Leary 22/23,26,Bristol City", "J. de Lange 22/23,25,Go Ahead Eagles", "L. Lund Pedersen 22/23,23,Viborg", "F. Buntić 22/23,26,Vizela", "S. Bolat 22/23,34,Westerlo", "J. Corona 22/23,42,Club Tijuana", "A. Lopes 22/23,32,Olympique Lyonnais", "J. Joronen 22/23,30,Venezia", "O. Kolář 22/23,28,Slavia Praha", "K. Casteels 22/23,30,Wolfsburg", "C. Acevedo 22/23,27,Santos Laguna", "Ł. Fabiański 22/23,38,West Ham", "L. Chevalier 22/23,21,Lille", "H. Bonmann 22/23,29,Wolfsberger AC", "N. Olij 22/23,27,Sparta Rotterdam", "A. Hansen 22/23,27,Nordsjælland", "M. Berkovec 22/23,34,Zbrojovka Brno", "M. Živković 22/23,33,Železničar Pancevo", "G. Kobel 22/23,25,Borussia Dortmund", "J. Frick 22/23,30,Servette", "P. Nardi 22/23,29,Gent", "F. Armani 22/23,36,River Plate", "Fábio 22/23,42,Fluminense", "F. Stanković 22/23,21,Volendam", "Ricardo Batista 22/23,36,Casa Pia AC", "J. Ledesma 22/23,30,Cádiz", "J. De Olivera 22/23,40,Independiente Rivadavia", "A. Gunn 22/23,27,Norwich City", "L. Majkić 22/23,23,Istra 1961", "I. Ivusic 22/23,28,Pafos", "G. Marinelli 22/23,34,Tigre", "Y. Diouf 22/23,23,Reims", "D. Jensen 22/23,31,İstanbulspor", "N. Mirković 22/23,32,Novi Pazar", "A. Sauvage 22/23,31,Laval", "J. Bijlow 22/23,25,Feyenoord", "Weverton 22/23,35,Palmeiras", "O. Christensen 22/23,24,Hertha BSC", "V. Cojocaru 22/23,27,OH Leuven", "J. Cillessen 22/23,34,NEC", "A. Oukidja 22/23,34,Metz", "L. Carević 22/23,24,Vojvodina", "O. Zelenika 22/23,30,Varaždin", "R. Majecki 22/23,23,Cercle Brugge", "A. Batalla 22/23,27,San Lorenzo", "A. Kinský 22/23,20,Pardubice", "K. Martin 22/23,28,Yverdon Sport", "F. Escales 22/23,27,Annecy", "G. Arias 22/23,35,Racing Club", "Dani Figueira 22/23,24,Estoril", "S. van Gassel 22/23,26,Excelsior", "V. Ilić 22/23,20,Bačka Topola", "V. Babacan 22/23,34,İstanbul Başakşehir", "L. Hoyos 22/23,34,Newell's Old Boys", "M. Andújar 22/23,40,Estudiantes", "Rafael 22/23,34,São Paulo", "M. Kovář 22/23,23,Man United U23", "J. Hansen 22/23,38,AGF", "J. Hanuš 22/23,35,Jablonec", "J. Placide 22/23,35,Bastia", "A. Paleari 22/23,30,Benevento", "T. Durso 22/23,24,Gimnasia La Plata", "G. Güvenc 22/23,31,Kasımpaşa", "Bruno Varela 22/23,28,Vitória Guimarães", "Paulo Vítor 22/23,34,Chaves", "B. Drągowski 22/23,25,Spezia", "K. Nakamura 22/23,28,Portimonense", "G. Vicario 22/23,26,Empoli", "B. Bayazıt 22/23,24,Kayserispor", "E. Vaessen 22/23,27,RKC Waalwijk", "Pepe Reina 22/23,40,Villarreal", "A. Talavera 22/23,40,Juárez", "S. Gori 22/23,27,Perugia", "I. De Arruabarrena 22/23,26,Arouca", "Tadeu 22/23,31,Goiás", "Seung-Gyu Kim 22/23,32,Al Shabab", "N. Čavlina 22/23,21,Lokomotiva Zagreb", "D. Schmidt 22/23,31,Sint-Truiden", "M. Maignan 22/23,27,Milan", "A. Silva 22/23,39,Santa Fe", "H. Verhulst 22/23,30,AZ", "F. Djukic 22/23,23,Hvidovre", "S. Manojlović 22/23,20,Javor Ivanjica", "S. Romero 22/23,36,Boca Juniors", "M. Kikkenborg 22/23,23,Lyngby", "D. Ward 22/23,29,Leicester City", "I. Pandur 22/23,23,Fortuna Sittard", "C. Maxwell 22/23,32,Blackpool", "Marcos Felipe 22/23,27,Bahia", "L. Rogić 22/23,27,Sarajevo", "Antonio Sivera 22/23,26,Deportivo Alavés", "G. Coucke 22/23,24,Mechelen", "B. Leroy 22/23,34,Ajaccio", "D. Schierl 22/23,28,Austria Lustenau", "P. Carlgren 22/23,31,Randers", "P. Menzel 22/23,24,Austria Klagenfurt", "Abdullah Al-Mayouf 22/23,36,Al Hilal", "I. Radu 22/23,26,Auxerre", "L. Moser 22/23,23,Eupen", "F. Cambeses 22/23,26,Banfield", "O. Vliegen 22/23,24,Slovan Liberec", "J. McCarthy 22/23,31,Los Angeles FC", "B. Amos 22/23,33,Wigan Athletic", "J. Hart 22/23,36,Celtic", "A. Abedzadeh 22/23,30,Ponferradina", "N. Lemaitre 22/23,26,Quevilly Rouen", "A. Schlager 22/23,27,LASK", "D. Epassy 22/23,30,Abha", "M. Günok 22/23,34,Beşiktaş", "M. van der Hart 22/23,28,Emmen", "S. Ranđelović 22/23,24,Radnik Surdulica", "B. Stuver 22/23,32,Austin FC", "Marcelo Grohe 22/23,36,Al Ittihad", "Cássio 22/23,36,Corinthians", "P. Bernardoni 22/23,26,Angers SCO", "F. Oswald 22/23,32,WSG Swarovski Tirol", "H. Lindner 22/23,33,Sion", "G. Gallon 22/23,30,Troyes", "T. Kaminski 22/23,30,Blackburn Rovers", "L. Nicholls 22/23,30,Huddersfield Town", "L. Zidane 22/23,25,Eibar", "A. Blake 22/23,32,Philadelphia Union", "B. Lecomte 22/23,32,Montpellier", "Jordi Masip 22/23,34,Real Valladolid", "H. Koffi 22/23,26,Charleroi", "João Paulo 22/23,28,Santos", "A. Saipi 22/23,23,Lugano", "T. Castella 22/23,30,Lausanne Sport", "J. Trefil 22/23,22,Sigma Olomouc", "H. Van Crombrugge 22/23,30,Anderlecht", "R. Rey 22/23,32,Independiente", "M. Carnesecchi 22/23,22,Cremonese", "G. Herrera 22/23,31,Talleres Córdoba", "T. Cardozo 22/23,26,Peñarol", "E. Caprile 22/23,21,Empoli", "Andrew 22/23,21,Gil Vicente", "P. Gazzaniga 22/23,31,Girona", "M. Goicoechea 22/23,35,Danubio", "M. Hermansen 22/23,23,Leicester City", "Vicente Guaita 22/23,36,Crystal Palace", "I. Chicco 22/23,27,Colón", "T. Vaclík 22/23,34,Huddersfield Town", "Rui Silva 22/23,29,Real Betis", "L. Malagón 22/23,26,América", "S. Şahin-Radlinger 22/23,30,Ried", "F. Kljajić 22/23,32,Torpedo Kutaisi", "Neto 22/23,33,Bournemouth", "Nicolas 22/23,35,Pisa", "M. Mijatović 22/23,36,Al Adalah", "P. Abrahamsson 22/23,35,Häcken", "T. Marchiori 22/23,28,Atlético Tucumán", "J. Omlin 22/23,29,Borussia M'gladbach", "N. Petrić 22/23,32,Banyoles", "M. Barovero 22/23,39,Atlético de San Luis", "Andrés Fernández 22/23,36,Huesca", "Juan Soriano 22/23,25,Tenerife", "R. Zentner 22/23,28,Mainz 05", "Rubén Yáñez 22/23,29,Sporting Gijón", "K. Matošević 22/23,25,Triestina", "M. Müller 22/23,30,Schalke 04", "L. Mpasi 22/23,28,Rodez", "Carlos Coronel 22/23,26,New York RB", "J. Bonham 22/23,29,Stoke City", "D. Stanivuković 22/23,29,Kolubara", "Y. Irrazábal 22/23,35,Albion", "A. Pears 22/23,25,Blackburn Rovers", "S. Colombi 22/23,31,Reggina", "E. Audero 22/23,26,Sampdoria", "José Antonio Caro 22/23,29,Burgos", "D. Rodríguez 22/23,34,Godoy Cruz", "U. Çakır 22/23,27,Trabzonspor", "Lucas Perri 22/23,25,Botafogo", "J. Siebenhandl 22/23,33,Sturm Graz", "M. Hansen 22/23,33,OB", "S. Clark 22/23,37,Houston Dynamo", "G. Akkan 22/23,28,Ankaragücü", "A. Desábato 22/23,33,Barracas Central", "Hyeon-Woo Jo 22/23,31,Ulsan Hyundai", "N. Losada 22/23,30,Belgrano", "Rafael Cabral 22/23,33,Cruzeiro", "A. Fisher 22/23,25,Swansea City", "D. Callender 22/23,25,Inter Miami", "Asier Riesgo 22/23,39,Leganés", "P. Gallese 22/23,33,Orlando City", "K. Scherpen 22/23,23,Vitesse", "Robert Sánchez 22/23,25,Brighton", "J. Willis 22/23,34,Nashville SC", "In-Jae Hwang 22/23,29,Pohang Steelers", "V. Demarconnay 22/23,40,Paris", "J. Broun 22/23,37,Rosario Central", "F. Muslera 22/23,37,Galatasaray", "Sergio Herrera 22/23,30,Osasuna", "Chang-Geun Lee 22/23,29,Daejeon Citizen", "A. Noppert 22/23,29,Heerenveen", "M. Delač 22/23,30,Horsens", "A. Palmer 22/23,26,WBA", "M. Pigliacelli 22/23,30,Palermo", "I. Banić 22/23,29,Gorica", "André Moreira 22/23,27,Grasshopper", "M. Verrips 22/23,26,Groningen", "N. Trott 22/23,24,Vejle", "M. Rakovan 22/23,33,Trinity Zlín", "V. Bajić 22/23,35,Napredak Kruševac", "A. Iannarilli 22/23,32,Ternana", "J. Musso 22/23,29,Atalanta", "Iván Cuéllar 22/23,39,Sporting Gijón", "R. Bürki 22/23,32,St. Louis City", "A. Schwolow 22/23,31,Schalke 04", "Aarón Escandell 22/23,27,Las Palmas", "D. Da Silva 22/23,30,Stade Lausanne-Ouchy", "A. Rodríguez 22/23,31,Club Tijuana", "S. Frei 22/23,37,Seattle Sounders", "Victor Braga 22/23,31,Al Ta'ee", "Dong-Jun Kim 22/23,28,Jeju United", "D. Marshall 22/23,38,Hibernian", "R. Rúnarsson 22/23,28,Arsenal", "K. Osako 22/23,23,Sanfrecce Hiroshima", "Đ. Petrović 22/23,23,New England", "Q. Braat 22/23,26,Real Oviedo", "Y. Takaoka 22/23,27,Vancouver Whitecaps", "Paulo Victor 22/23,36,Al Ettifaq", "T. Casali 22/23,27,Rheindorf Altach", "V. Stojković 22/23,40,Al Feiha", "T. Miller 22/23,30,DC United", "R. Pasveer 22/23,39,Ajax", "S. Bossut 22/23,37,Zulte-Waregem", "R. Gikiewicz 22/23,35,Augsburg", "M. Malenica 22/23,29,Osijek", "Hyung-Mo Yang 22/23,32,Suwon Bluewings", "J. Laštůvka 22/23,41,Baník Ostrava", "S. Turati 22/23,21,Frosinone", "F. Manojlović 22/23,27,Spartak Subotica", "H. Isted 22/23,26,Luton Town", "A. Mandréa 22/23,26,Caen", "A. Racioppi 22/23,24,Young Boys", "M. Dmitrović 22/23,31,Sevilla", "M. Keller 22/23,21,Young Boys", "L. Barraza 22/23,26,New York City", "J. Rinne 22/23,30,Al Fateh", "R. Celentano 22/23,22,Cincinnati", "C. Tătărușanu 22/23,37,Milan", "T. Carson 22/23,35,St. Mirren", "M. Langerak 22/23,34,Nagoya Grampus", "M. Ingram 22/23,29,Hull City", "S. Britos 22/23,35,Liverpool", "R. Macagno 22/23,26,Platense", "Walter 22/23,35,Cuiabá", "O. Dovin 22/23,21,Hammarby", "Z. Clark 22/23,31,Hearts", "M. Zeghba 22/23,32,Dhamk", "Jaílson 22/23,41,América Mineiro", "G. Alcalá 22/23,31,Pumas UNAM", "J. Sirois 22/23,22,CF Montréal", "E. Kastrati 22/23,26,Cittadella", "S. Nishikawa 22/23,37,Urawa Reds", "M. Reichl 22/23,30,Bohemians 1905", "Iker Álvarez 22/23,22,Villarreal", "S. Walker 22/23,31,Kilmarnock", "Alfonso Herrero 22/23,29,Málaga", "S. Benda 22/23,24,Swansea City", "B. Maubleu 22/23,33,Grenoble", "M. Prévôt 22/23,26,Sochaux", "M. Dyngeland 22/23,27,Brann", "G. Dietsch 22/23,22,RFC Seraing", "O. Piri 22/23,28,Giresunspor", "D. St. Clair 22/23,26,Minnesota United", "Cleiton 22/23,25,Red Bull Bragantino", "K. Navas 22/23,36,Nottingham Forest", "M. Paes 22/23,25,Dallas", "N. Gentilio 22/23,36,Racing", "L. Andrenacci 22/23,28,Brescia", "G. Guruceaga 22/23,28,Torque", "M. Silveira 22/23,23,Wanderers", "J. Ichimori 22/23,32,Yokohama F. Marinos", "L. Kelly 22/23,27,Motherwell", "W. Yarbrough 22/23,34,Colorado Rapids", "Park Il-Gyu 22/23,33,Sagan Tosu", "Léo Jardim 22/23,28,Vasco da Gama", "D. Maekawa 22/23,28,Vissel Kobe", "S. Rochet 22/23,30,Internacional", "Mailson 22/23,26,Al Taawon", "M. Janáček 22/23,22,České Budějovice", "N. Haikin 22/23,28,Bodø / Glimt", "H. González 22/23,33,Mazatlán", "B. Peacock-Farrell 22/23,26,AGF", "G. Hubert 22/23,29,Oostende", "G. Reyes 22/23,37,Deportivo Maldonado", "C. Bravo 22/23,40,Real Betis", "F. Müller 22/23,25,Stuttgart", "M. Christiansen 22/23,22,Lillestrøm", "E. Özbir 22/23,33,Adana Demirspor", "João Ricardo 22/23,34,Fortaleza", "Daniel Fuzato 22/23,26,Getafe", "S. Johnson 22/23,34,Toronto", "A. Aréola 22/23,30,West Ham", "M. Drobnjak 22/23,28,Marsaxlokk", "J. González 22/23,32,Pumas UNAM", "D. Rosić 22/23,26,Radnički Niš", "M. Kuster 22/23,29,Winterthur", "K. Nordfeldt 22/23,34,AIK", "A. McGregor 22/23,41,Rangers", "Jeong-Hoon Kim 22/23,22,Jeonbuk Motors", "Miquel Parera 22/23,27,Racing Santander", "A. Vural 22/23,33,Sivasspor", "E. Alfonso 22/23,35,SPAL", "P. Schulte 22/23,22,Columbus Crew", "J. Steele 22/23,32,Brighton", "J. Słowik 22/23,31,Tokyo", "S. Meza 22/23,23,Huracán", "A. Marchesín 22/23,35,Celta de Vigo", "J. Karlström 22/23,26,Molde", "O. Jansson 22/23,32,IFK Norrköping", "T. Hayakawa 22/23,24,Kashima Antlers", "Matheus Cunha 22/23,22,Flamengo", "N. Leali 22/23,30,Genoa", "S. Fuentes 22/23,36,Rentistas", "D. Denis 22/23,31,Cerro", "S. Lung 22/23,34,Al Raed", "S. Mele 22/23,25,Junior", "Josep Martínez 22/23,25,Genoa", "Raúl Fernández 22/23,35,Granada", "M. Campaña 22/23,34,Al Riyadh", "O. Özdemir 22/23,28,Ümranıyespor", "T. Grigar 22/23,40,Teplice", "Iván Villar 22/23,25,Celta de Vigo", "L. Wahlstedt 22/23,24,Odds", "Gabriel 22/23,30,Coritiba", "Aitor Fernández 22/23,32,Osasuna", "I. Šehić 22/23,34,Konyaspor", "R. Sallinger 22/23,27,Hartberg", "D. Roef 22/23,29,Gent", "C. Brady 22/23,19,Chicago Fire", "R. Méndez 22/23,22,La Luz", "Marcelo Boeck 22/23,38,Fortaleza", "A. Milojevic 22/23,23,Mladost Novi Sad", "Bum-Keun Song 22/23,25,Shonan Bellmare", "E. Taşkıran 22/23,33,Kasımpaşa", "N. Belić 22/23,36,Čukarički", "B. Reynet 22/23,32,Dijon", "J. Tånnander 22/23,22,Sirius", "N. Törnqvist 22/23,21,Mjällby", "K. Kahlina 22/23,31,Charlotte FC", "Ricardo Friedrich 22/23,30,Kalmar", "E. Basilio 22/23,28,Guingamp", "S. Silva 22/23,24,Boston River", "Munir El Kajoui 22/23,34,Al Wehda", "R. Sinclair 22/23,22,St. Johnstone", "R. Matthews 22/23,29,Crystal Palace", "M. Dufour 22/23,24,Defensor Sporting", "D. Henderson 22/23,26,Nottingham Forest", "A. Micai 22/23,30,Cosenza", "C. Álvarez 22/23,37,Real Zaragoza", "I. Čović 22/23,32,Slaven Belupo", "J. Widell Zetterström 22/23,25,Djurgården", "N. Ratti 22/23,29,FC Andorra", "Gabriel Grando 22/23,23,Grêmio", "X. Mous 22/23,27,Heerenveen", "F. Forster 22/23,35,Tottenham", "Y. Mvogo 22/23,28,Lorient", "S. George 22/23,25,Livingston", "L. Burián 22/23,39,Vélez Sarsfield", "Y. Schoonderwaldt 22/23,23,Sparta Rotterdam", "Matheus Cavichioli 22/23,37,América Mineiro", "J. Dahlin 22/23,36,Malmö FF", "Z. MacMath 22/23,31,Real Salt Lake", "A. Hansen 22/23,33,Rosenborg", "S. Leković 22/23,21,Radnički Kragujevac", "V. Mannone 22/23,35,Lorient", "B. Guzan 22/23,38,Atlanta United", "A. Medina 22/23,36,Arsenal", "G. Poussin 22/23,24,Real Zaragoza", "B. Şen 22/23,24,Gaziantep", "I. Pettersson 22/23,26,Stabæk", "A. Bayındır 22/23,25,Fenerbahçe", "L. Acosta 22/23,28,Lanús", "Jong-Beom Baek 22/23,22,Seoul", "Dani Cárdenas 22/23,26,Levante", "M. Birighitti 22/23,32,Dundee United", "Álvaro Vallés 22/23,26,Las Palmas", "S. Breza 22/23,25,Yverdon Sport", "A. Gomis 22/23,29,Rennes", "H. Leite 22/23,32,Antalyaspor", "J. Šeda 22/23,37,Mladá Boleslav", "F. Bredlow 22/23,28,Stuttgart", "M. Fraisl 22/23,30,Arminia Bielefeld", "Z. Samcović 22/23,20,Mladost Lučani", "M. Neuer 22/23,37,Bayern München", "A. Maraval 22/23,29,Rouen", "M. Arias 22/23,31,Argentinos Juniors", "Mateus Pasinato 22/23,31,América Mineiro", "Santos 22/23,33,Flamengo", "M. Krunić 22/23,26,Hajer", "B. Costil 22/23,35,Lille", "S. Ghidotti 22/23,23,Como", "E. Viviano 22/23,37,Fatih Karagümrük", "Ó. Jiménez 22/23,34,América", "N. Micović 22/23,21,Los Angeles Galaxy", "R. Gutiérrez 22/23,26,Mazatlán", "D. Grimshaw 22/23,25,Blackpool", "J. Carranza 22/23,42,Instituto", "M. Ledesma 22/23,26,Central Córdoba SdE", "P. Gunnarsson 22/23,22,Viking", "T. Vandenberghe 22/23,30,Kortrijk", "A. M'Hamdi 22/23,31,Abha", "L. Sepe 22/23,32,Salernitana", "Bernabé Barragán 22/23,30,Albacete", "João Virginia 22/23,23,Cambuur", "Kyung-Min Kim 22/23,31,Gwangju", "M. Jedlička 22/23,25,Viktoria Plzeň", "B. Peacock-Farrell 22/23,26,Burnley", "M. Michel 22/23,31,Ajaccio", "K. Roos 22/23,31,Aberdeen", "J. Jones 22/23,34,Wigan Athletic", "I. Lučić 22/23,28,Hajduk Split", "J. Silva 22/23,26,Plaza Colonia", "F. Lanzillota 22/23,30,Argentinos Juniors", "Dani Rebollo 22/23,23,Real Zaragoza", "G. Slonina 22/23,19,Chelsea", "S. Grytebust 22/23,33,Aalesund", "N. Vikonis 22/23,39,Celaya", "D. Bentley 22/23,29,Wolverhampton", "H. Valdimarsson 22/23,21,Elfsborg", "M. Perin 22/23,30,Juventus", "R. Kojima 22/23,26,Albirex Niigata", "Fernando Pacheco 22/23,31,Espanyol", "E. Selvik 22/23,26,Haugesund", "A. Mandous 22/23,31,Slavia Praha", "D. Iversen 22/23,25,Leicester City", "T. Krul 22/23,35,Norwich City", "F. Jörgensen 22/23,21,Villarreal", "D. Thiam 22/23,25,SPAL", "V. Myhra 22/23,27,Strømsgodset", "J. Bursik 22/23,22,Club Brugge", "M. Schuhen 22/23,30,Darmstadt 98", "K. Müller 22/23,32,Heidenheim", "H. Keto 22/23,25,Sandefjord", "E. Mendy 22/23,31,Chelsea", "M. Nilsson Säfqvist 22/23,29,Halmstad", "R. Ruiter 22/23,36,Cambuur", "Nawaf Al Aqidi 22/23,23,Al Nassr", "Fernando Miguel 22/23,38,Fortaleza", "I. Filipović 22/23,28,Paris", "F. Niţă 22/23,36,Pardubice", "Jin-Hyeon Kim 22/23,36,Cerezo Osaka", "K. McIntosh 22/23,29,Sporting KC", "F. Mucha 22/23,31,Teplice", "R. Valeš 22/23,33,Bohemians 1905", "J. Markovič 22/23,22,Baník Ostrava", "Sang-Hun Yu 22/23,34,Gangwon", "Marafona 22/23,36,Paços de Ferreira", "S. Rossbach 22/23,27,Degerfors", "N. Kamifukumoto 22/23,33,Kawasaki Frontale", "Raúl Lizoáin 22/23,32,FC Andorra", "M. Gersbeck 22/23,28,Hertha BSC", "D. von Ballmoos 22/23,28,Young Boys", "S. Brolin 22/23,22,AIK", "A. Desmas 22/23,29,Le Havre", "B. Güngördü 22/23,27,Ankaragücü", "R. Ramírez 22/23,30,Necaxa", "F. Kaplan 22/23,34,Giresunspor", "P. Loretz 22/23,20,Luzern", "M. Macík 22/23,30,Sigma Olomouc", "Keiller 22/23,26,Internacional", "J. Haugaard 22/23,31,Tromsø", "S. Handanovič 22/23,38,Internazionale", "D. Stevanović 22/23,18,Radnički Niš", "Joan Femenías 22/23,26,Levante", "K. Sentić 22/23,22,Diósgyőr", "M. Higashiguchi 22/23,37,Gamba Osaka", "T. Wakahara 22/23,23,Kyoto Sanga", "K. Matsumoto 22/23,26,Kashiwa Reysol", "T. Sander 22/23,18,København", "D. Button 22/23,34,WBA", "S. Brodersen 22/23,26,Yokohama", "F. Sidklev 22/23,18,Brommapojkarna", "M. Sjöeng 22/23,21,Vålerenga", "A. Ivačič 22/23,29,Portland Timbers", "A. Kristiansen 22/23,33,Sarpsborg 08", "M. Sportiello 22/23,31,Atalanta", "S. Dostál 22/23,32,Trinity Zlín", "N. Mantl 22/23,23,Salzburg", "Adrián López 22/23,24,Recreativo Granada", "D. Šipoš 22/23,24,České Budějovice", "John 22/23,27,Internacional", "J. Olschowsky 22/23,21,Borussia M'gladbach", "Julen Agirrezabala 22/23,22,Athletic Bilbao", "F. Tapia 22/23,22,Querétaro", "M. Travers 22/23,24,Bournemouth", "T. Fayulu 22/23,24,Sion", "S. Sosa 22/23,36,Pumas UNAM", "Serif Berbić 22/23,21,Lugano", "A. Katić 22/23,21,Voždovac", "A. Andersson 22/23,32,GIF Sundsvall", "Cláudio Ramos 22/23,31,Porto", "T. Wellenreuther 22/23,27,Feyenoord", "S. Kritsyuk 22/23,32,Gil Vicente", "F. Correa 22/23,22,River Plate", "M. Murakami 22/23,30,Avispa Fukuoka", "P. Bajza 22/23,31,Hradec Králové", "M. Şengezer 22/23,26,İstanbul Başakşehir", "M. Turk 22/23,19,Sampdoria", "A. Lunin 22/23,24,Real Madrid", "Daniel 22/23,29,SJ Earthquakes", "A. Vulic 22/23,22,Spartak Subotica", "İ. Eğribayat 22/23,25,Fenerbahçe", "F. Mata 22/23,25,Atlante", "J. Hammel 22/23,22,Grasshopper", "Dong-Heon Kim 22/23,26,Incheon United", "S. Ortega 22/23,30,Man City", "T. Sugeno 22/23,39,Consadole Sapporo", "T. Nagaishi 22/23,27,Avispa Fukuoka", "G. Makaridze 22/23,33,Marítimo", "G. Makaridze 22/23,33,Marítimo", "M. Salvi 22/23,29,Basel", "E. Guarna 22/23,37,Ascoli", "K. Darlow 22/23,32,Newcastle United", "I. Arce 22/23,31,Deportivo Riestra", "J. Pulskamp 22/23,22,Sporting KC", "G. Beavers 22/23,18,Real Salt Lake", "J. Prior 22/23,27,Pau", "P. Gollini 22/23,28,Napoli", "M. Knežević 22/23,34,Mladost Novi Sad", "J. Bond 22/23,30,Los Angeles Galaxy", "J. Marcinkowski 22/23,26,SJ Earthquakes", "Young-Eun Choi 22/23,27,Daegu", "F. de Keijzer 22/23,23,Utrecht", "A. Uysal 22/23,29,Antalyaspor", "L. Bostyn 22/23,29,Zulte-Waregem", "S. Cibois 22/23,25,Rodez", "K. Tani 22/23,22,Gamba Osaka", "Álvaro Fernández 22/23,25,Espanyol", "M. Sandberg 22/23,32,HamKam", "Diego Altube 22/23,23,Albacete", "D. Phillips 22/23,27,Oostende", "Dong-Geon No 22/23,31,Suwon", "Sergio Asenjo 22/23,33,Real Valladolid", "R. Bacchia 22/23,24,Cerro Largo", "P. Dahlberg 22/23,24,IFK Göteborg", "T. Koubek 22/23,30,Augsburg", "B. Radošević 22/23,34,Gorica", "W. Hennessey 22/23,36,Nottingham Forest", "S. Bajić 22/23,21,Bristol City", "Z. Hemming 22/23,23,Middlesbrough U23", "L. Kalinić 22/23,33,Hajduk Split", "L. Chichizola 22/23,33,Parma", "Seung-Hoon Oh 22/23,35,Daegu", "A. Livieri 22/23,26,Pisa", "R. Fährmann 22/23,34,Schalke 04", "Juan Carlos 22/23,35,Girona", "D. Ochoa 22/23,22,Atlético de San Luis", "A. Meyer 22/23,32,Borussia Dortmund", "I. Grbić 22/23,27,Atlético Madrid", "J. Drommel 22/23,26,PSV", "J. Orozco 22/23,37,Club Tijuana", "D. Bingham 22/23,33,Portland Timbers", "Sung-Yun Gu 22/23,29,Consadole Sapporo", "Sung-Ryong Jung 22/23,38,Kawasaki Frontale", "E. Canpolat 22/23,22,Kasımpaşa", "S. Johnstone 22/23,30,Crystal Palace", "B. Białkowski 22/23,35,Millwall", "M. Mansilla 22/23,27,Central Córdoba SdE", "S. Moyano 22/23,32,Unión Santa Fe", "J. Letáček 22/23,24,Baník Ostrava", "P. Gulácsi 22/23,33,RB Leipzig", "Hyun Yoo 22/23,38,Suwon", "A. Marković 22/23,31,Slaven Belupo", "Y. Fofana 22/23,22,Angers SCO", "R. Gudiño 22/23,27,Necaxa", "G. Villar 22/23,25,Barracas Central", "S. Kırıntılı 22/23,38,Ümranıyespor", "J. Klinsmann 22/23,26,Los Angeles Galaxy", "M. Šarkić 22/23,25,Stoke City", "H. Lloris 21/22,35,Tottenham", "P. Gulácsi 21/22,32,RB Leipzig", "S. Handanovič 21/22,37,Internazionale", "Alisson 21/22,29,Liverpool", "E. Mendy 21/22,30,Chelsea", "G. Bazunu 21/22,20,Southampton", "M. Dupé 21/22,29,Toulouse", "André Ferreira 21/22,26,Paços de Ferreira", "K. Schmeichel 21/22,35,Leicester City", "K. Lamprou 21/22,30,PEC Zwolle", "Ederson 21/22,28,Man City", "R. Gikiewicz 21/22,34,Augsburg", "M. ter Stegen 21/22,30,Barcelona", "T. Courtois 21/22,30,Real Madrid", "P. Leeuwenburgh 21/22,28,Groningen", "Rui Patrício 21/22,34,Roma", "J. Oblak 21/22,29,Atlético Madrid", "P. Bernardoni 21/22,25,Saint-Étienne", "O. Christensen 21/22,23,Hertha BSC", "Y. Bounou 21/22,31,Sevilla", "G. Rulli 21/22,30,Villarreal", "J. Musso 21/22,28,Atalanta", "E. Vaessen 21/22,26,RKC Waalwijk", "David de Gea 21/22,31,Man United", "E. Martínez 21/22,29,Aston Villa", "Diogo Costa 21/22,22,Porto", "M. Maignan 21/22,27,Milan", "Matheus 21/22,30,Sporting Braga", "Antonio Adán 21/22,35,Sporting CP", "K. Trapp 21/22,32,Eintracht Frankfurt", "A. Nübel 21/22,25,Monaco", "O. Vlachodimos 21/22,28,Benfica", "J. Houwen 21/22,26,Vitesse", "A. Ramsdale 21/22,24,Arsenal", "I. Meslier 21/22,22,Leeds United", "W. Szczęsny 21/22,32,Juventus", "M. Dúbravka 21/22,33,Newcastle United", "Robert Sánchez 21/22,24,Brighton", "J. Pickford 21/22,28,Everton", "Álex Remiro 21/22,27,Real Sociedad", "T. Strakosha 21/22,27,Lazio", "P. Terracciano 21/22,32,Fiorentina", "Luís Maximiano 21/22,23,Granada", "Unai Simón 21/22,25,Athletic Bilbao", "José Sá 21/22,29,Wolverhampton", "Ł. Fabiański 21/22,37,West Ham", "G. Vicario 21/22,25,Empoli", "Julen Agirrezabala 21/22,21,Bilbao Athletic", "N. Pope 21/22,30,Burnley", "A. Lafont 21/22,23,Nantes", "I. Provedel 21/22,28,Spezia", "D. Ospina 21/22,33,Napoli", "K. Scherpen 21/22,22,Vitesse", "J. Ledesma 21/22,29,Cádiz", "A. Lopes 21/22,31,Olympique Lyonnais", "Luiz Júnior 21/22,21,Famalicão", "David Soria 21/22,29,Getafe", "Sergio Herrera 21/22,29,Osasuna", "J. Drommel 21/22,25,PSV", "B. Costil 21/22,34,Bordeaux", "S. Sirigu 21/22,35,Genoa", "M. Bizot 21/22,31,Brest", "Diego López 21/22,40,Espanyol", "M. Sels 21/22,30,Strasbourg", "P. Rajković 21/22,26,Reims", "A. Consigli 21/22,35,Sassuolo", "Édgar Badía 21/22,30,Elche", "Fernando Pacheco 21/22,30,Deportivo Alavés", "M. Silvestri 21/22,31,Udinese", "A. Cragno 21/22,28,Cagliari", "M. Flekken 21/22,29,Freiburg", "Ł. Skorupski 21/22,31,Bologna", "W. Benítez 21/22,29,Nice", "L. Hrádecký 21/22,32,Bayer Leverkusen", "L. Unnerstall 21/22,32,Twente", "Luiz Felipe 21/22,25,Belenenses", "O. Djoco 21/22,24,Clermont", "Rui Silva 21/22,28,Real Betis", "Rafael Bracali 21/22,41,Boavista", "Javi Díaz 21/22,25,Sevilla Atlético", "F. Müller 21/22,24,Stuttgart", "L. Montipò 21/22,26,Hellas Verona", "O. Baumann 21/22,32,Hoffenheim", "G. Kobel 21/22,24,Borussia Dortmund", "Pau López 21/22,27,Olympique Marseille", "Y. van Osch 21/22,25,Fortuna Sittard", "S. Dimitrievski 21/22,28,Rayo Vallecano", "Bruno Varela 21/22,27,Vitória Guimarães", "M. Branderhorst 21/22,28,NEC", "Y. Sommer 21/22,33,Borussia M'gladbach", "S. Ortega 21/22,29,Arminia Bielefeld", "R. Zentner 21/22,27,Mainz 05", "M. Neuer 21/22,36,Bayern München", "Pedro Silva 21/22,25,Vizela", "Paulo Victor 21/22,35,Marítimo", "F. Forster 21/22,34,Southampton", "M. Schwäbe 21/22,27,Köln", "K. Navas 21/22,35,PSG", "M. Riemann 21/22,33,Bochum", "T. Wellenreuther 21/22,26,Willem II", "J. Omlin 21/22,28,Montpellier", "M. Okoye 21/22,22,Sparta Rotterdam", "L. Horníček 21/22,20,Sporting Braga", "Dani Cárdenas 21/22,25,Levante", "T. Krul 21/22,34,Norwich City", "A. Onana 21/22,26,Ajax", "Marco Pereira 21/22,35,Santa Clara", "M. Rensing 21/22,36,Fortuna Düsseldorf", "Samuel Portugal 21/22,28,Portimonense", "Victor Braga 21/22,30,Arouca", "A. Noppert 21/22,28,Go Ahead Eagles", "B. Foster 21/22,39,Watford", "Vicente Guaita 21/22,35,Crystal Palace", "X. Mous 21/22,26,Heerenveen", "O. Marciano 21/22,32,Feyenoord", "G. Gallon 21/22,29,Troyes", "F. de Keijzer 21/22,22,Utrecht", "Beto 21/22,40,Farense", "M. Caillard 21/22,28,Metz", "G. Donnarumma 21/22,23,PSG", "K. Casteels 21/22,30,Wolfsburg", "J. Cillessen 21/22,33,Valencia", "S. Kritsyuk 21/22,31,Zenit", "M. Dreyer 21/22,33,Lorient", "N. Mäenpää 21/22,37,Venezia", "E. Audero 21/22,25,Sampdoria", "Kiko Casilla 21/22,35,Elche", "David Raya 21/22,26,Brentford", "K. Bucker 21/22,25,Heracles", "S. Mandanda 21/22,37,Olympique Marseille", "G. Mamardashvili 21/22,21,Valencia", "Sergio Rico 21/22,28,Mallorca", "C. Bravo 21/22,39,Real Betis", "A. Gomis 21/22,28,Rennes", "L. Sepe 21/22,31,Salernitana", "J. Bijlow 21/22,24,Feyenoord", "V. Milinković-Savić 21/22,25,Torino", "J. Leca 21/22,36,Lens", "Dani Figueira 21/22,24,Estoril", "D. Bertaud 21/22,23,Montpellier", "E. Mulder 21/22,33,Heerenveen", "R. Pasveer 21/22,38,Ajax", "A. Schwolow 21/22,30,Hertha BSC", "G. Poussin 21/22,23,Bordeaux", "I. Grbić 21/22,26,Lille", "D. Alemdar 21/22,19,Rennes", "A. Aréola 21/22,29,West Ham", "J. Butland 21/22,29,Crystal Palace", "Ž. Frelih 21/22,24,Gil Vicente", "J. Blaswich 21/22,31,Heracles", "L. Zidane 21/22,24,Rayo Vallecano", "J. Gorter 21/22,22,Ajax", "M. Lotka 21/22,21,Hertha BSC", "Roberto Jiménez 21/22,35,Real Valladolid", "W. Falcone 21/22,27,Sampdoria", "Thiago Rodrigues 21/22,26,Estoril", "E. Berisha 21/22,33,Torino", "Álvaro Fernández 21/22,24,Brentford", "M. Ryan 21/22,30,Real Sociedad", "A. Mandréa 21/22,25,Angers SCO", "F. Rønnow 21/22,30,Union Berlin", "Kewin Silva 21/22,27,Moreirense"  ];
+  const searchInput = document.getElementById("searchInput1");
+ const matchingNamesContainer = document.getElementById("matchingNames");
+const searchButton = document.getElementById("searchButton");
+
+
+function isMobileDevice() {
+  const userAgent = navigator.userAgent;
+  return /Android|iPhone/i.test(userAgent);
+}
+
+function updateMatchingNames() {
+  const searchQuery = removeSpecialChars(searchInput.value.toLowerCase());
+  const matchingNames = names.filter(function(name) {
+    const [fullName] = name.split(",");
+    const normalizedName = removeSpecialChars(fullName.toLowerCase());
+    return normalizedName.includes(searchQuery);
+  });
+
+  matchingNamesContainer.innerHTML = "";
+
+  matchingNames.forEach(function(name) {
+    const [fullName, team, age] = name.split(",");
+
+    const nameElement = document.createElement("div");
+    nameElement.classList.add("name");
+
+    const fullNameElement = document.createElement("span");
+    fullNameElement.textContent = fullName;
+    fullNameElement.classList.add("fullName");
+    nameElement.appendChild(fullNameElement);
+
+    const ageElement = document.createElement("span");
+    ageElement.textContent = " (" + team + ",";
+    ageElement.classList.add("age");
+    nameElement.appendChild(ageElement);
+
+    const teamElement = document.createElement("span");
+    teamElement.textContent = " " + age + ")";
+    teamElement.classList.add("team");
+    nameElement.appendChild(teamElement);
+
+    nameElement.addEventListener("click", function() {
+      searchInput.value = fullName; // Set the clicked name as the search input value
+      searchButton1.click(); // Trigger the search button click event
+    });
+
+    matchingNamesContainer.appendChild(nameElement);
+  });
+
+  if (searchQuery === "" && matchingNames.length === 0) {
+    matchingNamesContainer.style.display = "none";
+  } else {
+    matchingNamesContainer.style.display = "block";
+
+    matchingNamesContainer.style.backgroundColor = "#9c9b9b";
+    matchingNamesContainer.style.width = "384px";
+    matchingNamesContainer.style.padding = "10px";
+    matchingNamesContainer.style.position = "absolute";
+    matchingNamesContainer.style.left = "12px";
+    matchingNamesContainer.style.zIndex = "9999"; // Set a high z-index value
+
+
+    // Set different styles for mobile and non-mobile
+    if (isMobileDevice()) {
+      matchingNamesContainer.style.top = "2.8%";
+    } else {
+      matchingNamesContainer.style.top = "5.9%";
+    }
+
+  }
+
+
+  if (searchQuery === "") {
+    matchingNamesContainer.style.display = "none";
+  }
+}
+
+searchInput.addEventListener("input", updateMatchingNames);
+searchInput.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    searchButton1.click(); // Trigger the search button click event
+  } else if (event.key === "Backspace") {
+    updateMatchingNames();
+  }
+});
+</script>
+
+<div class="toggle-container">
+  <label class="toggle-label"></label>
+  <label class="toggle-checkbox">
+    <input type="checkbox" id="toggleButton" onclick="toggleFilling()" unchecked>
+    <span class="toggle-slider"></span>
+  </label>
+</div>
+
+
+<button onclick="takeScreenshot()" class="button-10"><div class="icon2"></div></button>
+
+
+  <script>
+
+
+function takeScreenshot() {
+
+
+ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  let x, y, cropPercentageX, cropPercentageY, cropPercentageRight, captureWidth, captureHeight;
+
+  if (isMobile) {
+    // Values for mobile devices
+    x = 0;
+    y = 0;
+    cropPercentageX = -0.0147;
+    cropPercentageY = 0.115;
+    cropPercentageRight = 0.238;
+    captureWidth = 930;
+    captureHeight = 975;
+  } else {
+    // Values for desktop
+    x = 0;
+    y = 0;
+    cropPercentageX = -0.0087;
+    cropPercentageY = 0.1;
+    cropPercentageRight = 0.4;
+    captureWidth = 1200;
+    captureHeight = 975;
+  }
+
+
+
+domtoimage.toBlob(document.getElementById('parent-container'), {
+  width: captureWidth,
+  height: captureHeight,
+  style: {
+    transform: 'none' // Remove any applied transformations
+  }
+}).then(blob => {
+    // Create an image element to load the screenshot blob
+    const img = new Image();
+    img.onload = () => {
+      // Calculate the crop dimensions based on the percentages and image size
+      const cropX = img.width * cropPercentageX;
+      const cropY = img.height * cropPercentageY;
+      const cropWidth = img.width - cropX - (img.width * cropPercentageRight);
+      const cropHeight = img.height - cropY;
+
+      // Create a new canvas element with the cropped dimensions
+      const canvas = document.createElement('canvas');
+      canvas.width = cropWidth;
+      canvas.height = cropHeight;
+
+      // Get the 2D drawing context of the canvas
+      const ctx = canvas.getContext('2d');
+
+const storedDarkMode = localStorage.getItem("darkMode");
+
+// Check if dark mode is enabled based on stored preference or system preference
+const darkModeEnabled = storedDarkMode === "true" || window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Fill the canvas with the appropriate color
+if (darkModeEnabled) {
+  ctx.fillStyle = '#000000'; // Black color
+} else {
+  ctx.fillStyle = '#ffffff'; // White color
+}
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+      ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+
+
+      // Convert the canvas to a PNG image
+      canvas.toBlob(croppedBlob => {
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(croppedBlob);
+        link.download = 'screenshot.png'; // Specify the filename for the downloaded image
+
+        // Simulate a click on the link to trigger the download
+        link.click();
+      }, 'image/png');
+    };
+    img.src = URL.createObjectURL(blob);
+  });
+}
+    const csvData = `1,A. Moris 22/23,Union Saint-Gilloise,33,1,0.523,0.276,0.352,0.27,0.883,0.282,6055
+    2,D. Livaković 22/23,Dinamo Zagreb,28,0.998,0.3,0.695,0.352,0.802,0.755,0.774,5861
+    3,David de Gea 22/23,Man United,32,0.053,0.259,0.09,0.508,0.222,0.418,0.804,5683
+    4,O. Vlachodimos 22/23,Benfica,29,0.148,0.392,0.386,0.079,0.381,0.571,0.413,5570
+    5,T. Courtois 22/23,Real Madrid,31,0.497,0.333,0.212,0.815,0.058,0.646,0.894,5412
+    6,M. Borjan 22/23,Slovan Bratislava,35,0.996,0.611,0.51,0.204,0.486,0.625,0.704,5379
+    7,Rui Patrício 22/23,Roma,35,0.021,0,0,0.016,0.974,0.952,0.249,5332
+    8,N. Guzmán 22/23,Tigres UANL,37,0.994,0.319,0.733,0.671,0.58,0.883,0.228,5265
+    9,K. Schmeichel 22/23,Nice,36,0.302,0.069,0.069,0.407,0.762,0.407,0.418,5162
+    10,O. Glazer 22/23,Crvena Zvezda,27,0.992,0.156,0.434,0.282,0.702,0.321,0.667,5083
+    11,S. Mignolet 22/23,Club Brugge,35,0.99,0.309,0.844,0.352,0.675,0.794,0.879,5074
+    12,M. ter Stegen 22/23,Barcelona,31,0.164,0.46,0.238,0.836,0.794,0.561,0.651,5071
+    13,L. Hrádecký 22/23,Bayer Leverkusen,33,0.349,0.259,0.291,0.466,0.788,0.397,0.312,5056
+    14,E. Horvath 22/23,Luton Town,27,0.988,0.405,0.272,0.282,0.233,0.401,0.877,5040
+    15,Alisson 22/23,Liverpool,30,0.825,0.672,0.28,0.82,0.206,0.503,0.635,5013
+    16,J. Butez 22/23,Antwerp,27,0.986,0.648,0.601,0.609,0.831,0.918,0.634,4992
+    17,G. Donnarumma 22/23,PSG,24,0.106,0.254,0.376,0.111,0.016,0.704,0.921,4991
+    18,A. Patterson 22/23,Sunderland,23,0.984,0.714,0.652,0.78,0.08,0.568,0.189,4923
+    19,Álex Remiro 22/23,Real Sociedad,28,0.503,0.153,0.148,0.55,0.333,0.159,0.54,4879
+    20,F. Nguyen 22/23,Công An Nhân Dân,30,0.982,0.648,0.235,0.385,0.673,0.901,0.87,4830
+    21,F. Woodman 22/23,Preston North End,26,0.981,0.504,0.156,0.484,0.451,0.469,0.484,4801
+    22,V. Milinković-Savić 22/23,Torino,26,0.947,0.545,0.772,0.979,0.365,0.571,0.545,4787
+    23,Diogo Costa 22/23,Porto,23,0.487,0.259,0.413,0.847,0.55,0.767,0.566,4755
+    24,S. Dieng 22/23,QPR,28,0.979,0.728,0.23,0.825,0.562,0.457,0.891,4732
+    25,A. Nübel 22/23,Monaco,26,0.317,0.069,0.249,0.243,0.651,0.534,0.185,4695
+    26,B. Wilson 22/23,Coventry City,30,0.977,0.393,0.554,0.609,0.307,0.34,0.296,4645
+    27,K. Trapp 22/23,Eintracht Frankfurt,32,0.127,0.169,0.291,0.153,0.196,0.608,0.265,4641
+    28,W. Szczęsny 22/23,Juventus,33,0.138,0.46,0.238,0.254,0.963,0.799,0.587,4633
+    29,Ederson 22/23,Man City,29,0.37,0.196,0.111,0.794,0.249,0.444,0.302,4624
+    30,G. Ochoa 22/23,Salernitana,38,0.975,0.06,0.619,0.027,0.953,0.603,0.792,4611
+    31,M. Hitz 22/23,Basel,35,0.973,0.253,0.617,0.609,0.562,0.71,0.712,4610
+    32,A. Lafont 22/23,Nantes,24,0.656,0.291,0.857,0.36,0.344,0.185,0.81,4591
+    33,Matheus 22/23,Sporting Braga,30,0.899,0.651,0.561,0.646,0.529,0.328,0.651,4488
+    34,Antonio Adán 22/23,Sporting CP,36,0.466,0.259,0.503,0.63,0.053,0.635,0.508,4482
+    35,J. Pickford 22/23,Everton,29,0.598,0.333,0.434,0.328,0.275,0.259,0.693,4479
+    36,D. Bachmann 22/23,Watford,28,0.971,0.2,0.531,0.504,0.667,0.362,0.088,4458
+    37,G. Mamardashvili 22/23,Valencia,22,0.116,0.497,0.333,0.175,0.619,0.058,0.503,4455
+    38,Z. Steffen 22/23,Man City,28,0.529,0.937,0.651,0.751,0.228,0.481,0.169,4421
+    39,A. Meret 22/23,Napoli,26,0.079,0.122,0.143,0.286,0.884,0.889,0.577,4398
+    40,I. Provedel 22/23,Lazio,29,0.233,0.46,0.577,0.735,0.545,0.487,0.725,4369
+    41,E. Martínez 22/23,Aston Villa,30,0.804,0.63,0.894,0.64,0.423,0.82,0.762,4362
+    42,V. Johansson 22/23,Rotherham United,24,0.969,0.936,0.724,0.977,0.778,0.268,0.646,4359
+    43,G. Ochoa 22/23,Salernitana,37,0.032,0.069,0.148,0.365,0.852,0.778,0.608,4358
+    44,N. Larsen 22/23,Silkeborg,32,0.967,0.837,0.216,0.928,0.457,0.77,0.119,4349
+    45,J. Staněk 22/23,Viktoria Plzeň,27,0.965,0.337,0.7,0.874,0.16,0.656,0.928,4339
+    46,B. Radunović 22/23,Cagliari,27,0.963,0.479,0.819,0.385,0.401,0.177,0.56,4330
+    47,A. Okonkwo 22/23,Sturm Graz,21,0.961,0.436,0.496,0.626,0.414,0.514,0.218,4324
+    48,N. Pope 22/23,Newcastle United,31,0.937,0.217,0.72,0.048,0.233,0.259,0.799,4294
+    49,F. Monetti 22/23,Lanús,34,0.959,0.553,0.148,0.352,0.257,0.776,0.732,4294
+    50,R. Cota 22/23,León,36,0.957,0.874,0.249,0.321,0.642,0.319,0.94,4290
+    51,C. Vargas 22/23,Atlas,34,0.955,0.698,0.582,0.019,0.278,0.743,0.858,4287
+    52,Y. Brecher 22/23,Zürich,30,0.953,0.601,0.21,0.039,0.16,0.65,0.389,4280
+    53,M. Flekken 22/23,Freiburg,29,0.603,0.196,0.683,0.899,0.857,0.312,0.577,4277
+    54,A. Ramsdale 22/23,Arsenal,25,0.661,0.259,0.164,0.37,0.349,0.36,0.476,4264
+    55,W. Foderingham 22/23,Sheffield United,32,0.951,0.381,0.352,0.646,0.648,0.239,0.693,4255
+    56,Tiago Volpi 22/23,Toluca,32,0.949,0.611,0.422,0.86,0.307,0.73,0.368,4252
+    57,P. Terracciano 22/23,Fiorentina,33,0.349,0.545,0.233,0.778,0.667,0.582,0.328,4244
+    58,Luiz Júnior 22/23,Famalicão,22,0.55,0.868,0.889,0.095,0.254,0.376,0.624,4241
+    59,A. Murić 22/23,Burnley,24,0.947,0.206,0.796,0.839,0.44,0.942,0.796,4219
+    60,Y. Bounou 22/23,Sevilla,32,0.212,0.169,0.593,0.81,0.439,0.328,0.233,4216
+    61,N. Hedl 22/23,Rapid Wien,22,0.946,0.897,0.634,0.255,0.85,0.839,0.827,4200
+    62,R. Allsop 22/23,Cardiff City,30,0.944,0.883,0.222,0.107,0.677,0.854,0.589,4193
+    63,J. Ruddy 22/23,Birmingham City,36,0.942,0.909,0.152,0.352,0.004,0.391,0.944,4190
+    64,W. Benítez 22/23,PSV,30,0.011,0.18,0.333,0.196,0.831,0.354,0.275,4136
+    65,M. Vandevoordt 22/23,Genk,21,0.94,0.189,0.911,0.484,0.763,0.636,0.444,4128
+    66,M. Jiménez 22/23,Guadalajara,33,0.938,0.105,0.488,0.825,0.807,0.15,0.253,4109
+    67,G. Poluzzi 22/23,Südtirol,35,0.936,0.091,0.973,0.885,0.144,0.233,0.786,4094
+    68,J. Oblak 22/23,Atlético Madrid,30,0.418,0.291,0.534,0.106,0.106,0.587,0.614,4086
+    69,P. Köhn 22/23,Salzburg,25,0.934,0.601,0.827,0.23,0.765,0.504,0.875,4071
+    70,S. Mandanda 22/23,Rennes,38,0.725,0.392,0.545,0.688,0.508,0.921,0.365,4064
+    71,Y. Sommer 22/23,Bayern München,34,0.196,0.603,0.333,0.968,0.746,0.418,0.556,4062
+    72,M. Schwäbe 22/23,Köln,28,0,0.122,0.042,0.926,0.847,0.598,0.048,4058
+    73,J. Lumley 22/23,Reading,28,0.932,0.661,0.193,0.453,0.053,0.286,0.584,4048
+    74,A. Onana 22/23,Internazionale,27,0.095,0.217,0.36,0.91,0.688,0.725,0.815,4023
+    75,C. Früchtl 22/23,Austria Wien,23,0.93,0.761,0.072,0.839,0.56,0.827,0.551,4021
+    76,M. Ryan 22/23,AZ,31,0.513,0.497,0.704,0.545,0.757,0.937,0.45,4010
+    77,M. Ryan 22/23,AZ,31,0.928,0.479,0.446,0.407,0.955,0.733,0.759,4010
+    78,Pau López 22/23,Olympique Marseille,28,0.037,0.72,0.534,0.693,0.09,0.905,0.386,4008
+    79,L. Unnerstall 22/23,Twente,32,0.762,0.333,0.275,0.222,0.27,0.079,0.82,3999
+    80,A. Bodart 22/23,Standard Liège,25,0.926,0.428,0.241,0.514,0.35,0.541,0.053,3998
+    81,Kepa Arrizabalaga 22/23,Chelsea,28,0.55,0.804,0.423,0.661,0.212,0.37,0.894,3983
+    82,F. Rønnow 22/23,Union Berlin,30,0.434,0.444,0.926,0.905,0.979,0.841,0.931,3967
+    83,R. Laidlaw 22/23,Ross County,30,0.924,0.566,0.481,0.352,0.158,0.173,0.675,3960
+    84,G. Bazunu 22/23,Southampton,21,0.868,0.884,0.815,0.513,0.429,0.101,0.032,3955
+    85,S. Dimitrievski 22/23,Rayo Vallecano,29,0.741,0.333,0.291,0.159,0.063,0.81,0.36,3945
+    86,O. Ustari 22/23,Pachuca,37,0.922,0.508,0.323,0.204,0.093,0.3,0.693,3920
+    87,G. Allison 22/23,Querétaro,32,0.92,0.222,0.7,0.815,0.006,0.123,0.27,3898
+    88,David Raya 22/23,Brentford,27,0.799,0.698,0.831,0.799,0.698,0.466,0.762,3878
+    89,W. Falcone 22/23,Lecce,28,0.646,0.651,0.714,0.265,0.836,0.757,0.524,3867
+    90,David Soria 22/23,Getafe,30,0.741,0.392,0.619,0.011,0.915,0,0.63,3851
+    91,G. Rulli 22/23,Ajax,31,0.603,0.767,0.857,0.937,0.735,0.529,0.307,3850
+    92,José Sá 22/23,Wolverhampton,30,0.228,0.741,0.794,0.381,0.18,0.222,0.381,3848
+    93,V. Barkas 22/23,Utrecht,29,0.471,0.757,0.931,0.307,0.302,0.132,0.28,3836
+    94,M. Silvestri 22/23,Udinese,32,0.053,0.545,0.164,0.275,0.767,0.656,0.423,3818
+    95,Ł. Skorupski 22/23,Bologna,32,0.148,0.291,0.672,0.397,0.942,0.513,0.471,3815
+    96,M. Sels 22/23,Strasbourg,31,0.317,0.497,0.487,0.063,0.492,0.603,0.778,3797
+    97,E. Andrada 22/23,Monterrey,32,0.918,0.866,0.839,0.874,0.263,0.854,0.574,3771
+    98,Édgar Badía 22/23,Elche,31,0.661,0.672,0.503,0.042,0.894,0.857,0.735,3755
+    99,I. Meslier 22/23,Leeds United,23,0.921,0.857,0.757,0.19,0.037,0.296,0.095,3751
+    100,G. Larsonneur 22/23,Saint-Étienne,26,0.916,0.339,0.899,0.895,0.772,0.512,0.391,3746
+    101,J. Griffiths 22/23,WBA,21,0.914,0.276,0.202,0.545,0.63,0.811,0.965,3742
+    102,L. Montipò 22/23,Hellas Verona,27,0.55,0.153,0.307,0.317,0.952,0.82,0.074,3738
+    103,A. Popović 22/23,DAC,23,0.912,0.455,0.274,0.175,0.753,0.488,0.416,3738
+    104,Gabriel Batista 22/23,Santa Clara,24,0.772,0.577,0.392,0.111,0.677,0.587,0.153,3729
+    105,J. Lössl 22/23,Midtjylland,34,0.911,0.354,0.805,0.815,0.584,0.786,0.372,3726
+    106,R. Gagno 22/23,Modena,25,0.909,0.319,0.829,0.566,0.366,0.405,0.335,3725
+    107,N. Labrović 22/23,Rijeka,23,0.907,0.566,0.72,0.146,0.638,0.438,0.198,3707
+    108,B. Verbruggen 22/23,Anderlecht,20,0.905,0.848,0.877,0.484,0.57,0.982,0.154,3693
+    109,M. Dupé 22/23,Toulouse,30,0.042,0.577,0.503,0.492,0.614,0.471,0.677,3680
+    110,Lucas Perri 22/23,Botafogo,25,0.903,0.523,0.817,0.545,0.012,0.27,0.459,3671
+    111,Éverson 22/23,Atlético Mineiro,33,0.901,0.212,0.451,0.846,0.883,0.683,0.681,3658
+    112,B. Leno 22/23,Fulham,31,0.847,0.577,0.434,0.746,0.471,0.921,1,3652
+    113,H. Lloris 22/23,Tottenham,36,0.36,0.698,0.466,0.132,0.672,0.878,0.122,3651
+    114,G. Long 22/23,Millwall,29,0.899,0.393,0.193,0.058,0.222,0.29,0.79,3648
+    115,O. Baumann 22/23,Hoffenheim,32,0.402,0.894,0.91,0.878,0.487,0.783,0.434,3643
+    116,L. Ati Zigi 22/23,St. Gallen,26,0.897,0.267,0.319,0.646,0.545,0.358,0.093,3637
+    117,R. Gurtner 22/23,Amiens SC,36,0.895,0.233,0.481,0.255,0.253,0.053,0.708,3633
+    118,M. Di Gregorio 22/23,Monza,25,0.624,0.153,0.148,0.884,0.497,0.683,0.693,3613
+    119,Fernando Martínez 22/23,Almería,32,0.434,0.032,0.455,0.339,0.571,0.386,0.386,3601
+    120,Marcelo Carné 22/23,Marítimo,33,0.19,0.788,0.905,0.122,0.122,0.376,0.593,3594
+    121,Unai Simón 22/23,Athletic Bilbao,25,0.402,0.058,0.09,0.466,0.407,0.143,0.407,3591
+    122,L. Cháves 22/23,Huracán,27,0.893,0.718,0.305,0.321,0.405,0.79,0.722,3590
+    123,M. Diaw 22/23,Clermont,29,0.847,0.09,0.635,0.704,0.296,0.037,0.868,3575
+    124,M. Riemann 22/23,Bochum,34,0.989,0.831,0.762,0.984,0.878,0.085,0.333,3573
+    125,B. Samba 22/23,Lens,29,0.423,0.603,0.328,0.677,0.169,0.63,0.968,3571
+    126,M. Bizot 22/23,Brest,32,0.423,0.243,0.434,0.185,0.868,0.989,0.836,3569
+    127,J. Pavlenka 22/23,Werder Bremen,31,0.624,0.857,0.593,0.481,0.72,0.344,0.127,3559
+    128,J. Blaswich 22/23,RB Leipzig,32,0.286,0.735,0.741,0.974,0,0.725,0.46,3558
+    129,P. Rajković 22/23,Mallorca,27,0.635,0.392,0.741,0.169,0.561,0.873,0.497,3547
+    130,K. Grabara 22/23,København,24,0.891,0.566,0.782,0.815,0.661,0.792,0.422,3547
+    131,Bento 22/23,Athletico Paranaense,24,0.889,0.346,0.586,0.175,0.208,0.165,0.045,3543
+    132,A. Consigli 22/23,Sassuolo,36,0.444,0.672,0.392,0.825,0.82,0.862,0.053,3522
+    133,M. O’Leary 22/23,Bristol City,26,0.836,1,0.968,0.804,0.587,0.259,0.534,3521
+    134,J. de Lange 22/23,Go Ahead Eagles,25,0.259,0.444,0.593,0.698,0.751,0.206,0.386,3516
+    135,L. Lund Pedersen 22/23,Viborg,23,0.887,0.405,0.809,0.175,0.366,0.833,0.696,3515
+    136,F. Buntić 22/23,Vizela,26,0.725,0.392,0.392,0,0.529,0.127,0.349,3505
+    137,S. Bolat 22/23,Westerlo,34,0.885,0.632,0.683,0.626,0.589,0.934,0.683,3505
+    138,J. Corona 22/23,Club Tijuana,42,0.883,0.125,0.572,0.13,0.864,0.226,0.617,3501
+    139,A. Lopes 22/23,Olympique Lyonnais,32,0.275,0.741,0.132,0.534,0.45,0.556,0.788,3498
+    140,J. Joronen 22/23,Venezia,30,0.881,0.784,0.601,0.107,0.619,0.695,0.428,3496
+    141,O. Kolář 22/23,Slavia Praha,28,0.879,0.638,0.185,0.039,0.844,0.895,0.8,3491
+    142,K. Casteels 22/23,Wolfsburg,30,0.545,0.291,0.487,0.947,0.889,0.772,0.64,3488
+    143,C. Acevedo 22/23,Santos Laguna,27,0.877,0.233,0.187,0.13,0.601,0.086,0.379,3487
+    144,Ł. Fabiański 22/23,West Ham,38,0.339,0.952,0.614,0.021,0.608,0.275,0.423,3485
+    145,L. Chevalier 22/23,Lille,21,0.37,0.18,0.175,0.704,0.291,0.788,0.646,3478
+    146,H. Bonmann 22/23,Wolfsberger AC,29,0.875,0.891,0.508,0.928,0.115,0.821,0.516,3456
+    147,N. Olij 22/23,Sparta Rotterdam,27,0.878,0.873,0.794,0.857,0.926,0.455,0.905,3453
+    148,A. Hansen 22/23,Nordsjælland,27,0.872,0.479,0.811,0.949,0.848,0.971,0.078,3448
+    149,M. Berkovec 22/23,Zbrojovka Brno,34,0.872,0.823,0.089,0.484,0.383,0.858,0.545,3448
+    150,M. Živković 22/23,Železničar Pancevo,33,0.87,0.267,0.986,0.13,0.733,0.527,0.733,3446
+    151,G. Kobel 22/23,Borussia Dortmund,25,0.291,0.09,0.127,0.868,0.323,0.884,0.979,3445
+    152,J. Frick 22/23,Servette,30,0.868,0.508,0.095,0.78,0.208,0.745,0.28,3444
+    153,P. Nardi 22/23,Gent,29,0.866,0.539,0.576,0.089,0.794,0.537,0.757,3440
+    154,F. Armani 22/23,River Plate,36,0.864,0.173,0.516,0.255,0.914,0.156,0.879,3426
+    155,Fábio 22/23,Fluminense,42,0.862,0.173,0.92,0.514,0.496,0.416,0.226,3418
+    156,F. Stanković 22/23,Volendam,21,0.974,0.291,0.577,0.349,0.032,0.55,0.037,3403
+    157,Ricardo Batista 22/23,Casa Pia AC,36,0.46,0.836,0.894,0.18,0.048,0.365,0.889,3394
+    158,J. Ledesma 22/23,Cádiz,30,0.857,0.915,0.915,0.095,0.175,0.069,0.593,3387
+    159,J. De Olivera 22/23,Independiente Rivadavia,40,0.86,0.377,0.481,0.255,0.237,0.097,0.765,3385
+    160,A. Gunn 22/23,Norwich City,27,0.788,0.217,0.111,0.72,0.598,0.815,0.788,3366
+    161,L. Majkić 22/23,Istra 1961,23,0.858,0.632,0.866,0.671,0.446,0.72,0.029,3365
+    162,I. Ivusic 22/23,Pafos,28,0.856,0.496,0.154,0.097,0.204,0.265,0.642,3363
+    163,G. Marinelli 22/23,Tigre,34,0.854,0.718,0.761,0.874,0.058,0.741,0.479,3360
+    164,Y. Diouf 22/23,Reims,23,0.661,0.884,0.868,0.571,0.159,0.169,0.751,3358
+    165,D. Jensen 22/23,İstanbulspor,31,0.85,0.455,0.531,0.626,0.831,0.685,0.644,3355
+    166,N. Mirković 22/23,Novi Pazar,32,0.85,0.689,0.189,0.484,0.615,0.891,0.689,3355
+    167,A. Sauvage 22/23,Laval,31,0.848,0.679,0.074,0.068,0.475,0.484,0.621,3351
+    168,J. Bijlow 22/23,Feyenoord,25,0.698,0.217,0.64,0.767,0.148,0.677,0.714,3339
+    169,Weverton 22/23,Palmeiras,35,0.846,0.056,0.87,0.255,0.837,0.753,0.438,3338
+    170,O. Christensen 22/23,Hertha BSC,24,0.958,0.603,0.762,0.667,0.624,0.164,0.169,3337
+    171,V. Cojocaru 22/23,OH Leuven,27,0.844,0.866,0.506,0.514,0.156,0.745,0.021,3328
+    172,J. Cillessen 22/23,NEC,34,0.397,0.111,0.28,0.434,0.243,0.021,0.762,3326
+    173,A. Oukidja 22/23,Metz,34,0.842,0.698,0.607,0.712,0.187,0.183,0.183,3323
+    174,L. Carević 22/23,Vojvodina,24,0.84,0.241,0.864,0.912,0.488,0.286,0.578,3307
+    175,O. Zelenika 22/23,Varaždin,30,0.839,0.623,0.502,0.204,0.909,0.961,0.698,3300
+    176,R. Majecki 22/23,Cercle Brugge,23,0.837,0.837,0.899,0.321,0.016,0.222,0.706,3280
+    177,A. Batalla 22/23,San Lorenzo,27,0.833,0.125,0.899,0.434,0.021,0.068,0.889,3267
+    178,A. Kinský 22/23,Pardubice,20,0.833,0.979,0.914,0.545,0.278,0.969,0.123,3267
+    179,K. Martin 22/23,Yverdon Sport,28,0.831,0.286,0.142,0.86,0.471,0.819,0.955,3266
+    180,F. Escales 22/23,Annecy,27,0.829,0.975,0.576,0.407,0.185,0.716,0.019,3259
+    181,G. Arias 22/23,Racing Club,35,0.827,0.309,0.247,0.255,0.496,0.274,0.15,3250
+    182,Dani Figueira 22/23,Estoril,24,0.603,0.392,0.201,0.354,0.571,0.497,0.915,3245
+    183,S. van Gassel 22/23,Excelsior,26,0.534,0.577,0.704,0.635,0.201,0.042,0.942,3244
+    184,V. Ilić 22/23,Bačka Topola,20,0.825,0.066,0.397,0.514,0.082,0.414,0.196,3233
+    185,V. Babacan 22/23,İstanbul Başakşehir,34,0.823,0.358,0.652,0.158,0.593,0.975,0.597,3227
+    186,L. Hoyos 22/23,Newell's Old Boys,34,0.819,0.286,0.543,0.23,0.951,0.947,0.329,3225
+    187,M. Andújar 22/23,Estudiantes,40,0.819,0.601,0.403,0.23,0.87,0.14,0.372,3225
+    188,Rafael 22/23,São Paulo,34,0.817,0.066,0.541,0.739,0.37,0.484,0.564,3223
+    189,M. Kovář 22/23,Man United U23,23,0.815,0.488,0.562,0.121,0.654,0.626,0.685,3220
+    190,J. Hansen 22/23,AGF,38,0.813,0.726,0.636,0.158,0.642,0.852,0.77,3215
+    191,J. Hanuš 22/23,Jablonec,35,0.811,0.381,0.739,0.759,0.181,0.253,0.529,3208
+    192,J. Placide 22/23,Bastia,35,0.809,0.905,0.175,0.434,0.716,0.677,0.763,3204
+    193,A. Paleari 22/23,Benevento,30,0.807,0.372,0.586,0.282,0.794,0.426,0.171,3202
+    194,T. Durso 22/23,Gimnasia La Plata,24,0.805,0.327,0.366,0.545,0.936,0.01,0.496,3201
+    195,G. Güvenc 22/23,Kasımpaşa,31,0.804,0.761,0.957,0.609,0.315,0.689,0.379,3197
+    196,Bruno Varela 22/23,Vitória Guimarães,28,0.603,0.952,0.815,0.201,0.804,0.328,0.688,3195
+    197,Paulo Vítor 22/23,Chaves,34,0.931,0.989,0.995,0.164,0.074,0.048,0.989,3187
+    198,B. Drągowski 22/23,Spezia,25,0.815,0.651,0.333,0.725,0.476,0.915,0.185,3183
+    199,K. Nakamura 22/23,Portimonense,28,0.444,0.243,0.693,0.656,0.841,0.18,0.905,3168
+    200,G. Vicario 22/23,Empoli,26,0.471,0.847,0.937,0.894,0.63,0.439,0.704,3163
+    201,B. Bayazıt 22/23,Kayserispor,24,0.802,0.747,0.335,0.204,0.514,0.879,0.44,3159
+    202,E. Vaessen 22/23,RKC Waalwijk,27,0.937,0.672,0.937,0.587,0.021,0.153,0.529,3155
+    203,Pepe Reina 22/23,Villarreal,40,0.206,0.122,0.19,0.741,0.397,0.397,0.677,3151
+    204,A. Talavera 22/23,Juárez,40,0.8,0.414,0.469,0.13,0.414,0.422,0.232,3147
+    205,S. Gori 22/23,Perugia,27,0.798,0.578,0.593,0.434,0.041,0.208,0.025,3146
+    206,I. De Arruabarrena 22/23,Arouca,26,0.857,0.995,0.963,0.138,0.656,0.217,0.926,3136
+    207,Tadeu 22/23,Goiás,31,0.796,0.589,0.695,0.815,0.383,0.481,0.514,3132
+    208,Seung-Gyu Kim 22/23,Al Shabab,32,0.794,0.689,0.56,0.504,0.42,0.691,0.551,3129
+    209,N. Čavlina 22/23,Lokomotiva Zagreb,21,0.792,0.553,0.893,0.305,0.905,0.665,0.599,3107
+    210,D. Schmidt 22/23,Sint-Truiden,31,0.79,0.671,0.331,0.92,0.778,0.848,0.953,3087
+    211,M. Maignan 22/23,Milan,27,0.37,0.698,0.529,0.862,0.582,0.624,0.778,3080
+    212,A. Silva 22/23,Santa Fe,39,0.788,0.23,0.053,0.255,0.023,0.072,0.101,3077
+    213,H. Verhulst 22/23,AZ,30,0.175,0.09,0.037,0.582,0.386,0.746,0.37,3075
+    214,F. Djukic 22/23,Hvidovre,23,0.786,0.862,0.204,0.759,0.57,0.796,0.568,3064
+    215,S. Manojlović 22/23,Javor Ivanjica,20,0.784,0.451,0.728,0.726,0.121,0.589,0.309,3062
+    216,S. Romero 22/23,Boca Juniors,36,0.782,0.173,0.984,0.089,0.506,0.228,0.012,3059
+    217,M. Kikkenborg 22/23,Lyngby,23,0.78,0.947,0.805,0.988,0.405,0.726,0.525,3049
+    218,D. Ward 22/23,Leicester City,29,0.302,0.333,0.81,0.556,0.513,0.799,0,3048
+    219,I. Pandur 22/23,Fortuna Sittard,23,0.36,0.836,0.984,0.603,0.693,0.693,0.339,3046
+    220,C. Maxwell 22/23,Blackpool,32,0.778,0.3,0.177,0.646,0.391,0.216,0.737,3041
+    221,Marcos Felipe 22/23,Bahia,27,0.774,0.259,0.916,0.204,0.354,0.535,0.07,3030
+    222,L. Rogić 22/23,Sarajevo,27,0.774,0.601,0.434,0.193,0.025,0.381,0.068,3030
+    223,Antonio Sivera 22/23,Deportivo Alavés,26,0.772,0.327,0.802,0.321,0.335,0.58,0.272,3018
+    224,G. Coucke 22/23,Mechelen,24,0.77,0.589,0.8,0.671,0.547,0.757,0.325,3006
+    225,B. Leroy 22/23,Ajaccio,34,0.698,0.18,0.36,0.058,0.958,0.254,0.037,3004
+    226,D. Schierl 22/23,Austria Lustenau,28,0.767,0.455,0.457,0.79,0.914,0.652,0.537,3004
+    227,P. Carlgren 22/23,Randers,31,0.767,0.286,0.911,0.726,0.169,0.529,0.739,3004
+    228,P. Menzel 22/23,Austria Klagenfurt,24,0.765,0.951,0.34,0.321,0.877,0.804,0.947,3003
+    229,Abdullah Al-Mayouf 22/23,Al Hilal,36,0.763,0.189,0.49,0.193,0.428,0.525,0.121,2997
+    230,I. Radu 22/23,Auxerre,26,0.635,0.497,0.249,0.561,0.19,0.661,0.937,2991
+    231,L. Moser 22/23,Eupen,23,0.889,0.497,0.201,0.127,0.265,0.143,0.132,2974
+    232,F. Cambeses 22/23,Banfield,26,0.761,0.346,0.457,0.739,0.267,0.019,0.815,2969
+    233,O. Vliegen 22/23,Slovan Liberec,24,0.759,0.611,0.761,0.646,0.648,0.374,0.761,2959
+    234,J. McCarthy 22/23,Los Angeles FC,31,0.757,0.206,0.71,0.039,0.922,0.3,0.257,2948
+    235,B. Amos 22/23,Wigan Athletic,33,0.755,0.589,0.305,0.434,0.702,0.379,0.949,2942
+    236,J. Hart 22/23,Celtic,36,0.753,0.523,0.475,0.434,0.942,0.661,0.008,2936
+    237,A. Abedzadeh 22/23,Ponferradina,30,0.751,0.815,0.673,0.739,0.471,0.724,0.3,2935
+    238,N. Lemaitre 22/23,Quevilly Rouen,26,0.749,0.932,0.714,0.158,0.615,0.586,0.969,2926
+    239,A. Schlager 22/23,LASK,27,0.747,0.3,0.628,0.282,0.728,0.823,0.673,2913
+    240,D. Epassy 22/23,Abha,30,0.743,0.661,0.241,0.646,0.695,0.72,0.144,2901
+    241,M. Günok 22/23,Beşiktaş,34,0.743,0.553,0.543,0.352,0.726,0.669,0.249,2901
+    242,M. van der Hart 22/23,Emmen,28,0.212,0.788,0.323,0.439,0.217,0.317,0.312,2882
+    243,S. Ranđelović 22/23,Radnik Surdulica,24,0.741,0.479,0.553,0.671,0.07,0.134,0.471,2881
+    244,B. Stuver 22/23,Austin FC,32,0.739,0.309,0.379,0.158,0.728,0.85,0.037,2878
+    245,Marcelo Grohe 22/23,Al Ittihad,36,0.737,0.056,0.92,0.352,0.788,0.008,0.049,2875
+    246,Cássio 22/23,Corinthians,36,0.735,0.006,0.42,0.305,0.449,0.101,0.864,2867
+    247,P. Bernardoni 22/23,Angers SCO,26,0.577,0.46,0.651,0.005,0.37,0.741,0.101,2865
+    248,F. Oswald 22/23,WSG Swarovski Tirol,32,0.733,0.78,0.691,0.282,0.183,0.673,0.504,2862
+    249,H. Lindner 22/23,Sion,33,0.732,0.07,0.383,0.453,0.654,0.656,0.782,2856
+    250,G. Gallon 22/23,Troyes,30,0.402,0.947,0.873,0.259,0.238,0.984,0.672,2855
+    251,T. Kaminski 22/23,Blackburn Rovers,30,0.726,0.195,0.759,0.385,0.767,0.774,0.06,2837
+    252,L. Nicholls 22/23,Huddersfield Town,30,0.726,0.327,0.683,0.453,0.307,0.323,0.905,2837
+    253,L. Zidane 22/23,Eibar,25,0.726,0.276,0.259,0.097,0.823,0.87,0.488,2837
+    254,A. Blake 22/23,Philadelphia Union,32,0.724,0.105,0.527,0.385,0.202,0.08,0.839,2830
+    255,B. Lecomte 22/23,Montpellier,32,0.026,0.63,0.545,0.212,0.354,0.016,0.841,2823
+    256,Jordi Masip 22/23,Real Valladolid,34,0.444,0.333,0.111,0.333,0.772,0.931,0.73,2822
+    257,H. Koffi 22/23,Charleroi,26,0.72,0.93,0.609,0.514,0.224,0.582,0.64,2822
+    258,João Paulo 22/23,Santos,28,0.72,0.309,0.755,0.726,0.844,0.15,0.179,2822
+    259,A. Saipi 22/23,Lugano,23,0.718,0.381,0.671,0.726,0.977,0.813,0.595,2802
+    260,T. Castella 22/23,Lausanne Sport,30,0.716,0.381,0.477,0.969,0.319,0.368,0.897,2800
+    261,J. Trefil 22/23,Sigma Olomouc,22,0.714,0.339,0.27,0.78,0.794,0.78,0.537,2793
+    262,H. Van Crombrugge 22/23,Anderlecht,30,0.712,0.097,0.673,0.963,0.685,0.829,0.449,2788
+    263,R. Rey 22/23,Independiente,32,0.71,0.566,0.718,0.695,0.823,0.056,0.93,2780
+    264,M. Carnesecchi 22/23,Cremonese,22,0.534,0.651,0.831,0.476,0.46,0.561,0.439,2772
+    265,G. Herrera 22/23,Talleres Córdoba,31,0.708,0.827,0.885,0.924,0.405,0.459,0.356,2771
+    266,T. Cardozo 22/23,Peñarol,26,0.706,0.354,0.109,0.175,0.444,0.339,0.232,2768
+    267,E. Caprile 22/23,Empoli,21,0.704,0.134,0.932,0.907,0.043,0.156,0.502,2767
+    268,Andrew 22/23,Gil Vicente,21,0.974,0.778,0.741,0.603,0.418,0.275,0.857,2760
+    269,P. Gazzaniga 22/23,Girona,31,0.751,0.122,0.434,0.593,0.556,0.228,0.852,2749
+    270,M. Goicoechea 22/23,Danubio,35,0.702,0.286,0.846,0.626,0.899,0.693,0.996,2748
+    271,M. Hermansen 22/23,Leicester City,23,0.7,0.761,0.51,0.101,0.94,0.912,0.117,2747
+    272,Vicente Guaita 22/23,Crystal Palace,36,0.778,0.778,0.841,0.249,0.799,0.545,0.28,2746
+    273,I. Chicco 22/23,Colón,27,0.698,0.626,0.831,0.825,0.654,0.208,0.091,2746
+    274,T. Vaclík 22/23,Huddersfield Town,34,0.696,0.309,0.253,0.321,0.412,0.126,0.932,2744
+    275,Rui Silva 22/23,Real Betis,29,0.265,0.392,0.101,0.275,0.54,0.296,0.481,2742
+    276,L. Malagón 22/23,América,26,0.695,0.259,0.261,0.175,0.319,0.611,0.603,2736
+    277,S. Şahin-Radlinger 22/23,Ried,30,0.693,0.523,0.286,0.321,0.187,0.809,0.372,2722
+    278,F. Kljajić 22/23,Torpedo Kutaisi,32,0.691,0.648,0.451,0.204,0.121,0.342,0.107,2714
+    279,Neto 22/23,Bournemouth,33,0.815,0.524,0.852,0.085,0.725,0.053,0.831,2711
+    280,Nicolas 22/23,Pisa,35,0.689,0.671,0.375,0.712,0.535,0.589,0.506,2705
+    281,M. Mijatović 22/23,Al Adalah,36,0.687,0.714,0.082,0.566,0.506,0.175,0.418,2692
+    282,P. Abrahamsson 22/23,Häcken,35,0.685,0.582,0.772,0.193,0.794,0.601,0.175,2684
+    283,T. Marchiori 22/23,Atlético Tucumán,28,0.683,0.436,0.531,0.352,0.588,0.019,0.862,2666
+    285,J. Omlin 22/23,Borussia M'gladbach,29,0.836,0.524,0.783,0.889,0.286,0.307,0.561,2661
+    286,N. Petrić 22/23,Banyoles,32,0.679,0.054,0.874,0.146,0.667,0.033,0.885,2657
+    287,M. Barovero 22/23,Atlético de San Luis,39,0.677,0.267,0.813,0.101,0.049,0.054,0.239,2653
+    288,Andrés Fernández 22/23,Huesca,36,0.675,0.644,0.907,0.282,0.737,0.222,0.807,2649
+    289,Juan Soriano 22/23,Tenerife,25,0.673,0.097,0.411,0.671,0.525,0.516,0.819,2637
+    290,R. Zentner 22/23,Mainz 05,28,0.661,0.974,0.989,0.413,0.524,0.011,0.201,2618
+    291,Rubén Yáñez 22/23,Sporting Gijón,29,0.671,0.837,0.944,0.885,0.335,0.276,0.076,2618
+    292,K. Matošević 22/23,Triestina,25,0.669,0.045,0.554,0.514,0.685,0.202,0.399,2614
+    293,M. Müller 22/23,Schalke 04,30,0.667,0.436,0.233,0.453,0.788,0.874,0.208,2605
+    294,L. Mpasi 22/23,Rodez,28,0.665,0.973,0.84,0.453,0.323,0.412,0.879,2604
+    295,Carlos Coronel 22/23,New York RB,26,0.663,0.539,0.29,0.204,0.37,0.411,0.51,2602
+    296,J. Bonham 22/23,Stoke City,29,0.661,0.827,0.358,0.609,0.547,0.732,0.665,2600
+    297,D. Stanivuković 22/23,Kolubara,29,0.66,0.451,0.881,0.86,0.315,0.185,0.49,2596
+    298,Y. Irrazábal 22/23,Albion,35,0.658,0.737,0.44,0.609,0.243,0.115,0.967,2591
+    299,A. Pears 22/23,Blackburn Rovers,25,0.656,0.414,0.815,0.695,0.909,0.817,0.268,2582
+    300,S. Colombi 22/23,Reggina,31,0.654,0.115,0.403,0.695,0.979,0.267,0.856,2575
+    301,E. Audero 22/23,Sampdoria,26,0.513,0.545,0.619,0.577,0.434,0.762,0.217,2574
+    302,José Antonio Caro 22/23,Burgos,29,0.652,0.918,0.768,0.79,0.029,0.63,0.185,2574
+    303,D. Rodríguez 22/23,Godoy Cruz,34,0.65,0.469,0.562,0.545,0.062,0.3,0.687,2563
+    304,U. Çakır 22/23,Trabzonspor,27,0.648,0.206,0.179,0.759,0.7,0.605,0.368,2556
+    305,Lucas Perri 22/23,Botafogo,25,0.328,0.46,0.317,0.032,0.392,0.005,0.619,2549
+    306,J. Siebenhandl 22/23,Sturm Graz,33,0.644,0.372,0.22,0.385,0.889,0.393,0.103,2546
+    307,M. Hansen 22/23,OB,33,0.644,0.134,0.949,0.905,0.72,0.759,0.323,2546
+    308,S. Clark 22/23,Houston Dynamo,37,0.642,0.792,0.749,0.712,0.358,0.607,0.648,2534
+    309,G. Akkan 22/23,Ankaragücü,28,0.64,0.414,0.728,0.759,0.296,0.593,0.146,2525
+    310,A. Desábato 22/23,Barracas Central,33,0.638,0.996,0.44,0.959,0.167,0.356,0.566,2524
+    311,Hyeon-Woo Jo 22/23,Ulsan Hyundai,31,0.636,0.016,0.282,0.407,0.626,0.387,0.71,2505
+    312,N. Losada 22/23,Belgrano,30,0.634,0.539,0.953,0.846,0.786,0.407,0.78,2500
+    313,Rafael Cabral 22/23,Cruzeiro,33,0.632,0.161,0.823,0.004,0.905,0.504,0.934,2499
+    314,A. Fisher 22/23,Swansea City,25,0.63,0.539,0.502,0.305,0.802,0.864,0.01,2495
+    315,D. Callender 22/23,Inter Miami,25,0.628,0.169,0.366,0.504,0.362,0.632,0.161,2494
+    316,Asier Riesgo 22/23,Leganés,39,0.626,0.393,0.432,0.566,0.965,0.099,0.576,2491
+    317,P. Gallese 22/23,Orlando City,33,0.625,0.508,0.58,0.566,0.605,0.119,0.589,2486
+    318,K. Scherpen 22/23,Vitesse,23,0.767,0.804,0.979,0.598,0.397,0.032,0.212,2482
+    319,Robert Sánchez 22/23,Brighton,25,0.175,0.603,0.651,0.561,0.005,0.111,0.143,2480
+    320,J. Willis 22/23,Nashville SC,34,0.621,0.035,0.652,0.646,0.745,0.313,0.963,2480
+    321,In-Jae Hwang 22/23,Pohang Steelers,29,0.621,0.097,0.15,0.726,0.457,0.111,0.348,2480
+    322,V. Demarconnay 22/23,Paris,40,0.617,0.626,0.712,0.646,0.716,0.866,0.35,2479
+    323,J. Broun 22/23,Rosario Central,37,0.617,0.004,0.733,0.121,0.553,0.06,0.531,2479
+    324,F. Muslera 22/23,Galatasaray,37,0.615,0.492,0.36,0.23,0.852,0.842,0.395,2477
+    325,Sergio Herrera 22/23,Osasuna,30,0.778,0.603,0.333,0.455,0.635,0.074,0.667,2474
+    326,Chang-Geun Lee 22/23,Daejeon Citizen,29,0.613,0.661,0.755,0.588,0.475,0.251,0.813,2474
+    327,A. Noppert 22/23,Heerenveen,29,0.878,0.72,0.772,0.677,0.36,0.19,0.878,2468
+    328,M. Delač 22/23,Horsens,30,0.611,0.905,0.412,0.407,0.434,0.305,0.65,2468
+    329,A. Palmer 22/23,WBA,26,0.609,0.012,0.558,0.78,0.496,0.7,0.202,2450
+    330,M. Pigliacelli 22/23,Palermo,30,0.607,0.679,0.327,0.23,0.218,0.831,0.34,2447
+    331,I. Banić 22/23,Gorica,29,0.605,0.844,0.667,0.514,0.267,0.679,0.498,2444
+    332,André Moreira 22/23,Grasshopper,27,0.603,0.428,0.85,0.321,0.356,0.872,0.222,2443
+    333,M. Verrips 22/23,Groningen,26,0.868,0.804,0.265,0.772,0.28,0.392,0.09,2442
+    334,N. Trott 22/23,Vejle,24,0.601,0.648,0.695,0.712,0.358,0.897,0.407,2440
+    335,M. Rakovan 22/23,Trinity Zlín,33,0.599,0.858,0.117,0.86,0.535,0.623,0.73,2438
+    336,V. Bajić 22/23,Napredak Kruševac,35,0.597,0.582,0.196,0.107,0.286,0.298,0.977,2437
+    337,A. Iannarilli 22/23,Ternana,32,0.595,0.393,0.449,0.255,0.895,0.138,0.352,2432
+    338,J. Musso 22/23,Atalanta,29,0.508,0.212,0.132,0.312,0.413,0.852,0.339,2429
+    339,Iván Cuéllar 22/23,Sporting Gijón,39,0.593,0.718,0.34,0.609,0.152,0.453,0.852,2409
+    340,R. Bürki 22/23,St. Louis City,32,0.591,0.784,0.739,0.626,0.06,0.66,0.619,2406
+    341,A. Schwolow 22/23,Schalke 04,31,0.143,0.444,0.19,0.672,0.995,0.608,0.021,2402
+    342,Aarón Escandell 22/23,Las Palmas,27,0.589,0.173,0.868,0.514,0.759,0.465,0.899,2400
+    343,D. Da Silva 22/23,Stade Lausanne-Ouchy,30,0.588,0.455,0.691,0.759,0.078,0.566,0.099,2397
+    344,A. Rodríguez 22/23,Club Tijuana,31,0.586,0.222,0.226,0.453,0.121,0.249,0.589,2394
+    345,S. Frei 22/23,Seattle Sounders,37,0.584,0.014,0.315,0.13,0.759,0.255,0.63,2393
+    346,Victor Braga 22/23,Al Ta'ee,31,0.582,0.648,0.13,0.79,0.903,0.232,0.315,2392
+    347,Dong-Jun Kim 22/23,Jeju United,28,0.578,0.835,0.714,0.255,0.226,0.241,0.379,2383
+    348,D. Marshall 22/23,Hibernian,38,0.578,0.035,0.302,0.175,0.335,0.348,0.154,2383
+    349,R. Rúnarsson 22/23,Arsenal,28,0.576,0.891,0.043,0.255,0.63,0.877,0.339,2379
+    350,K. Osako 22/23,Sanfrecce Hiroshima,23,0.572,0.358,0.531,0.695,0.307,0.455,0.362,2377
+    351,Đ. Petrović 22/23,New England,23,0.572,0.414,0.928,0.545,0.34,0.399,0.074,2377
+    352,Q. Braat 22/23,Real Oviedo,26,0.57,0.082,0.706,0.846,0.031,0.132,0.94,2367
+    353,Y. Takaoka 22/23,Vancouver Whitecaps,27,0.568,0.07,0.278,0.885,0.982,0.588,0.823,2365
+    354,Paulo Victor 22/23,Al Ettifaq,36,0.566,0.792,0.589,0.805,0.949,0.068,0.191,2355
+    355,T. Casali 22/23,Rheindorf Altach,27,0.564,0.648,0.457,0.453,0.934,0.679,0.459,2348
+    356,V. Stojković 22/23,Al Feiha,40,0.562,0.589,0.381,0.204,0.926,0.014,0.165,2344
+    357,T. Miller 22/23,DC United,30,0.56,1,0.045,0.566,0.541,0.984,0.625,2338
+    358,R. Pasveer 22/23,Ajax,39,0.55,0.032,0.069,0.921,0.328,0.651,0.238,2337
+    359,S. Bossut 22/23,Zulte-Waregem,37,0.558,0.982,0.039,0.058,0.216,0.907,0.802,2337
+    360,R. Gikiewicz 22/23,Augsburg,35,0.963,0.873,0.884,0.952,0.698,0.106,0.376,2336
+    361,M. Malenica 22/23,Osijek,29,0.556,0.339,0.796,0.588,0.967,0.599,0.868,2336
+    362,Hyung-Mo Yang 22/23,Suwon Bluewings,32,0.554,0.508,0.097,0.484,0.745,0.196,0.835,2332
+    363,J. Laštůvka 22/23,Baník Ostrava,41,0.553,0.689,0.496,0.772,0.111,0.628,0.821,2330
+    364,S. Turati 22/23,Frosinone,21,0.551,0.023,0.43,0.712,0.753,0.364,0.084,2329
+    365,F. Manojlović 22/23,Spartak Subotica,27,0.549,0.134,0.374,0.146,0.475,0.082,0.99,2319
+    366,H. Isted 22/23,Luton Town,26,0.547,0.901,0.364,0.815,0.243,0.352,0.337,2316
+    367,A. Mandréa 22/23,Caen,26,0.543,0.492,0.064,0.484,0.586,0.461,0.214,2312
+    368,A. Racioppi 22/23,Young Boys,24,0.543,0.245,0.525,0.13,0.237,0.946,0.7,2312
+    369,M. Dmitrović 22/23,Sevilla,31,0.492,0.931,0.873,0.73,0.116,0.169,0.974,2307
+    370,M. Keller 22/23,Young Boys,21,0.541,0.105,0.613,0.874,0.654,0.786,0.848,2304
+    371,L. Barraza 22/23,New York City,26,0.539,0.097,0.447,0.282,0.695,0.963,0.29,2301
+    372,J. Rinne 22/23,Al Fateh,30,0.537,0.574,0.179,0.193,0.35,0.255,0.006,2298
+    373,R. Celentano 22/23,Cincinnati,22,0.535,0.523,0.753,0.566,0.807,0.058,0.411,2296
+    374,C. Tătărușanu 22/23,Milan,37,0.095,0.767,0.487,0.757,0.873,0.698,0.222,2283
+    375,T. Carson 22/23,St. Mirren,35,0.533,0.611,0.136,0.027,0.14,0.179,0.656,2280
+    376,M. Langerak 22/23,Nagoya Grampus,34,0.531,0.115,0.893,0.146,0.883,0.167,0.444,2275
+    377,M. Ingram 22/23,Hull City,29,0.527,0.241,0.924,0.068,0.831,0.911,0.671,2274
+    378,S. Britos 22/23,Liverpool,35,0.527,0.553,0.64,0.646,0.22,0.438,0.395,2274
+    379,R. Macagno 22/23,Platense,26,0.525,0.358,0.825,0.027,0.685,0.088,0.926,2272
+    380,Walter 22/23,Cuiabá,35,0.521,0.115,0.835,0.407,0.469,0.125,0.743,2269
+    381,O. Dovin 22/23,Hammarby,21,0.521,0.088,0.661,0.739,0.881,0.568,0.872,2269
+    382,Z. Clark 22/23,Hearts,31,0.519,0.963,0.751,0.407,0.605,0.216,0.152,2266
+    383,M. Zeghba 22/23,Dhamk,32,0.518,0.698,0.288,0.588,0.171,0.702,0.018,2258
+    384,Jaílson 22/23,América Mineiro,41,0.514,0.091,0.784,0.027,0.63,0.084,0.658,2257
+    385,G. Alcalá 22/23,Pumas UNAM,31,0.514,0.339,0.778,0.504,0.331,0.247,0.924,2257
+    386,J. Sirois 22/23,CF Montréal,22,0.512,0.819,0.679,0.305,0.609,0.549,0.243,2255
+    387,E. Kastrati 22/23,Cittadella,26,0.51,0.936,0.856,0.79,0.233,0.451,0.743,2252
+    388,S. Nishikawa 22/23,Urawa Reds,37,0.508,0.045,0.593,0.975,0.973,0.959,0.105,2251
+    389,M. Reichl 22/23,Bohemians 1905,30,0.506,0.728,0.625,0.79,0.344,0.401,0.549,2245
+    390,Iker Álvarez 22/23,Villarreal,22,0.504,0.455,0.389,0.305,0.298,0.245,0.467,2238
+    391,S. Walker 22/23,Kilmarnock,31,0.502,0.539,0.665,0.79,0.294,0.091,0.72,2237
+    392,Alfonso Herrero 22/23,Málaga,29,0.5,0.436,0.383,0.825,0.512,0.447,0.265,2236
+    393,S. Benda 22/23,Swansea City,24,0.498,0.488,0.144,0.407,0.243,0.767,0.082,2235
+    394,B. Maubleu 22/23,Grenoble,33,0.496,0.455,0.897,0.671,0.379,0.49,0.716,2230
+    395,M. Prévôt 22/23,Sochaux,26,0.494,0.051,0.765,0.204,0.772,0.644,0.095,2227
+    396,M. Dyngeland 22/23,Brann,27,0.492,0.698,0.222,0.204,0.49,0.955,0.424,2218
+    397,G. Dietsch 22/23,RFC Seraing,22,0.49,0.998,0.119,0.695,0.811,0.671,0.911,2210
+    398,O. Piri 22/23,Giresunspor,28,0.488,0.473,0.08,0.805,0.175,0.372,0.206,2207
+    399,D. St. Clair 22/23,Minnesota United,26,0.486,0.523,0.317,0.158,0.556,0.263,0.23,2201
+    400,Cleiton 22/23,Red Bull Bragantino,25,0.484,0.23,0.977,0.107,0.126,0.43,0.444,2193
+    401,K. Navas 22/23,Nottingham Forest,36,0.709,0.788,0.646,0.037,0.503,0.704,0.291,2188
+    402,M. Paes 22/23,Dallas,25,0.482,0.827,0.638,0.514,0.601,0.761,0.2,2188
+    403,N. Gentilio 22/23,Racing,36,0.481,0.539,0.068,0.695,0.134,0.039,0.556,2187
+    404,L. Andrenacci 22/23,Brescia,28,0.479,0.154,0.65,0.434,0.648,0.163,0.259,2179
+    405,G. Guruceaga 22/23,Torque,28,0.477,0.955,0.21,0.434,0.971,0.858,0.045,2178
+    406,M. Silveira 22/23,Wanderers,23,0.475,0.346,0.965,0.969,0.821,0.276,0.961,2177
+    407,J. Ichimori 22/23,Yokohama F. Marinos,32,0.473,0.971,0.683,0.854,0.171,0.99,0.358,2175
+    408,L. Kelly 22/23,Motherwell,27,0.471,0.319,0.521,0.712,0.101,0.519,0.109,2174
+    409,W. Yarbrough 22/23,Colorado Rapids,34,0.469,0.774,0.646,0.074,0.751,0.479,0.36,2169
+    410,Park Il-Gyu 22/23,Sagan Tosu,33,0.467,0.992,0.998,0.772,0.642,0.996,0.031,2167
+    411,Léo Jardim 22/23,Vasco da Gama,28,0.465,0.156,0.422,0.074,0.973,0.261,0.305,2162
+    412,D. Maekawa 22/23,Vissel Kobe,28,0.463,0.848,0.835,0.998,0.29,0.763,0.554,2153
+    413,S. Rochet 22/23,Internacional,30,0.461,0.623,0.49,0.588,0.724,0.307,0.893,2152
+    414,Mailson 22/23,Al Taawon,26,0.459,0.626,0.737,0.23,0.018,0.128,0.401,2148
+    415,M. Janáček 22/23,České Budějovice,22,0.457,0.689,0.375,0.924,0.257,0.815,0.508,2146
+    416,N. Haikin 22/23,Bodø / Glimt,28,0.451,0.737,0.802,0.107,0.862,0.875,0.778,2145
+    417,H. González 22/23,Mazatlán,33,0.451,0.496,0.473,0.453,0.593,0.576,0.846,2145
+    418,B. Peacock-Farrell 22/23,AGF,26,0.451,0.276,0.294,0.759,0.521,0.922,0.874,2145
+    419,G. Hubert 22/23,Oostende,29,0.449,0.161,0.601,0.626,0.391,0.22,0.92,2143
+    420,G. Reyes 22/23,Deportivo Maldonado,37,0.447,0.523,0.362,0.626,0.191,0.15,0.994,2142
+    421,C. Bravo 22/23,Real Betis,40,0.471,0.91,0.392,0.217,0.339,0.46,0.661,2141
+    422,F. Müller 22/23,Stuttgart,25,0.577,0.333,0.058,0.852,0.947,0.524,0.069,2137
+    423,M. Christiansen 22/23,Lillestrøm,22,0.446,0.161,0.298,0.453,0.899,0.432,0.718,2137
+    424,E. Özbir 22/23,Adana Demirspor,33,0.444,0.92,0.356,0.453,0.531,0.932,0.56,2135
+    425,João Ricardo 22/23,Fortaleza,34,0.44,0.105,0.877,0.282,0.105,0.027,0.265,2134
+    426,Daniel Fuzato 22/23,Getafe,26,0.44,0.909,0.366,0.86,0.091,0.189,0.321,2134
+    427,S. Johnson 22/23,Toronto,34,0.438,0.553,0.346,0.453,0.936,0.504,0.21,2124
+    428,A. Aréola 22/23,West Ham,30,0.063,0.545,0.212,0.206,0.783,0.09,0.519,2121
+    429,M. Drobnjak 22/23,Marsaxlokk,28,0.434,0.99,0.123,0.352,0.475,0.189,0.486,2118
+    430,J. González 22/23,Pumas UNAM,32,0.434,0.78,0.294,0.255,0.29,0.463,0.056,2118
+    431,D. Rosić 22/23,Radnički Niš,26,0.432,0.276,0.708,0.074,0.15,0.078,0.113,2117
+    432,M. Kuster 22/23,Winterthur,29,0.43,0.823,0.268,0.039,0.428,0.504,0.288,2114
+    433,K. Nordfeldt 22/23,AIK,34,0.428,0.088,0.79,0.039,0.589,0.553,0.212,2108
+    434,A. McGregor 22/23,Rangers,41,0.426,0.737,0.06,0.014,0.868,0.375,0.14,2100
+    435,Jeong-Hoon Kim 22/23,Jeonbuk Motors,22,0.424,0.689,0.772,0.79,0.34,0.171,0.84,2098
+    436,Miquel Parera 22/23,Racing Santander,27,0.422,0.125,0.041,0.739,0.27,0.031,0.887,2097
+    437,A. Vural 22/23,Sivasspor,33,0.418,0.852,0.136,0.967,0.609,0.432,0.638,2096
+    438,E. Alfonso 22/23,SPAL,35,0.418,0.473,0.325,0.352,0.593,0.315,0.901,2096
+    439,P. Schulte 22/23,Columbus Crew,22,0.416,0.909,0.422,0.739,0.57,0.905,0.235,2094
+    440,J. Steele 22/23,Brighton,32,0.709,0.259,0.307,0.873,0.661,0.243,0.196,2091
+    441,J. Słowik 22/23,Tokyo,31,0.414,0.358,0.335,0.175,0.288,0.648,0.142,2091
+    442,S. Meza 22/23,Huracán,23,0.412,0.134,0.961,0.385,0.208,0,0.971,2085
+    443,A. Marchesín 22/23,Celta de Vigo,35,0.09,0.46,0.577,0.46,0.646,0.894,0.058,2083
+    444,J. Karlström 22/23,Molde,26,0.409,0.698,0.327,0.671,0.842,0.667,0.3,2082
+    445,O. Jansson 22/23,IFK Norrköping,32,0.409,0.802,0.434,0.671,0.263,0.335,0.615,2082
+    446,T. Hayakawa 22/23,Kashima Antlers,24,0.407,0.405,0.516,0.385,0.702,0.768,0.58,2080
+    447,Matheus Cunha 22/23,Flamengo,22,0.405,0.142,0.99,0.014,0.278,0.953,0.473,2076
+    448,N. Leali 22/23,Genoa,30,0.403,0.553,0.875,0.074,0.623,0.241,0.751,2072
+    449,S. Fuentes 22/23,Rentistas,36,0.401,0.728,0.21,0.484,0.304,0.029,0.066,2070
+    450,D. Denis 22/23,Cerro,31,0.399,0.372,0.409,0.039,0.053,0.004,0.833,2066
+    451,S. Lung 22/23,Al Raed,34,0.395,0.728,0.29,0.739,0.568,0.043,0.912,2065
+    452,S. Mele 22/23,Junior,25,0.395,0.105,0.397,0.407,0.066,0.045,0.128,2065
+    453,Josep Martínez 22/23,Genoa,25,0.393,0.761,0.66,0.92,0.226,0.924,0.327,2058
+    454,Raúl Fernández 22/23,Granada,35,0.389,0.518,0.747,0.671,0.922,0.36,0.259,2053
+    455,M. Campaña 22/23,Al Riyadh,34,0.389,0.796,0.158,0.938,0.623,0.113,0.722,2053
+    456,O. Özdemir 22/23,Ümranıyespor,28,0.385,0.518,0.792,0.671,0.084,0.609,0.027,2051
+    457,T. Grigar 22/23,Teplice,40,0.385,0.747,0.335,0.912,0.045,0.556,0.605,2051
+    458,Iván Villar 22/23,Celta de Vigo,25,0.587,0.291,0.18,0.143,0.312,0.952,0.402,2049
+    459,L. Wahlstedt 22/23,Odds,24,0.383,0.428,0.613,0.942,0.767,0.949,0.407,2045
+    460,Gabriel 22/23,Coritiba,30,0.381,0.319,0.107,0.759,0.422,0.444,0.315,2042
+    461,Aitor Fernández 22/23,Osasuna,32,0.963,0.217,0.571,0.503,0.714,0.122,0.455,2033
+    462,I. Šehić 22/23,Konyaspor,34,0.379,0.173,0.391,0.193,0.405,0.903,0.811,2027
+    463,R. Sallinger 22/23,Hartberg,27,0.377,0.185,0.64,0.984,0.504,0.967,0.249,2023
+    464,D. Roef 22/23,Gent,29,0.375,0.027,0.086,0.121,0.422,0.543,0.741,2019
+    465,C. Brady 22/23,Chicago Fire,19,0.374,0.267,0.938,0.772,0.214,0.093,0.163,2013
+    466,R. Méndez 22/23,La Luz,22,0.372,0.796,0.105,0.928,0.984,0.089,0.714,2008
+    467,Marcelo Boeck 22/23,Fortaleza,38,0.37,0.076,0.2,0.928,0.883,0.035,0.988,1997
+    468,A. Milojevic 22/23,Mladost Novi Sad,23,0.368,0.142,0.265,0.321,0.457,0.471,0.938,1995
+    469,Bum-Keun Song 22/23,Shonan Bellmare,25,0.366,0.638,0.963,0.089,0.638,0.537,0.691,1989
+    470,E. Taşkıran 22/23,Kasımpaşa,33,0.364,0.984,0.245,0.739,0.107,0.749,0.237,1986
+    471,N. Belić 22/23,Čukarički,36,0.362,0.016,0.51,0.23,0.72,0.204,0.412,1983
+    472,B. Reynet 22/23,Dijon,32,0.358,0.286,0.302,0.874,0.531,0.23,0.428,1982
+    473,J. Tånnander 22/23,Sirius,22,0.358,0.496,0.253,0.825,0.852,0.438,0.033,1982
+    474,N. Törnqvist 22/23,Mjällby,21,0.354,0.436,0.679,0.13,0.535,0.481,0.7,1981
+    475,K. Kahlina 22/23,Charlotte FC,31,0.354,0.784,0.101,0.407,0.578,0.868,0.169,1981
+    476,Ricardo Friedrich 22/23,Kalmar,30,0.352,0.959,0.646,0.874,0.251,0.92,0.387,1975
+    477,E. Basilio 22/23,Guingamp,28,0.35,0.582,0.924,0.626,0.619,0.198,0.572,1971
+    478,S. Silva 22/23,Boston River,24,0.346,0.761,0.84,0.193,0.278,0.56,0.473,1969
+    479,Munir El Kajoui 22/23,Al Wehda,34,0.346,0.146,0.982,0.825,0.749,0.337,0.167,1969
+    480,R. Sinclair 22/23,St. Johnstone,22,0.344,0.837,0.852,0.947,0.525,0.397,0.957,1967
+    481,R. Matthews 22/23,Crystal Palace,29,0.342,0.146,0.078,0.434,0.475,0.095,0.547,1961
+    482,M. Dufour 22/23,Defensor Sporting,24,0.34,0.874,0.667,0.434,0.683,0.728,0.173,1959
+    483,D. Henderson 22/23,Nottingham Forest,26,0.751,0.016,0.608,0.529,0.095,0.952,0.741,1958
+    484,A. Micai 22/23,Cosenza,30,0.339,0.033,0.547,0.305,0.16,0.272,0.331,1956
+    485,C. Álvarez 22/23,Real Zaragoza,37,0.337,0.414,0.393,0.089,0.519,0.364,0.726,1954
+    486,I. Čović 22/23,Slaven Belupo,32,0.335,0.259,0.971,0.626,0.626,0.121,0.607,1952
+    487,J. Widell Zetterström 22/23,Djurgården,25,0.333,0.751,0.683,0.051,0.874,0.329,0.054,1948
+    488,N. Ratti 22/23,FC Andorra,29,0.329,0.883,0.794,0.204,0.823,1,0.473,1936
+    489,Gabriel Grando 22/23,Grêmio,23,0.329,0.091,0.77,0.545,0.514,0.066,0.002,1936
+    490,X. Mous 22/23,Heerenveen,27,0.513,0.63,0.466,0.376,0.455,0.995,0.132,1935
+    491,F. Forster 22/23,Tottenham,35,0.106,0.524,0.212,0.026,0.079,0.831,0.238,1933
+    492,Y. Mvogo 22/23,Lorient,28,0.074,0.524,0.619,0.228,0.931,0.868,0.545,1930
+    493,S. George 22/23,Livingston,25,0.325,0.844,0.183,0.646,0.702,0.409,0.825,1918
+    494,L. Burián 22/23,Vélez Sarsfield,39,0.325,0.041,0.393,0.646,0.839,0.107,0.918,1918
+    495,Y. Schoonderwaldt 22/23,Sparta Rotterdam,23,0.984,0.984,0.958,0.624,0.64,0.238,0.011,1917
+    496,Matheus Cavichioli 22/23,América Mineiro,37,0.323,0.963,0.146,0.895,0.261,0.348,0.315,1917
+    497,J. Dahlin 22/23,Malmö FF,36,0.321,0.222,0.551,0.014,0.86,0.187,0.126,1913
+    498,Z. MacMath 22/23,Real Salt Lake,31,0.319,0.959,0.414,0.646,0.506,0.64,0.148,1912
+    499,A. Hansen 22/23,Rosenborg,33,0.315,0.222,0.298,0.204,0.776,0.638,0.981,1910
+    500,S. Leković 22/23,Radnički Kragujevac,21,0.315,0.718,0.305,0.609,0.241,0.521,0.16,1910
+    501,V. Mannone 22/23,Lorient,35,0.233,0.392,0.561,0.444,0.989,0.831,0.947,1908
+    502,B. Guzan 22/23,Atlanta United,38,0.313,0.146,0.037,0.453,0.782,0.449,0.366,1889
+    503,A. Medina 22/23,Arsenal,36,0.593,0.048,0.783,0.392,0.376,0.201,0.963,1888
+    504,G. Poussin 22/23,Real Zaragoza,24,0.311,0.082,0.521,0.453,0.864,0.973,0.979,1884
+    505,B. Şen 22/23,Gaziantep,24,0.309,0.815,0.058,0.671,0.928,0.893,0.385,1882
+    506,I. Pettersson 22/23,Stabæk,26,0.304,0.761,0.784,0.566,0.37,0.899,0.224,1880
+    507,A. Bayındır 22/23,Fenerbahçe,25,0.304,0.737,0.167,0.453,0.226,0.494,0.041,1880
+    508,L. Acosta 22/23,Lanús,28,0.304,0.2,0.457,0.019,0.895,0.475,0.533,1880
+    509,Jong-Beom Baek 22/23,Seoul,22,0.302,0.539,0.519,0.23,0.858,0.521,0.272,1878
+    510,Dani Cárdenas 22/23,Levante,26,0.3,0.381,0.457,0.23,0.541,0.708,0.607,1876
+    511,M. Birighitti 22/23,Dundee United,32,0.298,0.936,0.13,0.352,0.128,0.074,0.405,1872
+    512,Álvaro Vallés 22/23,Las Palmas,26,0.296,0.381,0.49,0.23,0.16,0.778,0.181,1868
+    513,S. Breza 22/23,Yverdon Sport,25,0.294,0.504,0.86,0.86,0.134,0.204,0.558,1867
+    514,A. Gomis 22/23,Rennes,29,0.292,0.648,0.885,0.23,0.691,0.323,0.611,1864
+    515,H. Leite 22/23,Antalyaspor,32,0.29,0.125,0.173,0.352,0.856,0.617,0.282,1858
+    516,J. Šeda 22/23,Mladá Boleslav,37,0.288,0.827,0.776,0.23,0.815,0.615,0.951,1854
+    517,F. Bredlow 22/23,Stuttgart,28,0.37,0.111,0.249,0.831,0.259,0.942,0.18,1853
+    518,M. Fraisl 22/23,Arminia Bielefeld,30,0.286,0.327,0.171,0.695,0.58,0.687,0.768,1844
+    519,Z. Samcović 22/23,Mladost Lučani,20,0.284,0.518,0.422,0.352,0.984,0.051,0.241,1843
+    520,M. Neuer 22/23,Bayern München,37,0.339,0.577,0.011,0.942,0.593,0.534,0.709,1834
+    521,A. Maraval 22/23,Rouen,29,0.282,0.414,0.23,0.058,0.959,0.375,0.403,1831
+    522,M. Arias 22/23,Argentinos Juniors,31,0.28,0.632,0.947,0.107,0.728,0.547,0.626,1830
+    523,Mateus Pasinato 22/23,América Mineiro,31,0.278,0.751,0.469,0.949,0.414,0.105,0.613,1823
+    524,Santos 22/23,Flamengo,33,0.276,0.027,0.14,0.255,0.179,0.751,0.134,1822
+    525,M. Krunić 22/23,Hajer,26,0.274,0.496,0.097,0.385,0.502,0.916,0.829,1817
+    526,B. Costil 22/23,Lille,35,0.55,0.021,0.101,0.233,0.968,0.841,0.016,1816
+    527,S. Ghidotti 22/23,Como,23,0.272,0.346,0.237,0.058,0.955,0.259,1,1812
+    528,E. Viviano 22/23,Fatih Karagümrük,37,0.268,0.809,0.076,0.839,0.492,0.928,0.263,1810
+    529,Ó. Jiménez 22/23,América,34,0.268,0.479,0.352,0.019,0.691,0.344,0.669,1810
+    530,N. Micović 22/23,Los Angeles Galaxy,21,0.267,0.082,0.228,0.609,0.529,0.492,0.276,1807
+    531,R. Gutiérrez 22/23,Mazatlán,26,0.265,0.761,0.284,0.712,0.661,0.739,0.132,1791
+    532,D. Grimshaw 22/23,Blackpool,25,0.263,0.286,0.78,0.504,0.379,0.568,0.298,1784
+    533,J. Carranza 22/23,Instituto,42,0.261,0.887,0.539,0.058,0.463,0.214,0.998,1776
+    534,M. Ledesma 22/23,Central Córdoba SdE,26,0.259,0.469,0.7,0.255,0.039,0.037,0.372,1773
+    535,P. Gunnarsson 22/23,Viking,22,0.257,0.377,0.344,0.407,0.609,0.881,0.537,1769
+    536,T. Vandenberghe 22/23,Kortrijk,30,0.253,0.473,0.407,0.514,0.677,0.765,0.854,1764
+    537,A. M'Hamdi 22/23,Abha,31,0.253,0.944,0.94,0.895,0.391,0.327,0.072,1764
+    538,L. Sepe 22/23,Salernitana,32,0.709,0.291,0.519,0.614,0.143,0.735,0.714,1763
+    539,Bernabé Barragán 22/23,Albacete,30,0.251,0.019,0.125,0.407,0.788,0.233,0.735,1758
+    540,João Virginia 22/23,Cambuur,23,0.37,0.741,0.672,0.619,0.153,0.026,0.958,1757
+    541,Kyung-Min Kim 22/23,Gwangju,31,0.247,0.146,0.988,0.994,0.695,0.109,0.628,1741
+    542,M. Jedlička 22/23,Viktoria Plzeň,25,0.247,0.035,0.946,0.282,0.088,0.101,0.837,1741
+    543,B. Peacock-Farrell 22/23,Burnley,26,0.245,0.253,0.305,0.78,0.463,0.938,0.914,1735
+    544,M. Michel 22/23,Ajaccio,31,0.241,0.358,0.872,0.854,0.551,0.42,0.831,1730
+    545,K. Roos 22/23,Aberdeen,31,0.241,0.021,0.979,0.282,0.253,0.294,0.064,1730
+    546,J. Jones 22/23,Wigan Athletic,34,0.239,0.578,0.047,0.907,0.362,0.554,0.893,1726
+    547,I. Lučić 22/23,Hajduk Split,28,0.237,0.161,0.597,0.074,0.348,0.798,0.035,1718
+    548,J. Silva 22/23,Plaza Colonia,26,0.233,0.932,0.161,0.646,0.152,0.023,0.412,1707
+    549,F. Lanzillota 22/23,Argentinos Juniors,30,0.233,0.253,0.261,0.545,0.912,0.498,0.975,1707
+    550,Dani Rebollo 22/23,Real Zaragoza,23,0.232,0.914,0.319,0.726,0.193,0.562,0.058,1689
+    551,G. Slonina 22/23,Chelsea,19,0.226,0.809,0.527,0.566,0.947,0.333,0.986,1685
+    552,S. Grytebust 22/23,Aalesund,33,0.226,0.644,0.021,0.981,0.037,0.593,0.796,1685
+    553,N. Vikonis 22/23,Celaya,39,0.226,0.611,0.111,0.566,0.87,0.543,0.866,1685
+    554,D. Bentley 22/23,Wolverhampton,29,0.302,0.672,0.73,0.302,0.905,0.683,0.079,1679
+    555,H. Valdimarsson 22/23,Elfsborg,21,0.224,0.988,0.856,0.99,0.132,0.621,0.519,1678
+    556,M. Perin 22/23,Juventus,30,0.063,0.026,0.063,0.418,0.307,0.968,0.979,1676
+    557,R. Kojima 22/23,Albirex Niigata,26,0.222,0.661,0.626,0.885,0.879,0.994,0.786,1671
+    558,Fernando Pacheco 22/23,Espanyol,31,0.905,0.804,0.825,0.323,0.825,0.418,0.106,1669
+    559,E. Selvik 22/23,Haugesund,26,0.218,0.582,0.848,0.957,0.984,0.889,0.844,1668
+    560,A. Mandous 22/23,Slavia Praha,31,0.218,0.924,0.418,0.025,0.815,0.93,0.842,1668
+    561,D. Iversen 22/23,Leicester City,25,0.265,0.333,0.413,0.074,0.026,0.794,0.751,1667
+    562,T. Krul 22/23,Norwich City,35,0.212,0.333,0.481,0.788,0.042,0.407,0.116,1667
+    563,F. Jörgensen 22/23,Villarreal,21,0.185,0.333,0.265,0.291,0.185,0.349,0.466,1667
+    564,D. Thiam 22/23,SPAL,25,0.216,0.946,0.481,0.321,0.053,0.496,0.004,1661
+    565,V. Myhra 22/23,Strømsgodset,27,0.214,0.698,0.745,0.969,0.712,0.578,0.344,1660
+    566,J. Bursik 22/23,Club Brugge,22,0.212,0.286,0.158,0.453,0.875,0.663,0.755,1656
+    567,M. Schuhen 22/23,Darmstadt 98,30,0.208,0.737,0.899,0.839,0.932,0.951,0.946,1655
+    568,K. Müller 22/23,Heidenheim,32,0.208,0.245,0.724,0.321,0.741,0.94,0.905,1655
+    569,H. Keto 22/23,Sandefjord,25,0.206,0.06,0.218,0.994,0.753,0.914,0.482,1652
+    570,E. Mendy 22/23,Chelsea,31,0.275,0.963,0.683,0.386,0.778,0.212,0.444,1649
+    571,M. Nilsson Säfqvist 22/23,Halmstad,29,0.204,0.508,0.889,0.588,0.27,0.29,0.463,1638
+    572,R. Ruiter 22/23,Cambuur,36,0.804,0.72,0.519,0.841,0.735,0.661,0.153,1635
+    573,Nawaf Al Aqidi 22/23,Al Nassr,23,0.202,0.984,0.934,0.588,0.377,0.498,0.023,1633
+    574,Fernando Miguel 22/23,Fortaleza,38,0.2,0.01,0.891,0.588,0.193,0.018,0.086,1625
+    575,I. Filipović 22/23,Paris,28,0.198,0.728,0.115,0.977,0.451,0.634,0.426,1623
+    576,F. Niţă 22/23,Pardubice,36,0.196,0.455,0.981,0.928,0.298,0.784,0.677,1617
+    577,Jin-Hyeon Kim 22/23,Cerezo Osaka,36,0.195,0.712,0.955,0.938,0.084,0.979,0.123,1609
+    578,K. McIntosh 22/23,Sporting KC,29,0.193,0.276,0.056,0.121,0.702,0.551,0.457,1607
+    579,F. Mucha 22/23,Teplice,31,0.189,0.877,0.278,0.726,0.92,0.346,0.294,1595
+    580,R. Valeš 22/23,Bohemians 1905,33,0.189,0.877,0.101,0.484,0.451,0.597,0.982,1595
+    581,J. Markovič 22/23,Baník Ostrava,22,0.187,0.994,0.621,0.907,0.44,0.804,0.292,1591
+    582,Sang-Hun Yu 22/23,Gangwon,34,0.185,0.185,0.07,0.074,0.051,0.047,0.743,1582
+    583,Marafona 22/23,Paços de Ferreira,36,0.952,0.069,0.032,0.053,0.466,0.19,0.513,1575
+    584,S. Rossbach 22/23,Degerfors,27,0.183,0.115,0.031,0.739,0.944,0.237,0.632,1569
+    585,N. Kamifukumoto 22/23,Kawasaki Frontale,33,0.181,0.92,0.562,0.805,0.323,0.992,0.187,1566
+    586,Raúl Lizoáin 22/23,FC Andorra,32,0.179,0.809,0.652,0.626,0.521,0.998,0.661,1558
+    587,M. Gersbeck 22/23,Hertha BSC,28,0.177,0.924,0.267,0.942,0.095,0.957,0.679,1557
+    588,D. von Ballmoos 22/23,Young Boys,28,0.175,0.405,0.784,0.027,0.677,0.909,0.434,1555
+    589,S. Brolin 22/23,AIK,22,0.173,0.967,0.346,0.514,0.047,0.823,0.535,1552
+    590,A. Desmas 22/23,Le Havre,29,0.171,0.041,0.767,0.006,0.946,0.136,0.418,1550
+    591,B. Güngördü 22/23,Ankaragücü,27,0.169,0.245,0.455,0.79,0.323,0.704,0.776,1548
+    592,R. Ramírez 22/23,Necaxa,30,0.167,0.233,0.253,0.514,0.767,0.179,0.278,1546
+    593,F. Kaplan 22/23,Giresunspor,34,0.165,0.393,0.582,0.984,0.226,0.714,0.623,1545
+    594,P. Loretz 22/23,Luzern,20,0.163,0.589,0.936,0.027,0.068,0.862,0.584,1544
+    595,M. Macík 22/23,Sigma Olomouc,30,0.161,0.899,0.414,0.074,0.304,0.695,0.391,1543
+    596,Keiller 22/23,Internacional,26,0.16,0.045,0.047,0.825,0.57,0.012,0.311,1534
+    597,J. Haugaard 22/23,Tromsø,31,0.158,0.574,0.907,1,0.109,0.988,0.136,1533
+    598,S. Handanovič 22/23,Internazionale,38,0.016,0.09,0.011,0.963,0.683,0.947,0.254,1525
+    599,D. Stevanović 22/23,Radnički Niš,18,0.156,0.589,0.025,0,0.383,0.062,0.204,1519
+    600,Joan Femenías 22/23,Levante,26,0.154,0.189,0.57,0,0.969,0.735,0.518,1514
+    601,K. Sentić 22/23,Diósgyőr,22,0.152,0.156,0.01,0.006,0.399,0.424,0,1503
+    602,M. Higashiguchi 22/23,Gamba Osaka,37,0.15,0.358,0.831,0.407,0.148,0.8,0.111,1494
+    603,T. Wakahara 22/23,Kyoto Sanga,23,0.148,0.601,0.033,0.545,0.333,0.37,0.58,1488
+    604,K. Matsumoto 22/23,Kashiwa Reysol,26,0.144,0.267,0.237,0.545,0.099,0.467,0.216,1484
+    605,T. Sander 22/23,København,18,0.144,0.802,0.496,0.953,0.095,0.802,0.346,1484
+    606,D. Button 22/23,WBA,34,0.14,0.196,0.016,0.146,0.961,0.716,0.451,1482
+    607,S. Brodersen 22/23,Yokohama,26,0.14,0.611,0.732,0.407,0.782,0.673,0.245,1482
+    608,F. Sidklev 22/23,Brommapojkarna,18,0.138,0.327,0.35,0.99,0.984,0.383,0.914,1477
+    609,M. Sjöeng 22/23,Vålerenga,21,0.136,0.436,0.029,0.434,0.033,0.737,0.22,1476
+    610,A. Ivačič 22/23,Portland Timbers,29,0.134,0.196,0.066,0.146,0.193,0.284,0.523,1471
+    611,A. Kristiansen 22/23,Sarpsborg 08,33,0.132,0.169,0.366,0.695,0.089,0.331,0.984,1459
+    612,M. Sportiello 22/23,Atalanta,31,0.148,0.757,0.698,0.344,0.095,0.968,0.228,1454
+    613,S. Dostál 22/23,Trinity Zlín,32,0.13,0.796,0.928,0.158,0.119,0.837,0.992,1450
+    614,N. Mantl 22/23,Salzburg,23,0.128,0.212,0.854,0.588,0.07,0.613,0.3,1448
+    615,Adrián López 22/23,Recreativo Granada,24,0.125,0.305,0.881,0.107,0.475,0.558,0.089,1439
+    616,D. Šipoš 22/23,České Budějovice,24,0.125,0.924,0.189,0.955,0.553,0.986,0.527,1439
+    617,John 22/23,Internacional,27,0.123,0.358,0.969,0.912,0.984,0.076,0.802,1433
+    618,J. Olschowsky 22/23,Borussia M'gladbach,21,0.661,0.847,0.794,0.989,0.085,0.243,0.952,1431
+    619,Julen Agirrezabala 22/23,Athletic Bilbao,22,0.233,0.291,0.651,0.402,0.804,0.64,0.323,1429
+    620,F. Tapia 22/23,Querétaro,22,0.121,0.661,0.994,0.912,0.492,0.307,0.469,1428
+    621,M. Travers 22/23,Bournemouth,24,0.196,0.545,0.423,0.09,0.73,0.418,0,1427
+    622,T. Fayulu 22/23,Sion,24,0.119,0.671,0.661,0.805,0.115,0.533,0.465,1421
+    623,S. Sosa 22/23,Pumas UNAM,36,0.117,0.076,0.047,0.305,0.811,0.354,0.44,1416
+    624,Serif Berbić 22/23,Lugano,21,0.115,0.212,0.251,0.588,0.893,0.712,0.333,1414
+    625,A. Katić 22/23,Voždovac,21,0.113,0.125,0.949,0.514,0.101,0.981,0.247,1409
+    626,A. Andersson 22/23,GIF Sundsvall,32,0.111,0.687,0.64,0.453,0.193,0.574,0.936,1407
+    627,Cláudio Ramos 22/23,Porto,31,0.693,0.63,0.381,0.714,0.857,0.979,0.825,1406
+    628,T. Wellenreuther 22/23,Feyenoord,27,0.646,0.333,0.069,0.519,0.317,0.45,0.148,1405
+    629,S. Kritsyuk 22/23,Gil Vicente,32,1,0.894,0.947,0.497,0.984,0.095,0.884,1394
+    630,F. Correa 22/23,River Plate,22,0.109,0.887,0.208,0.175,0.035,0.13,0.342,1391
+    631,M. Murakami 22/23,Avispa Fukuoka,30,0.107,0.405,0.477,0.484,0.984,0.169,0.922,1384
+    632,P. Bajza 22/23,Hradec Králové,31,0.105,0.852,0.996,0.175,0.562,0.473,0.794,1370
+    633,M. Şengezer 22/23,İstanbul Başakşehir,26,0.103,0.757,1,0.321,0.979,0.936,0.158,1367
+    634,M. Turk 22/23,Sampdoria,19,0.116,0.042,0.053,0.296,0.481,0.116,0.603,1355
+    635,A. Lunin 22/23,Real Madrid,24,0.079,0.122,0.026,0.429,0.444,0.746,0.201,1354
+    636,Daniel 22/23,SJ Earthquakes,29,0.101,0.07,0.942,0.321,0.389,0.047,0.311,1346
+    637,A. Vulic 22/23,Spartak Subotica,22,0.099,0.393,0.023,0.352,0.002,0.144,0.195,1338
+    638,İ. Eğribayat 22/23,Fenerbahçe,25,0.097,0.115,0.623,0.646,0.805,0.562,0.432,1328
+    639,F. Mata 22/23,Atlante,25,0.095,0.949,0.739,0.352,0.27,0.77,0.498,1325
+    640,J. Hammel 22/23,Grasshopper,22,0.093,0.802,0.113,0.514,0.661,0.887,0.86,1316
+    641,Dong-Heon Kim 22/23,Incheon United,26,0.091,0.436,0.44,0.961,0.14,0.064,0.115,1300
+    642,S. Ortega 22/23,Man City,30,0.788,0.148,0,1,0.937,0.72,0.847,1297
+    643,T. Sugeno 22/23,Consadole Sapporo,39,0.089,0.006,0.014,0.051,0.914,0.944,0.253,1292
+    644,T. Nagaishi 22/23,Avispa Fukuoka,27,0.088,0.784,0.134,0.051,0.01,0.146,0.451,1290
+    645,G. Makaridze 22/23,Marítimo,33,0.995,0.46,0.725,0.423,0.011,0.286,0.085,1283
+    646,G. Makaridze 22/23,Marítimo,33,0.086,0.979,0.091,0.385,0.446,0.642,0.016,1283
+    647,M. Salvi 22/23,Basel,29,0.084,0,0.589,0.051,0.403,0.477,0.043,1282
+    648,E. Guarna 22/23,Ascoli,37,0.082,0.858,0.128,0.545,0.434,0.646,0.584,1280
+    649,K. Darlow 22/23,Newcastle United,32,0.328,0.968,0.974,0.995,0.132,0.476,0.862,1279
+    650,I. Arce 22/23,Deportivo Riestra,31,0.08,0.671,0.547,0.385,0.019,0.28,0.903,1276
+    651,J. Pulskamp 22/23,Sporting KC,22,0.078,0.025,0.163,0.566,0.741,0.193,0.062,1270
+    652,G. Beavers 22/23,Real Salt Lake,18,0.076,0.967,0.062,0.204,0.667,0.385,0.136,1267
+    653,J. Prior 22/23,Pau,27,0.074,0.414,0.125,0.805,0.298,0.436,0.599,1261
+    654,P. Gollini 22/23,Napoli,28,0.169,0.048,0.048,0.915,0.899,0.899,0.164,1259
+    655,M. Knežević 22/23,Mladost Novi Sad,34,0.072,0.698,0.918,0.407,0.422,0.142,0.807,1249
+    656,J. Bond 22/23,Los Angeles Galaxy,30,0.07,0.877,0.609,0.885,0.733,0.652,0.191,1248
+    657,J. Marcinkowski 22/23,SJ Earthquakes,26,0.068,0.08,0.467,0.121,0.138,0.193,0.652,1239
+    658,Young-Eun Choi 22/23,Daegu,27,0.066,0.212,0.163,0.895,0.008,0.002,0.494,1232
+    659,F. de Keijzer 22/23,Utrecht,23,0.233,0.979,0.947,0.651,0.111,0.503,0.873,1226
+    660,A. Uysal 22/23,Antalyaspor,29,0.064,0.774,0.967,0.588,0.961,0.846,0.765,1216
+    661,L. Bostyn 22/23,Zulte-Waregem,29,0.062,0.862,0.632,0.01,0.111,0.584,0.521,1196
+    662,S. Cibois 22/23,Rodez,25,0.06,0.87,0.992,0.695,0.37,0.317,0.66,1193
+    663,K. Tani 22/23,Gamba Osaka,22,0.058,0.891,0.019,0.981,0.815,0.977,0.652,1187
+    664,Álvaro Fernández 22/23,Espanyol,25,0.725,0.714,0.228,0.069,0.91,0.487,0.291,1186
+    665,M. Sandberg 22/23,HamKam,32,0.056,0.436,0.002,0.255,0.829,0.393,0.492,1186
+    666,Diego Altube 22/23,Albacete,23,0.054,0.173,0.088,0.514,0.889,0.444,0.848,1178
+    667,D. Phillips 22/23,Oostende,27,0.053,0.953,0,0.13,0.074,0.426,0.352,1177
+    668,Dong-Geon No 22/23,Suwon,31,0.051,0.679,0.196,0.963,0.175,0.28,0.097,1176
+    669,Sergio Asenjo 22/23,Real Valladolid,33,0.688,0,0.069,0.45,0.709,0.063,0.063,1173
+    670,R. Bacchia 22/23,Cerro Largo,24,0.049,0.774,0.975,0.282,0,0.025,0.286,1172
+    671,P. Dahlberg 22/23,IFK Göteborg,24,0.047,0.259,0.383,0.846,0.558,0.16,0.909,1171
+    672,T. Koubek 22/23,Augsburg,30,0.926,0.894,0.545,0.931,0.138,0.233,0.571,1170
+    673,B. Radošević 22/23,Gorica,34,0.045,0.914,0.722,0.772,0.514,0.311,0.307,1170
+    674,W. Hennessey 22/23,Nottingham Forest,36,0.233,0.804,0.73,0.487,0.598,0.91,0.492,1162
+    675,S. Bajić 22/23,Bristol City,21,0.043,0.051,0.008,0.854,0.463,0.706,0.636,1154
+    676,Z. Hemming 22/23,Middlesbrough U23,23,0.041,0.523,0.018,0.282,0.076,0.416,0.753,1149
+    677,L. Kalinić 22/23,Hajduk Split,33,0.039,0.553,0.004,0.068,0.712,0.698,0.014,1141
+    678,L. Chichizola 22/23,Parma,33,0.037,0.955,0.628,0.86,0.144,0.84,0.177,1136
+    679,Seung-Hoon Oh 22/23,Daegu,35,0.035,0.031,0.305,0.671,0.984,0.006,0.959,1133
+    680,A. Livieri 22/23,Pisa,26,0.033,0.064,0.397,0.305,0.428,0.294,0.815,1115
+    681,R. Fährmann 22/23,Schalke 04,34,0.127,0.921,0.921,0.762,1,0.995,0.27,1110
+    682,Juan Carlos 22/23,Girona,35,0.291,0.392,0.36,0.534,0.804,0.286,0.111,1107
+    683,D. Ochoa 22/23,Atlético de San Luis,22,0.031,0.975,0.006,0.321,0.062,0.926,0.743,1105
+    684,A. Meyer 22/23,Borussia Dortmund,32,0.91,0.063,0.455,0.958,0.921,0.672,0.487,1103
+    685,I. Grbić 22/23,Atlético Madrid,27,0.005,0.921,1,0.143,0.164,0.619,0.995,1101
+    686,J. Drommel 22/23,PSV,26,0.042,0.196,0.466,0.238,0.519,0.138,0.026,1099
+    687,J. Orozco 22/23,Club Tijuana,37,0.029,0.759,0.012,0.514,0.344,0.617,0.805,1099
+    688,D. Bingham 22/23,Portland Timbers,33,0.027,0.807,0.562,0.321,0.839,0.502,0.784,1097
+    689,Sung-Yun Gu 22/23,Consadole Sapporo,29,0.025,0.942,0.025,0.321,0.206,0.965,0.362,1094
+    690,Sung-Ryong Jung 22/23,Kawasaki Frontale,38,0.023,0.856,0.093,0.895,0.323,0.835,0.479,1085
+    691,E. Canpolat 22/23,Kasımpaşa,22,0.021,0.901,0.035,0.01,0.928,0.531,0.051,1081
+    692,S. Johnstone 22/23,Crystal Palace,30,0.831,0.392,0.18,0.519,0.566,0.704,0.741,1076
+    693,B. Białkowski 22/23,Millwall,35,0.019,0.233,0.86,0.074,0.249,0.212,0.973,1076
+    694,M. Mansilla 22/23,Central Córdoba SdE,27,0.018,0.002,0.959,0.158,0.984,0.16,0.128,1074
+    695,S. Moyano 22/23,Unión Santa Fe,32,0.016,0.305,0.599,0.158,0.63,0.148,0.57,1072
+    696,J. Letáček 22/23,Baník Ostrava,24,0.014,0.751,0.574,0.352,0.737,0.807,0.537,1063
+    697,P. Gulácsi 22/23,RB Leipzig,33,0.915,0,0.011,0.783,0.069,0.519,0.259,1062
+    698,Hyun Yoo 22/23,Suwon,38,0.012,0.872,0.331,0.946,0.014,0.016,0.726,1062
+    699,A. Marković 22/23,Slaven Belupo,31,0.01,0.245,0.119,0.158,0.434,0.041,0.451,1060
+    700,Y. Fofana 22/23,Angers SCO,22,0.889,0.942,0.847,0.27,0.127,0.317,0.349,1059
+    701,R. Gudiño 22/23,Necaxa,27,0.008,0.2,0.054,0.566,0.984,0.389,0.039,1046
+    702,G. Villar 22/23,Barracas Central,25,0.006,0.819,0.204,0.739,0.193,0.2,0.08,1043
+    703,S. Kırıntılı 22/23,Ümranıyespor,38,0.002,0.679,0.169,0.23,0.593,0.782,0.772,1031
+    704,J. Klinsmann 22/23,Los Angeles Galaxy,26,0.002,0.212,0.084,0.385,0.128,0.115,0.436,1031
+    705,M. Šarkić 22/23,Stoke City,25,0,0.428,0.673,0.588,0.027,0.844,0.663,1025
+    706,H. Lloris 21/22,Tottenham,35,0.478,0.609,0.571,0.043,0.851,0.758,0.484,4939
+    707,P. Gulácsi 21/22,RB Leipzig,32,0.199,0.075,0.106,0.795,0.342,0.907,0.323,4910
+    708,S. Handanovič 21/22,Internazionale,37,0.006,0.062,0.143,0.845,0.919,0.863,0.634,4862
+    709,Alisson 21/22,Liverpool,29,0.839,0.224,0.398,0.907,0.348,0.565,0.826,4195
+    710,E. Mendy 21/22,Chelsea,30,0.199,0.311,0.261,0.224,0.602,0.311,0.354,4176
+    711,G. Bazunu 21/22,Southampton,20,0.851,0.876,0.733,0.596,0.422,0.143,0.031,3955
+    712,M. Dupé 21/22,Toulouse,29,0.081,0.478,0.466,0.571,0.609,0.547,0.671,3680
+    713,André Ferreira 21/22,Paços de Ferreira,26,0.602,0.95,0.534,0.05,0.807,0.559,0.714,3641
+    714,K. Schmeichel 21/22,Leicester City,35,0.199,0.46,0.161,0.311,0.59,0.702,0.739,3584
+    715,K. Lamprou 21/22,PEC Zwolle,30,0.913,0.522,0.453,0.901,0.652,0.28,0.398,3580
+    716,Ederson 21/22,Man City,28,0.404,0.752,0.155,0.621,0.199,0.727,0.422,3492
+    717,R. Gikiewicz 21/22,Augsburg,34,0.547,0.609,0.602,0.615,0.776,0.255,0.099,3484
+    718,M. ter Stegen 21/22,Barcelona,30,0.323,0.186,0.143,0.839,0.484,0.366,0.416,3478
+    719,T. Courtois 21/22,Real Madrid,30,0.062,0.429,0.335,0.714,0,0.634,0.938,3467
+    720,P. Leeuwenburgh 21/22,Groningen,28,0.826,0.584,0.23,0.969,0.466,0.652,0.18,3434
+    721,Rui Patrício 21/22,Roma,34,0.05,0.05,0.006,0.155,0.938,0.82,0.242,3422
+    722,J. Oblak 21/22,Atlético Madrid,29,0.143,0.478,0.28,0.13,0.273,0.696,0.503,3421
+    723,P. Bernardoni 21/22,Saint-Étienne,25,0.963,0.82,0.683,0.161,0.441,0.547,0.05,3357
+    724,O. Christensen 21/22,Hertha BSC,23,0.938,0.509,0.689,0.733,0.615,0.211,0.205,3337
+    725,Y. Bounou 21/22,Sevilla,31,0.068,0.329,0.602,0.472,0.379,0.776,0.888,3246
+    726,G. Rulli 21/22,Villarreal,30,0.696,0.248,0.851,0.851,0.41,0.764,0.435,3156
+    727,J. Musso 21/22,Atalanta,28,0.373,0.118,0.217,0.28,0.298,0.491,0.317,3028
+    728,E. Vaessen 21/22,RKC Waalwijk,26,1,0.789,0.888,0.832,0.54,0.056,0.478,3014
+    729,David de Gea 21/22,Man United,31,0.093,0.329,0.174,0.019,0.087,0.571,0.894,3009
+    730,E. Martínez 21/22,Aston Villa,29,0.286,0.702,0.658,0.118,0.298,0.248,0.627,2960
+    731,Diogo Costa 21/22,Porto,22,0.503,0.571,0.255,0.919,0.447,0.888,0.516,2939
+    732,M. Maignan 21/22,Milan,27,0.248,0.248,0.516,0.863,0.708,0.981,0.801,2936
+    733,Matheus 21/22,Sporting Braga,30,0.658,0.901,0.801,0.876,0.248,0.584,0.814,2910
+    734,Antonio Adán 21/22,Sporting CP,35,0.571,0.248,0.323,0.516,0.745,0.752,0.075,2865
+    735,K. Trapp 21/22,Eintracht Frankfurt,32,0.59,0.41,0.602,0.807,0.292,0.54,0.925,2818
+    736,A. Nübel 21/22,Monaco,25,0.298,0.075,0.075,0.342,0.627,0.677,0.832,2774
+    737,O. Vlachodimos 21/22,Benfica,28,0.64,0.478,0.28,0.54,0.689,0.665,0.404,2745
+    738,J. Houwen 21/22,Vitesse,26,0.547,0.124,0.087,0.77,0.155,0.354,0.335,2730
+    739,A. Ramsdale 21/22,Arsenal,24,0.888,0.329,0.677,0.696,0.13,0.106,0.068,2728
+    740,I. Meslier 21/22,Leeds United,22,0.689,0.627,0.696,0.689,0.106,0.385,0.062,2702
+    741,W. Szczęsny 21/22,Juventus,32,0.025,0.224,0.398,0.547,0.627,0.671,0.348,2700
+    742,M. Dúbravka 21/22,Newcastle United,33,0.453,0.124,0.335,0.211,0.839,0.981,0.87,2663
+    743,Robert Sánchez 21/22,Brighton,24,0.012,0.522,0.845,0.814,0.012,0.379,0.807,2640
+    744,J. Pickford 21/22,Everton,28,0.534,0.683,0.696,0.435,0.565,0.311,0.335,2636
+    745,Álex Remiro 21/22,Real Sociedad,27,0.329,0.006,0.106,0.727,0.77,0.702,0.758,2618
+    746,T. Strakosha 21/22,Lazio,27,0.186,0.143,0.106,0.671,0.745,0.311,0.366,2606
+    747,P. Terracciano 21/22,Fiorentina,32,0.714,0.46,0.789,0.981,0.845,0.528,0.019,2585
+    748,Luís Maximiano 21/22,Granada,23,0.932,0.199,0.335,0.137,0.671,0.093,0.497,2571
+    749,Unai Simón 21/22,Athletic Bilbao,25,0.478,0.478,0.578,0.087,0.217,0.217,0.323,2553
+    750,José Sá 21/22,Wolverhampton,29,0.95,0.863,0.988,0.298,0.043,0.41,0.839,2544
+    751,Ł. Fabiański 21/22,West Ham,37,0.143,0.776,0.503,0.075,0.491,0.497,0.559,2541
+    752,G. Vicario 21/22,Empoli,25,0.373,0.938,0.814,0.789,0.901,0.894,0.727,2523
+    753,Julen Agirrezabala 21/22,Bilbao Athletic,21,0.068,0.211,0.708,0.248,0.87,0.807,0.174,2513
+    754,N. Pope 21/22,Burnley,30,0.963,0.789,0.981,0.143,0.453,0.068,0.988,2508
+    755,A. Lafont 21/22,Nantes,23,0.863,0.876,0.826,0.186,0.23,0.795,0.776,2506
+    756,I. Provedel 21/22,Spezia,28,0.41,0.627,0.857,0.658,0.522,0.627,0.602,2496
+    757,D. Ospina 21/22,Napoli,33,0.099,0.329,0.106,0.708,0.677,0.435,0.665,2491
+    758,K. Scherpen 21/22,Vitesse,22,0.77,0.789,0.994,0.646,0.385,0.062,0.224,2482
+    759,J. Ledesma 21/22,Cádiz,29,0.453,0.752,0.901,0.273,0.168,0.118,0.571,2445
+    760,A. Lopes 21/22,Olympique Lyonnais,31,0.298,0.037,0.062,0.677,0.733,0.957,0.304,2428
+    761,Luiz Júnior 21/22,Famalicão,21,0.82,0.522,0.745,0.18,0.534,0.031,0.292,2426
+    762,David Soria 21/22,Getafe,29,0.776,0.447,0.745,0.199,0.969,0.037,0.578,2424
+    763,Sergio Herrera 21/22,Osasuna,29,0.752,0.683,0.28,0.323,0.888,0.006,0.696,2422
+    764,J. Drommel 21/22,PSV,25,0.037,0.522,0.466,0.236,0.081,0.901,0.54,2412
+    765,B. Costil 21/22,Bordeaux,34,0.429,0.584,0.422,0.553,0.497,0.658,0,2406
+    766,S. Sirigu 21/22,Genoa,35,0.342,0.373,0.075,0.36,0.907,0.435,0.472,2404
+    767,M. Bizot 21/22,Brest,31,0.814,0.062,0.193,0.242,0.832,0.975,0.385,2404
+    768,Diego López 21/22,Espanyol,40,0.901,0.82,0.901,0.335,0.124,0.342,0.298,2404
+    769,M. Sels 21/22,Strasbourg,30,0.137,0.373,0.398,0.093,0.509,0.478,0.286,2404
+    770,P. Rajković 21/22,Reims,26,0.621,0.776,0.932,0.453,0.242,0.429,0.863,2397
+    771,A. Consigli 21/22,Sassuolo,35,0.342,0.224,0.106,0.801,0.255,0.714,0.391,2396
+    772,Édgar Badía 21/22,Elche,30,0.882,0.876,0.578,0.385,0.944,0.534,0.851,2354
+    773,Fernando Pacheco 21/22,Deportivo Alavés,30,0.789,0.373,0.385,0.056,0.95,0.286,0.137,2352
+    774,M. Silvestri 21/22,Udinese,31,0.155,0.46,0.267,0.062,0.516,0.932,0.752,2349
+    775,A. Cragno 21/22,Cagliari,28,0.199,0.248,0.422,0.354,0.963,0.422,0.112,2341
+    776,M. Flekken 21/22,Freiburg,29,0.18,0.248,0.199,0.87,0.702,0.596,0.081,2336
+    777,Ł. Skorupski 21/22,Bologna,31,0.112,0.944,0.863,0.59,0.801,0.224,0.789,2326
+    778,W. Benítez 21/22,Nice,29,0.242,0.745,0.528,0.205,0.975,0.292,0.77,2305
+    779,L. Hrádecký 21/22,Bayer Leverkusen,32,0.429,0.627,0.416,0.925,0.789,0.714,0.491,2293
+    780,L. Unnerstall 21/22,Twente,32,0.652,0.932,0.925,0.522,0.714,0.199,0.876,2278
+    781,Luiz Felipe 21/22,Belenenses,25,0.683,0.845,0.652,0.317,0.118,0.522,0.373,2272
+    782,O. Djoco 21/22,Clermont,24,0.745,0.075,0.422,0.342,0.112,0.82,0.236,2266
+    783,Rui Silva 21/22,Real Betis,28,0.801,0.429,0.565,0.416,0.571,0.043,0.857,2265
+    784,Rafael Bracali 21/22,Boavista,41,0.944,0.752,0.969,0.149,0.932,0.373,0.373,2240
+    785,Javi Díaz 21/22,Sevilla Atlético,25,0.696,0.733,0.54,0.46,0.528,0.311,0.652,2231
+    786,F. Müller 21/22,Stuttgart,24,0.391,0.509,0.596,0.634,0.826,0.689,0.143,2225
+    787,L. Montipò 21/22,Hellas Verona,26,0.037,0.702,0.671,0.174,0.776,0.509,0.528,2217
+    788,O. Baumann 21/22,Hoffenheim,32,0.708,0.522,0.547,0.95,0.478,0.857,0.124,2215
+    789,G. Kobel 21/22,Borussia Dortmund,24,0.416,0.211,0.23,0.764,0.317,0.969,0.23,2206
+    790,Pau López 21/22,Olympique Marseille,27,0.665,0.584,0.516,0.988,0.143,0.87,0.056,2200
+    791,Y. van Osch 21/22,Fortuna Sittard,25,0.503,0.329,0.28,0.491,0.907,0.59,0.547,2165
+    792,S. Dimitrievski 21/22,Rayo Vallecano,28,0.273,0.901,0.876,0.373,0.578,0.267,0.64,2165
+    793,Bruno Varela 21/22,Vitória Guimarães,27,0.758,0.447,0.106,0.217,0.398,0.398,0.969,2165
+    794,M. Branderhorst 21/22,NEC,28,0.621,0.553,0.888,0.36,0.025,0.453,0.882,2146
+    795,Y. Sommer 21/22,Borussia M'gladbach,33,0.571,0.814,0.578,0.938,0.435,0.77,0.447,2111
+    796,S. Ortega 21/22,Arminia Bielefeld,29,0.714,0.031,0.037,0.975,0.814,0.609,1,2109
+    797,R. Zentner 21/22,Mainz 05,27,0.714,0.627,0.826,0.478,0.391,0.18,0.149,2105
+    798,M. Neuer 21/22,Bayern München,36,0.155,0.112,0.099,0.932,0.795,0.509,0.677,2104
+    799,Pedro Silva 21/22,Vizela,25,0.23,0.627,0.248,0,0.093,0.068,0.106,2100
+    800,Paulo Victor 21/22,Marítimo,35,0.783,0.627,0.547,0.447,0.64,0.677,0.745,2091
+    801,F. Forster 21/22,Southampton,34,0.857,0.752,0.776,0.292,0.031,0.012,0.248,2081
+    802,M. Schwäbe 21/22,Köln,27,0.317,0.478,0.217,0.963,0.876,0.845,0.696,2052
+    803,K. Navas 21/22,PSG,35,0.354,0.05,0.025,0.081,0.019,0.64,0.981,2048
+    804,M. Riemann 21/22,Bochum,33,0.975,0.832,0.745,1,0.957,0.019,0.845,2043
+    805,T. Wellenreuther 21/22,Willem II,26,0.981,0.839,0.87,0.913,0.559,0.05,0.093,2023
+    806,J. Omlin 21/22,Montpellier,28,0.528,0.845,0.882,0.652,0.267,0.348,0.72,1991
+    807,M. Okoye 21/22,Sparta Rotterdam,22,0.534,0.161,0.373,0.112,0.553,0.124,0.522,1981
+    808,L. Horníček 21/22,Sporting Braga,20,0.994,0.95,0.727,0.429,0.056,0.453,0.087,1959
+    809,Dani Cárdenas 21/22,Levante,25,0.789,0.199,0.23,0.106,0.193,0.478,0.273,1948
+    810,T. Krul 21/22,Norwich City,34,0.503,0.609,0.491,0.422,0.224,0.23,0.248,1941
+    811,A. Onana 21/22,Ajax,26,0.081,0.329,0.043,0.565,0.584,0.273,0.267,1938
+    812,Marco Pereira 21/22,Santa Clara,35,0.267,0.901,0.422,0.683,0.062,0.099,0.435,1902
+    813,M. Rensing 21/22,Fortuna Düsseldorf,36,0.329,0.901,0.975,0.224,0.72,0.95,0.534,1898
+    814,Samuel Portugal 21/22,Portimonense,28,0.429,0.329,0.391,0.752,0.286,0.64,0.907,1887
+    815,Victor Braga 21/22,Arouca,30,0.988,0.683,0.478,0.391,0.646,0.081,0.689,1887
+    816,A. Noppert 21/22,Go Ahead Eagles,28,0.677,0.578,0.801,0.894,0.36,0.205,0.95,1839
+    817,B. Foster 21/22,Watford,39,0.503,0.789,0.745,0.379,0.665,0,0.012,1831
+    818,Vicente Guaita 21/22,Crystal Palace,35,0.913,0.168,0.161,0.559,0.764,0.839,0.764,1797
+    819,X. Mous 21/22,Heerenveen,26,0.23,0.311,0.28,0.72,0.093,0.416,0.82,1762
+    820,O. Marciano 21/22,Feyenoord,32,0.925,0.248,0.28,0.528,0.037,0.596,0.646,1758
+    821,G. Gallon 21/22,Troyes,29,0.621,0.075,0.056,0.466,0.615,0.994,0.13,1739
+    822,F. de Keijzer 21/22,Utrecht,22,0.311,0.248,0.317,0.497,0.453,0.335,0.466,1736
+    823,Beto 21/22,Farense,40,0.478,0.702,0.547,0.702,0.733,0.994,0.957,1735
+    824,M. Caillard 21/22,Metz,28,0.863,0.248,0.447,0.012,0.205,0.242,0.727,1733
+    825,G. Donnarumma 21/22,PSG,23,0.472,0.248,0.18,0.193,0.354,0.087,0.46,1715
+    826,K. Casteels 21/22,Wolfsburg,30,0.248,0.311,0.72,0.776,0.894,0.615,0.211,1712
+    827,J. Cillessen 21/22,Valencia,33,0.602,0.075,0.36,0.267,0.211,0.578,0.621,1680
+    828,S. Kritsyuk 21/22,Zenit,31,0.292,1,0.95,0.261,1,0.497,0.907,1638
+    829,M. Dreyer 21/22,Lorient,33,0.168,0.149,0.025,0.031,0.068,0.149,0.037,1628
+    830,N. Mäenpää 21/22,Venezia,37,0.099,0.733,0.478,0.286,0.28,0.137,0.944,1605
+    831,E. Audero 21/22,Sampdoria,25,0.547,0.373,0.789,0.758,0.075,0.776,0.59,1581
+    832,Kiko Casilla 21/22,Elche,35,0.758,0.373,0.814,0.497,0.174,0.112,0.901,1568
+    833,David Raya 21/22,Brentford,26,0.59,0.925,0.932,0.882,0.416,0.168,0.696,1543
+    834,K. Bucker 21/22,Heracles,25,0.807,0.248,0.826,0.578,0.373,0.466,0.919,1541
+    835,S. Mandanda 21/22,Olympique Marseille,37,0.547,0.627,0.335,0.994,0.366,0.814,0.615,1528
+    836,G. Mamardashvili 21/22,Valencia,21,0.739,0.41,0.627,0.006,0.863,0.025,0.789,1522
+    837,Sergio Rico 21/22,Mallorca,28,0.019,0.224,0.05,0.037,0.882,0.876,0.043,1520
+    838,C. Bravo 21/22,Real Betis,39,0.05,0.553,0.267,0.41,0.758,0.404,0.161,1508
+    839,A. Gomis 21/22,Rennes,28,0.584,0.429,0.373,0.602,0.981,0.944,0.354,1497
+    840,L. Sepe 21/22,Salernitana,31,0.466,0.553,0.453,0.534,0.925,0.925,0.509,1496
+    841,J. Bijlow 21/22,Feyenoord,24,0.422,0.702,0.205,0.733,0.255,0.739,0.217,1479
+    842,V. Milinković-Savić 21/22,Torino,25,0.447,0.043,0.329,0.826,0.18,0.155,0.261,1457
+    843,J. Leca 21/22,Lens,36,0.168,0,0.019,0.124,0.429,0.727,0.168,1398
+    844,Dani Figueira 21/22,Estoril,24,0.031,0.186,0.186,0.665,0.149,0.82,0.199,1383
+    845,D. Bertaud 21/22,Montpellier,23,0.64,0.845,0.932,0.484,0.857,0.466,0.553,1373
+    846,E. Mulder 21/22,Heerenveen,33,0.391,0.012,0,0.627,0.503,0.304,0.186,1359
+    847,R. Pasveer 21/22,Ajax,38,0.261,0.012,0.006,0.944,0.317,0.621,0.609,1349
+    848,A. Schwolow 21/22,Hertha BSC,30,0.615,0.124,0.211,0.509,0.404,0.963,0.025,1349
+    849,G. Poussin 21/22,Bordeaux,23,0.894,0.627,0.745,0.609,0.186,0.193,0.006,1345
+    850,I. Grbić 21/22,Lille,26,0.354,0.627,0.708,0.068,0.161,0.882,0.304,1345
+    851,D. Alemdar 21/22,Rennes,19,0.832,0.012,0.062,0.64,0.683,0.745,0.59,1336
+    852,A. Aréola 21/22,West Ham,29,0,0.876,0.64,0.248,0.727,0.913,0.658,1321
+    853,J. Butland 21/22,Crystal Palace,29,0.124,0.373,0.491,0.398,0.236,0.932,0.28,1315
+    854,Ž. Frelih 21/22,Gil Vicente,24,0.665,0.41,0.087,0.304,0.658,0.161,0.118,1298
+    855,J. Blaswich 21/22,Heracles,31,0.714,0.149,0.733,0.82,0.137,0.447,0.994,1246
+    856,L. Zidane 21/22,Rayo Vallecano,24,0.112,0.584,0.634,0.404,0.994,0.913,0.963,1208
+    857,J. Gorter 21/22,Ajax,22,0.478,0.994,0.913,0.957,0.335,0.36,0.975,1190
+    858,M. Lotka 21/22,Hertha BSC,21,0.839,0.988,1,0.441,0.472,0.261,0.155,1133
+    859,Roberto Jiménez 21/22,Real Valladolid,35,0.186,0.075,0.36,0.099,0.596,0.801,0.429,1115
+    860,W. Falcone 21/22,Sampdoria,27,0.199,0.702,0.602,0.783,0.547,0.789,0.683,1101
+    861,Thiago Rodrigues 21/22,Estoril,26,0.366,0.168,0.509,0.745,0.311,0.13,0.186,1079
+    862,E. Berisha 21/22,Torino,33,0.907,0.168,0.776,0.329,0.82,0.292,0.932,1064
+    863,Álvaro Fernández 21/22,Brentford,24,0.385,0.963,0.913,0.888,0.329,0.23,0.565,1061
+    864,M. Ryan 21/22,Real Sociedad,30,0.13,0.863,0.665,0.584,0.696,0.174,0.776,1058
+    865,A. Mandréa 21/22,Angers SCO,25,0.957,0.969,0.64,0.025,0.006,0.186,0.404,1049
+    866,F. Rønnow 21/22,Union Berlin,30,0.273,0.975,0.95,0.857,0.988,0.391,0.453,1049
+    867,Kewin Silva 21/22,Moreirense,27,0.876,0.981,0.963,0.168,0.05,0.845,0.578,1003`;
+
+
+function calculateEuclideanDifference(data1, data2) {
+  let difference = 0;
+  for (let i = 4; i <= 10; i++) {
+    const metric1 = parseFloat(data1[i]);
+    const metric2 = parseFloat(data2[i]);
+    difference += Math.pow(metric1 - metric2, 2);
+  }
+  return Math.sqrt(difference);
+}
+
+const dataArray = csvData.split('\n').map(line => line.split(','));
+
+const colorClasses = ['result-color-blue', 'result-color-pink', 'result-color-orange', 'result-color-green', 'result-color-bleu', 'result-color-rose', 'result-color-1', 'result-color-2', 'result-color-3', 'result-color-4', 'result-color-5', 'result-color-6', 'result-color-7', 'result-color-8', 'result-color-9', 'result-color-10', 'result-color-11', 'result-color-12', 'result-color-13', 'result-color-14', 'result-color-15', 'result-color-16', 'result-color-17', 'result-color-18', 'result-color-19', 'result-color-20', 'result-color-21', 'result-color-22', 'result-color-23', 'result-color-24', 'result-color-25', 'result-color-26', 'result-color-27', 'result-color-28', 'result-color-29', 'result-color-30', 'result-color-31', 'result-color-32', 'result-color-33', 'result-color-34', 'result-color-35', 'result-color-36', 'result-color-37', 'result-color-38', 'result-color-39', 'result-color-40', 'result-color-41', 'result-color-42', 'result-color-43', 'result-color-44', 'result-color-45', 'result-color-46', 'result-color-47', 'result-color-48'];
+
+let searchResults = []; // Declare the search results variable
+
+
+function removeSpecialChars(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f\s]/g, '');
+}
+
+function search(query) {
+  const results = dataArray.filter(data =>
+    removeSpecialChars(data[1].toLowerCase()).includes(removeSpecialChars(query.toLowerCase()))
+  );
+  return results;
+}
+
+function createTable(teamName, teamIndex, color) {
+  const resultsTable = document.getElementById('resultsTable');
+
+  const headerNames = [
+    '',
+    'Percentiles',
+    '',
+    'Age',
+    'Defensive actions',
+    'Aerials contested',
+    'Exit line',
+    'Passes',
+    'Long pass%',
+    'Short pass%',
+    'PSxG - GA',
+    'Minutes played', 
+  '' // Add an empty string for the "x" column
+];
+
+
+  // Check if table headers exist
+  const headersExist = resultsTable.querySelector('th') !== null;
+
+  const table = headersExist ? resultsTable.querySelector('table') : document.createElement('table');
+  table.classList.add('metrics-table');
+
+  if (!headersExist) {
+    // Create the table header
+    const headerRow = document.createElement('tr');
+   
+for (let i = 1; i < headerNames.length; i++) {
+  const th = document.createElement('th');
+  th.textContent = headerNames[i];
+  headerRow.appendChild(th);
+}
+// Add a separate table header for the "x" column
+const xHeader = document.createElement('th');
+xHeader.textContent = '';
+headerRow.appendChild(xHeader);
+    table.appendChild(headerRow);
+  }
+
+
+
+const teamData = dataArray[teamIndex];
+const dataRow = document.createElement('tr');
+for (let i = 1; i < teamData.length; i++) {
+  const td = document.createElement('td');
+  if (i >= 4 && i <= 10) {
+    const value = parseFloat(teamData[i]) * 100;
+    td.textContent = value.toFixed(1);
+  } else {
+    td.textContent = teamData[i];
+  }
+  td.classList.add(color);
+  dataRow.appendChild(td);
+}
+
+// Add a separate table cell for the "x" column
+const xCell = document.createElement('td');
+const xButton = document.createElement('button');
+xButton.textContent = 'x';
+xButton.addEventListener('click', function () {
+  dataRow.remove(); // Remove the corresponding row from the table
+  const radarPolygons = document.querySelectorAll(`.radarPolygon.${color}`);
+  const radarLines = document.querySelectorAll(`.radarLines.${color}`);
+  const radarCircles = document.querySelectorAll(`.radarCircle.${color}`);
+
+  radarPolygons.forEach((polygon) => polygon.remove()); // Remove radar polygons with the specified color
+  radarLines.forEach((line) => line.remove()); // Remove radar lines with the specified color
+  radarCircles.forEach((circle) => circle.remove()); // Remove radar circles with the specified color
+});
+
+xCell.appendChild(xButton);
+dataRow.appendChild(xCell);
+
+table.appendChild(dataRow);
+
+  if (!headersExist) {
+    resultsTable.appendChild(table);
+  }
+
+
+  const combResults = dataArray[teamIndex].join(', ');
+  console.log(combResults);
+
+  const outerRadius = 280;
+  const center = [0, 0];
+  const angles = [
+    0,
+    (2 * Math.PI) / 7,
+    (4 * Math.PI) / 7,
+    (6 * Math.PI) / 7,
+    (8 * Math.PI) / 7,
+    (10 * Math.PI) / 7,
+    (12 * Math.PI) / 7
+  ];
+
+  function axisValueToCartesian(axis, value) {
+    let angle = angles[axis - 1];
+    angle += (2 * Math.PI / 7) * 0.2;
+    const x = 280 * value * Math.cos(angle);
+    const y = 280 * value * Math.sin(angle);
+    return { x, y };
+  }
+
+  const svg = document.querySelector('.radar');
+  const radarWrapper = svg.appendChild(
+    document.createElementNS('http://www.w3.org/2000/svg', 'g')
+  );
+  radarWrapper.setAttribute('transform', 'translate(280.77,280.77)');
+  radarWrapper.innerHTML = '';
+
+  const data = [];
+  const rowCols = combResults.split(',');
+  for (let i = 4; i < 11; i++) {
+    data.push({ axis: i - 3, value: parseFloat(rowCols[i]) });
+  }
+
+  const points = data
+    .map(({ axis, value }) => {
+      const { x, y } = axisValueToCartesian(axis, value);
+      return `${x},${y}`;
+    })
+    .join(' ');
+
+  const polyline = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'polyline'
+  );
+  polyline.setAttribute('class', `radarLines ${color}`);
+  polyline.setAttribute('points', `${points} ${points.split(' ')[0]}`);
+  polyline.setAttribute('stroke-width', '3');
+  polyline.setAttribute('fill', 'none');
+  radarWrapper.appendChild(polyline);
+
+  const polygon = document.createElementNS(
+    'http://www.w3.org/2000/svg',
+    'polygon'
+  );
+  polygon.setAttribute('class', `radarPolygon ${color}`);
+  polygon.setAttribute('points', points);
+  polygon.style.fillOpacity = '0.2';
+  radarWrapper.appendChild(polygon);
+
+  data.forEach(({ axis, value }) => {
+    const { x, y } = axisValueToCartesian(axis, value);
+    const circle = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'circle'
+    );
+    circle.setAttribute('class', `radarCircle ${color}`);
+    circle.style.fillOpacity = '0.86';
+    circle.setAttribute('r', '8.4');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    radarWrapper.appendChild(circle);
+  });
+}
+
+
+
+function toggleFilling() {
+  const radarPolygons = document.querySelectorAll('.radarPolygon');
+  radarPolygons.forEach(polygon => {
+    polygon.style.fill = polygon.style.fill ? '' : 'none'; // Toggle the filling
+  });
+}
+
+
+  const teamNames = new Set();
+
+
+function createTableForTeam1() {
+  const searchInput = document.getElementById('searchInput1');
+  const searchButton = document.getElementById('searchButton1');
+  const resultsTable = document.getElementById('resultsTable');
+  const teamNamesList = document.createElement('ul');
+  teamNamesList.style.fontFamily = 'Arial, sans-serif';
+  teamNamesList.style.listStyleType = 'none';
+  teamNamesList.style.paddingLeft = '9px';
+  resultsTable.appendChild(teamNamesList);
+  let searchCounter = 0;
+
+  searchButton.addEventListener('click', function () {
+    const searchQuery = searchInput.value;
+    const results = search(searchQuery);
+
+    // Reset the toggle state before performing a new search
+    const radarPolygons = document.querySelectorAll('.radarPolygon');
+    radarPolygons.forEach(polygon => {
+      polygon.style.fill = '';
+    });
+
+    if (results) {
+      const teamId = parseInt(results[0]);
+      const teamName =
+        results[1] + ' (' + results[2] + ', ' + results[3] + ') - ' + results[11] + ' min';
+      const color = colorClasses[searchCounter % colorClasses.length];
+
+      createTable(teamName, teamId - 1, color);
+
+      searchCounter++;
+    }
+  });
+}
+
+createTableForTeam1();
+
+
+
+const similarPlayersContainer = document.createElement("div");
+similarPlayersContainer.id = "similarPlayersContainer";
+similarPlayersContainer.style.position = "absolute";
+similarPlayersContainer.style.top = "998px";
+similarPlayersContainer.style.left = "178px";
+document.body.appendChild(similarPlayersContainer);
+
+let colorIndex = 0; // Initialize color index
+
+
+searchButton1.addEventListener("click", function() {
+ const searchQuery = searchInput.value;
+const searchedPlayer = search(searchQuery);
+
+if (searchedPlayer.length > 0) {
+  const searchedPlayerData = searchedPlayer[0];
+  const searchedPlayerIndex = parseInt(searchedPlayerData[0]) - 1;
+
+  // Calculate Euclidean difference with all matching players and find the most similar players
+  const similarPlayers = [];
+  for (let i = 0; i < dataArray.length; i++) {
+    if (i !== searchedPlayerIndex) {
+      const difference = calculateEuclideanDifference(searchedPlayerData, dataArray[i]);
+      similarPlayers.push({ index: i, difference: difference });
+    }
+  }
+
+  similarPlayers.sort((a, b) => a.difference - b.difference);
+
+  // Get the three most similar players
+  const mostSimilarPlayers = similarPlayers.slice(0, 5);
+
+  for (let i = 0; i < 1; i++) {
+    const playerIndex = mostSimilarPlayers[i].index;
+    const playerName = dataArray[playerIndex][1];
+    const playerAge = dataArray[playerIndex][3];
+    const playerTeam = dataArray[playerIndex][2];
+
+const similarPlayerTable = document.createElement("table");
+similarPlayerTable.classList.add("metrics-table");
+
+const headerRow = document.createElement("tr");
+const headerCell = document.createElement("th");
+headerCell.setAttribute("colspan", "5");
+headerCell.textContent = `Similar data to ${searchedPlayer[0][1]}`;
+  headerCell.classList.add(colorClasses[colorIndex % colorClasses.length]);
+headerRow.appendChild(headerCell);
+similarPlayerTable.appendChild(headerRow);
+
+const similarPlayerRow = document.createElement("tr");
+
+for (let i = 0; i < mostSimilarPlayers.length; i++) {
+  const playerIndex = mostSimilarPlayers[i].index;
+  const playerName = dataArray[playerIndex][1];
+  const playerAge = dataArray[playerIndex][3];
+  const playerTeam = dataArray[playerIndex][2];
+
+  const playerCell = document.createElement("td");
+  playerCell.textContent = `${playerName}`;
+playerCell.style.fontSize = "10.8px"; // Set the desired font size
+  playerCell.style.cursor = "pointer"; // Set cursor to pointer
+
+  // Add click event listener to the player name cell
+  playerCell.addEventListener("click", function() {
+    searchInput.value = playerName; // Set search input value to the clicked player name
+    // Trigger the search button click event to perform the search
+    searchButton1.click();
+  });
+
+  similarPlayerRow.appendChild(playerCell);
+}
+
+if (similarPlayersContainer.children.length > 0) {
+  // Remove the previous table if it exists
+  similarPlayersContainer.removeChild(similarPlayersContainer.firstChild);
+}
+
+similarPlayerTable.appendChild(similarPlayerRow);
+similarPlayersContainer.appendChild(similarPlayerTable);
+
+colorIndex++; // Increment color index for the next search
+
+
+
+  }
+
+}
+
+
+  searchInput.value = '';
+  updateMatchingNames();
+
+});
+
+  </script>
+
+
+ <script>
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+      const body = document.querySelector("body");
+      body.classList.toggle("dark-mode");
+
+      // Store the user's preference in local storage
+      const isDarkMode = body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDarkMode);
+    }
+
+    // Check if user has a stored preference for dark mode
+    const storedDarkMode = localStorage.getItem("darkMode");
+
+    if (storedDarkMode === "true") {
+      const body = document.querySelector("body");
+      body.classList.add("dark-mode");
+    }
+
+  </script>
+
+
+
+<a href="https://datamb.football/proradargk/" target="_self" rel="noopener noreferrer">
+  <button class="button-1" role="button">GK</button></a>
+
+<a href="https://datamb.football/proradarcb/" target="_self" rel="noopener noreferrer">
+  <button class="button-2" role="button">CB</button></a>
+
+<a href="https://datamb.football/proradarfb/" target="_self" rel="noopener noreferrer">
+  <button class="button-3" role="button">FB</button></a>
+
+<a href="https://datamb.football/proradarcm/" target="_self" rel="noopener noreferrer">
+  <button class="button-4" role="button">CM</button></a>
+
+<a href="https://datamb.football/proradarfw/" target="_self" rel="noopener noreferrer">
+  <button class="button-5" role="button">FW</button></a>
+
+<a href="https://datamb.football/proradarst/" target="_self" rel="noopener noreferrer">
+  <button class="button-6" role="button">ST</button></a>
+
+</div>
+
+	<br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		<br><br><br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		<br><br>
+
+	
+</body>
+</html>
