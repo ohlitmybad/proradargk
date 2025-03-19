@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>	
@@ -6,7 +7,6 @@
 	<meta name="robots" content="noindex">
 
 
-	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -14,805 +14,1180 @@
 <defs>
 <style>
 
-:root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --background-color: #f5f7fa;
-  --container-bg: #ffffff;
-  --text-color: #333333;
-  --border-color: #e0e0e0;
-  --hover-color: #f0f0f0;
-  --button-color: #3498db;
-  --button-text: #ffffff;
-  --header-bg: #ffffff;
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  --table-bg: #f2f2f2;
-}
-.dark-mode {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --background-color: #0e0f0f;
-  --container-bg: #1a1a1a;
-  --text-color: #e0e0e0;
-  --border-color: #333333;
-  --hover-color: #252525;
-  --button-color: #2980b9;
-  --button-text: #ffffff;
-  --header-bg: #0e0f0f;
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  --table-bg: #333333;
+#matchingNames {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-  margin: 0;
-  padding: 0;
-  overflow-x: auto;
-}
-
-body.dark-mode {
-  background-color: #0e0f0f !important;
-}
-
-.container {
-  max-width: 880px;
-  min-width: 701px;
-  margin: 0px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-	
-.chart-wrapper {
-  background-color: var(--container-bg);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 12px 14px 20px;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
-}
-
-.radar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 32px 0px -15px;
-  position: relative;
-  margin-bottom: 20px;
-}
-svg.radar {
-  width: 100%;
-  max-width: 477px;  
-  min-width: 477px;  
-  height: 504px;  
-  display: block;
-  margin: 0 auto;
-}
-
-svg.radar > g {
-  transform-origin: center;
-  transform: translate(50%, 50%);
-}
-
-
-/* SPECIFIC CSS */
-
-
-.search-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-  width: 70%;
-  min-width: 500px;
-  position: relative;
-}
-
-.search-container {
-  position: relative;
-  margin-bottom: 15px;
-  min-width: 500px;
+body.dark-mode #matchingNames {
+  background-color: #333333;
+  box-shadow: 0px 4px 12px rgba(255, 253, 253, 0.1);
 }
 
 #matchingNames {
-  flex: 1;
-  background-color: var(--container-bg);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
   scrollbar-width: thin;
   scrollbar-color: #c4c4c4 #f1f1f1;
-  z-index: 9999;
-  max-height: 267px;
-  overflow-y: auto;
-  margin-bottom: 15px;
-  min-height: 0;
 }
 
-#matchingNames:empty {
-  margin-bottom: 0;
-  min-height: 0;
-  display: none !important;
+body.dark-mode #matchingNames {
+  scrollbar-color: #888888 #333333;
+}
+body.dark-mode #matchingNames .fullName {
+  color: #ffffff;
 }
 
-/* matching names styles */
+body.dark-mode #matchingNames .age {
+  color: #ffffff;
+}
+
+body.dark-mode #matchingNames .team {
+  color: #ffffff;
+}
+
 
 .name {
   padding: 9px 12px;
-  font-size: 15px;
-  color: var(--text-color);
+  font-size: 13px;
+  color: #333333;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: background-color 0.2s ease-in-out;
-  font-family: 'Inter', sans-serif;
-  position: relative;
+font-family: Arial, sans-serif !important;
+position: relative;
 }
+
 .name:hover {
-  background-color: var(--hover-color);
+  background-color: #f5f5f5;
 }
+
+body.dark-mode #matchingNames .name:hover {
+  background-color: #444444;
+}
+
 .fullName {
   font-weight: bold;
+  color: #333333;
   margin-right: 6px;
 }
-.age, .team {
+
+.age {
   color: #777777;
   margin-right: 4px;
 }
-.dark-mode .age, .dark-mode .team, .dark-mode .fullName {
-  color: var(--text-color);
-}
 
-/* searchbar styles */
-
-
-#searchInput1 {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-size: 16px;
-  outline: none;
-  background-color: var(--container-bg);
-  color: var(--text-color);
-  transition: border-color 0.2s;
-  height: 40px;
-}
-
-#searchInput1:focus {
-  border-color: var(--primary-color);
-}
-
-#searchInput1::placeholder {
-  color: #999;
-}
-
-#searchButton1 {
-  background-color: var(--button-color);
-  color: var(--button-text) !important;
-  border: none;
-  border-radius: 6px;
-  height: 36px;
-  width: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#searchButton1:hover {
-  background-color: #2980b9;
-}
-
-body.dark-mode #searchButton1:hover {
-  background-color: #2980b9;
-}
-
-body.dark-mode #searchButton1 {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-/* Button styles for screenshot */
-.btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--button-color);
-  color: var(--button-text);
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  height: 36px;
-  box-sizing: border-box;
-}
-.btn:hover {
-  background-color: #2980b9;
-}
-.btn-outline {
-  background-color: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-}
-.btn-outline:hover {
-  background-color: var(--hover-color);
-}
-.btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  border-radius: 6px;
-}
-.icon2::before {
-  font-family: "Ionicons";
-  content: "\f147";
-  font-size: 18px;
-  color: var(--button-text);
+.team {
+  color: #777777;
 }
 
 
-/* Table styling */
-.metrics-table {
-  width: 100%;
-  background-color: var(--container-bg);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-  box-shadow: var(--shadow);
-  table-layout: fixed;
-  max-width: 100%;
-}
-.metrics-table th {
-  color: var(--text-color);
-  padding: 10px;
-  font-size: 12px;
-  text-align: center;
-  font-weight: 500;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid var(--border-color);
-  line-height: 1.2;
-}
-.dark-mode .metrics-table th {
-  color: #aeaeae;
-}
-/* Match the first header with the first column styling */
-.metrics-table th:first-child {
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  width: 20%;
+body {
+    background-color: white;
 }
 
-.metrics-table td {
-  padding: 8px 10px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 500;
-  border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.2s;
-  line-height: 1.2;
-  vertical-align: middle;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-/* Give more breathing room to the first column (name) */
-.metrics-table td:first-child {
-  padding: 12px 15px;
-  text-align: center;
-  white-space: normal;
-  width: 30%;
-  overflow: visible;
-  text-overflow: clip;
-  height: auto;
-  min-height: 50px;
-  line-height: 1.4;
-  vertical-align: middle;
-}
-.metrics-table tr:last-child td {
-  border-bottom: none;
-}
-.metrics-table tr:hover td {
-  background-color: var(--hover-color);
-}
-/* X button styling */
-.metrics-table td button {
-  background-color: transparent;
-  border: none;
-  color: #999;
-  font-size: 14px;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-.metrics-table td button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #666;
-}
-/* Dark mode specific table styling */
-.dark-mode .metrics-table {
-  background-color: var(--container-bg);
-}
-.dark-mode .metrics-table th {
-  background-color: rgba(255, 255, 255, 0.03);
-}
-.dark-mode .metrics-table td {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-.dark-mode .metrics-table td button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #aaa;
-}
-
-
-
-@media (hover: none) and (pointer: coarse) {
-      .similar-text, .player-text {
-        font-size: 8px !important;
-        line-height: 1 !important;
-        font-weight: 500 !important;
-      }
+@supports not (-moz-appearance: none) {
+    body {
+        zoom: 0.89;
     }
-    
-
-/* Similar players table */
-.similar-table {
-  width: 100%;
-  background-color: var(--container-bg);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 31px;
-  margin-bottom: 23px;
-  box-shadow: var(--shadow);
-}
-.similar-table th {
-  color: var(--text-color);
-  padding: 10px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 13.8px;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid var(--border-color);
-  line-height: 1.2;
 }
 
-.similar-table td {
-  padding: 7px 8px;
-  text-align: center;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  line-height: 1.2;
-}
-.similar-table td:last-child {
-  border-right: none;
-}
-.similar-table td:hover {
-  background-color: var(--hover-color);
-}
-/* Dark mode specific similar table styling */
-.dark-mode .similar-table {
-  background-color: var(--container-bg);
-}
-.dark-mode .similar-table th {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-.dark-mode .similar-table td {
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+svg text.label {
+    fill: #bcbcbc;
+font-size: 17.7px;
+  }
+
+
+  .dark-mode-toggle {
+    position: absolute;
+    top: 15.3px;
+    left: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    background-color: #e0e0de;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .button-10 {
+
+position: absolute;
+top: 61px;
+left: 93%;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40.1px;
+height: 40.1px;
+border-radius: 50%;
+background-color: #e0e0de;
+color: #333;
+border: 0.1px solid #ccc;
+cursor: pointer;
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Position switcher */
-.position-switcher {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+
+
+text {
+  font-family: Arial;
 }
-.position-button {
-  padding: 8px 16px;
-  background-color: var(--container-bg);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
+
+.result-color-blue {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
-.position-button:hover {
-  background-color: var(--hover-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+.result-color-pink {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
-/* Toggle controls */
-.toggle-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
+
+.result-color-orange {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
-.toggle-container {
-  display: flex;
-  align-items: center;
+
+.result-color-green {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
-.toggle-label {
-  font-size: 14px;
-  margin-right: 10px;
+
+
+
+
+
+.result-color-bleu {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
-.toggle-checkbox {
-  width: 40px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
+
+
+.result-color-rose {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
-.toggle-checkbox input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.toggle-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 20px;
-}
-.toggle-slider:before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-input:checked + .toggle-slider {
-  background-color: var(--primary-color);
-}
-input:checked + .toggle-slider:before {
-  transform: translateX(20px);
-}
-/* Dark mode toggle */
-.dark-mode-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--container-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  z-index: 100;
-  transition: background-color 0.3s;
-}
-.toggle-icon::before {
-  font-family: "Ionicons";
-  content: "\f467";
-  font-size: 30px;
-  color: var(--text-color);
-}
-.dark-mode .toggle-icon::before {
-  content: "\f3b0";
-  font-size: 20px;
-}
-/* Color classes for radar chart */
+
+
 .result-color-1 {
   color: #3062FB !important;
   stroke: #3062FB;
   fill: #3062FB;
-  fill-opacity: 0;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-2 {
   color: #F62681 !important;
-  stroke: #F62681;
-  fill: #F62681;
-  fill-opacity: 0;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-3 {
   color: #55d149 !important;
-  stroke: #55d149;
-  fill: #55d149;
-  fill-opacity: 0;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-4 {
   color: #FFCF5F !important;
-  stroke: #FFCF5F;
-  fill: #FFCF5F;
-  fill-opacity: 0;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-5 {
-  color: rgb(153, 50, 204) !important;
-  stroke: rgb(153, 50, 204);
-  fill: rgb(153, 50, 204);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-6 {
-  color: rgb(255, 140, 0) !important;
-  stroke: rgb(255, 140, 0);
-  fill: rgb(255, 140, 0);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
 .result-color-7 {
-  color: rgb(30, 144, 255) !important;
-  stroke: rgb(30, 144, 255);
-  fill: rgb(30, 144, 255);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-8 {
-  color: rgb(240, 128, 128) !important;
-  stroke: rgb(240, 128, 128);
-  fill: rgb(240, 128, 128);
-  fill-opacity: 0;
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-9 {
-  color: rgb(144, 238, 144) !important;
-  stroke: rgb(144, 238, 144);
-  fill: rgb(144, 238, 144);
-  fill-opacity: 0;
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-10 {
-  color: rgb(135, 206, 235) !important;
-  stroke: rgb(135, 206, 235);
-  fill: rgb(135, 206, 235);
-  fill-opacity: 0;
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-11 {
-  color: rgb(246, 38, 129) !important;
-  stroke: rgb(246, 38, 129);
-  fill: rgb(246, 38, 129);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-12 {
-  color: rgb(255, 69, 0) !important;
-  stroke: rgb(255, 69, 0);
-  fill: rgb(255, 69, 0);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
+
+
 .result-color-13 {
-  color: rgb(60, 179, 113) !important;
-  stroke: rgb(60, 179, 113);
-  fill: rgb(60, 179, 113);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-14 {
-  color: rgb(138, 40, 165) !important;
-  stroke: rgb(138, 40, 165);
-  fill: rgb(138, 40, 165);
-  fill-opacity: 0;
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-15 {
-  color: rgb(70, 130, 180) !important;
-  stroke: rgb(70, 130, 180);
-  fill: rgb(70, 130, 180);
-  fill-opacity: 0;
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-16 {
-  color: rgb(208, 32, 144) !important;
-  stroke: rgb(208, 32, 144);
-  fill: rgb(208, 32, 144);
-  fill-opacity: 0;
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-17 {
-  color: rgb(220, 20, 60) !important;
-  stroke: rgb(220, 20, 60);
-  fill: rgb(220, 20, 60);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-18 {
-  color: rgb(255, 223, 60) !important;
-  stroke: rgb(255, 223, 60);
-  fill: rgb(255, 223, 60);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
 .result-color-19 {
-  color: rgb(238, 130, 238) !important;
-  stroke: rgb(238, 130, 238);
-  fill: rgb(238, 130, 238);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-20 {
-  color: rgb(147, 112, 219) !important;
-  stroke: rgb(147, 112, 219);
-  fill: rgb(147, 112, 219);
-  fill-opacity: 0;
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-21 {
-  color: rgb(34, 139, 34) !important;
-  stroke: rgb(34, 139, 34);
-  fill: rgb(34, 139, 34);
-  fill-opacity: 0;
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-22 {
-  color: rgb(255, 198, 0) !important;
-  stroke: rgb(255, 198, 0);
-  fill: rgb(255, 198, 0);
-  fill-opacity: 0;
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-23 {
-  color: rgb(255, 99, 71) !important;
-  stroke: rgb(255, 99, 71);
-  fill: rgb(255, 99, 71);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-24 {
-  color: rgb(65, 105, 225) !important;
-  stroke: rgb(65, 105, 225);
-  fill: rgb(65, 105, 225);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
+
+
 .result-color-25 {
-  color: rgb(255, 215, 0) !important;
-  stroke: rgb(255, 215, 0);
-  fill: rgb(255, 215, 0);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-26 {
-  color: rgb(0, 206, 209) !important;
-  stroke: rgb(0, 206, 209);
-  fill: rgb(0, 206, 209);
-  fill-opacity: 0;
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-27 {
-  color: rgb(197, 142, 255) !important;
-  stroke: rgb(197, 142, 255);
-  fill: rgb(197, 142, 255);
-  fill-opacity: 0;
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-28 {
-  color: rgb(46, 139, 87) !important;
-  stroke: rgb(46, 139, 87);
-  fill: rgb(46, 139, 87);
-  fill-opacity: 0;
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-29 {
-  color: rgb(255, 105, 180) !important;
-  stroke: rgb(255, 105, 180);
-  fill: rgb(255, 105, 180);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-30 {
-  color: rgb(255, 165, 0) !important;
-  stroke: rgb(255, 165, 0);
-  fill: rgb(255, 165, 0);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
 .result-color-31 {
-  color: rgb(255, 207, 95) !important;
-  stroke: rgb(255, 207, 95);
-  fill: rgb(255, 207, 95);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-32 {
-  color: rgb(255, 182, 193) !important;
-  stroke: rgb(255, 182, 193);
-  fill: rgb(255, 182, 193);
-  fill-opacity: 0;
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
+
 .result-color-33 {
-  color: rgb(102, 205, 170) !important;
-  stroke: rgb(102, 205, 170);
-  fill: rgb(102, 205, 170);
-  fill-opacity: 0;
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
+
 .result-color-34 {
-  color: rgb(48, 98, 251) !important;
-  stroke: rgb(48, 98, 251);
-  fill: rgb(48, 98, 251);
-  fill-opacity: 0;
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
 }
+
+
 .result-color-35 {
-  color: rgb(186, 85, 211) !important;
-  stroke: rgb(186, 85, 211);
-  fill: rgb(186, 85, 211);
-  fill-opacity: 0;
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
 }
+
+
 .result-color-36 {
-  color: rgb(123, 104, 238) !important;
-  stroke: rgb(123, 104, 238);
-  fill: rgb(123, 104, 238);
-  fill-opacity: 0;
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
 }
+
+
 .result-color-37 {
-  color: rgb(0, 128, 128) !important;
-  stroke: rgb(0, 128, 128);
-  fill: rgb(0, 128, 128);
-  fill-opacity: 0;
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
 }
-svg text.label{
-  fill: #bcbcbc;
+
+
+.result-color-38 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
 }
-/* Add specific styling for resultsTable to reduce space */
-#resultsTable {
-  margin-top: -8px;
-  padding-top: 0;
+
+.result-color-39 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
 }
-/* Position Switcher styling */
-.position-switcher-container {
-  display: flex;
-  justify-content: center;
+
+.result-color-40 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-41 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-42 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-43 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-44 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-45 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-46 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-47 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-48 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+
+
+
+
+
+#searchInput1 {
+    width: 440px;
+    height: 37px;
+    font-size: 15px;
+    border-radius: 3px;
+    border-width: 0.5px;
+    padding: 1px;
+    padding-left: 5px; /* Adds extra padding on the left side */
+    margin-bottom: 1px;
+        }
+
+
+
+#searchButton1 {
+  width: 40px;
+color: black !important;
+height: 39px;
+cursor: pointer;
+
+}
+
+
+
+
+ .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+position: absolute;
+  top: 650px;
+  left: 650px;
+ width: 120px; 
+    }
+
+    .toggle-label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .toggle-checkbox {
+      width: 40px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .toggle-checkbox input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+    }
+
+    .toggle-slider:before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+
+
+
+.icon2::before {
+  content: "\f118";
+  font-family: "Ionicons";
+font-size: 22px;
+}
+
+.icon3::before {
+  content: "\f448";
+  font-family: "Ionicons";
+font-size: 22px;
+}
+
+
+
+  #searchInput1::placeholder {
+    font-size : 18px; 
+  }
+
+
+
+
+
+td {
+    font-weight: bold;
+  }
+  th {
+    font-weight: normal;
+  }
+
+
+.icon::before {
+  content: "\f21c";
+  font-family: "Ionicons";
+font-size: 22px;
+}		
+
+
+table {
+   border-collapse: collapse;
+  width: 200px;
+  font-family: Arial;
+  border-radius: 10px;
+}
+
+.metrics-table {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  width: 770px;
+  table-layout: fixed; 
+  border-collapse: collapse; 
+}
+
+.metrics-table th {
+  color: #000000;
+  padding: 6px 9px;
+  font-size: 11px;
+  text-align: center;
+  overflow: hidden; 
+}
+
+.metrics-table td {
+  padding: 4px 11px;
+  text-align: center;
+  word-wrap: break-word; 
+  overflow: hidden; 
+}
+
+.metrics-table th:nth-child(1),
+.metrics-table td:nth-child(1) {
+  width: 90px; 
+}
+
+.metrics-table th:nth-child(2),
+.metrics-table td:nth-child(2) {
+  width: 95px; 
+}
+
+.metrics-table th:nth-child(3),
+.metrics-table td:nth-child(3) {
+  width: 20px; 
+}
+
+
+tr:first-child th:first-child {
+  color: #5b5b5b;
+  font-weight: bold;
+  font-size: 12px;
+  word-wrap: break-word; 
+  overflow: hidden; 
+}
+
+
+
+
+
+  
+svg:nth-of-type(1) {
+  width: 700px;
+  height: 700px;
+}
+
+
+.searchcontainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+	  margin-left: 13px;
+            margin-top: 47px;
+	
+}
+
+
+.maxcontainer {
+position: absolute;
+    }
+
+
+.screenshotcontainer {
+   margin-left: 8px;
+  }
+        
+
+.similar-table {
+  position: absolute;
+  left: 391px;
+  transform: translateX(-50%);
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border-collapse: collapse; 
+}
+
+.similar-table th,
+.similar-table td {
+  text-align: center;
+  white-space: normal; 
+  width: auto;
+
+}
+
+.similar-table th {
+  color: #000000;
+  padding: 6px 9px;
+  font-size: 11px;
+  overflow: hidden; 
+}
+
+.similar-table td {
+  padding: 4px 11px;
+}
+
+
+
+
+.button-1 {
   align-items: center;
-  gap: 10px;
-  max-width: 700px;
-  flex-wrap: wrap;
-}
-.position-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
-  min-width: 40px;
-  width: 50px;
-  background-color: var(--container-bg);
-  color: var(--text-color);
-  text-decoration: none;
+height: 20px;
+background-color: #e7e4e4;
   border-radius: 6px;
-  border: 1px solid var(--border-color);
-  transition: all 0.2s ease;
-  font-weight: 500;
-  font-size: 14px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+width: 85px; 
+ 
+  touch-action: manipulation;
 }
 
-.position-link:hover {
-  background-color: var(--hover-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.button-1:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
 }
-.position-link.active {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+
+.button-2 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 115px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
 }
-/* Dark mode styles for position switcher */
-.dark-mode .position-link {
-  border-color: var(--border-color);
+
+.button-2:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
 }
-.dark-mode .position-link.active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+
+.button-3 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 215px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-3:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+	
+.button-4 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 315px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-4:hover {
+   box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 3px;
 }
 
 
+
+.button-5 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 415px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-5:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-6 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 15px;
+  left: 515px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-6:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+  /* DARK MODE */
+
+
+  body.dark-mode {
+    color: #f2f2f2;
+  }
+  body.dark-mode {
+    background-color: #0F0F0E;
+  }
+
+
+  body.dark-mode table {
+    background-color: #333333;
+  }
+
+  body.dark-mode tr:first-child th:first-child {
+  color: #5b5b5b;
+  
+}
+
+  body.dark-mode th
+  body.dark-mode td {
+    color: #f2f2f2;
+  }
+
+ body.dark-mode .metrics-table th {
+  color: #bcbcbc;
+  padding: 9px;
+}
+
+body.dark-mode #searchInput1 {
+    color: #000; 
+background-color : #cacaca;
+  }
+	
+ body.dark-mode	  #searchInput1::placeholder {
+    color: #363636; 
+  }
+
+ body.dark-mode	  #searchButton1 {
+    color: #fff !important; 
+background-color : #333333;
+  }
+
+
+
+body.dark-mode button {
+  background-color: #333333;
+}
+
+body.dark-mode button,
+body.dark-mode button:focus {
+  color: #f2f2f2;
+}
+
+body.dark-mode button:hover {
+  color: initial;
+}
+
+body.dark-mode .button-8 {
+  background-color: #13293d; 
+  color: #f2f2f2; 
+}
+
+body.dark-mode .button-8:hover,
+body.dark-mode .button-8:focus {
+  background-color: #3a6ea5; 
+  color: #f2f2f2; 
+}
+
+
+
+
+.dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f467"; 
+  font-size: 35px; 
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+}
+
+
+
+body.dark-mode .dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f3b0"; 
+  font-size: 24px; 
+}
+
+
+
+body.dark-mode .toggle-slider {
+  background-color: #2B2C2E; 
+}
+
+body.dark-mode input:checked + .toggle-slider:before {
+  background-color: #ccc; 
+}
+
+
+body.dark-mode .button-10 {
+  border: 0.1px solid #000000; 
+}
+
+
+body.dark-mode svg text.label {
+    fill: #bcbcbc;
+  }
+
+  body.dark-mode svg text.label {
+    fill: #bcbcbc;
+  }
+
+	
+body.dark-mode .button-1 {
+  background-color: #646464;
+}
+	
+
+#SFctr {
+	font-size: 17px !important;
+}
+
+#SFctr .SFfrm {
+    margin-top: 20px;
+margin-left: 10px;
+}
+	    
+#SFctr td {
+	font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.dark-mode #SFctr td {
+	color: #f3f6f4 !important;
+}
+	    
+#SFctr input[type="text"],
+#SFctr input[type="password"],
+#SFctr input[type="email"] {
+	border-radius: 8px;
+
+}
+
+.similar-table th {
+  padding: 12px 16px;
+}
 
 .league-selector {
   padding: 4px 8px;
@@ -863,31 +1238,6 @@ body.dark-mode .league-selector:focus {
   box-shadow: 0 0 0 2px rgba(48, 98, 251, 0.2);
 }
 	
-
-#SFctr {
-	font-size: 17px !important;
-}
-
-#SFctr .SFfrm {
-    margin-top: 20px;
-margin-left: 10px;
-}
-	    
-#SFctr td {
-	font-family: Arial, Helvetica, sans-serif !important;
-}
-
-body.dark-mode #SFctr td {
-	color: #f3f6f4 !important;
-}
-	    
-#SFctr input[type="text"],
-#SFctr input[type="password"],
-#SFctr input[type="email"] {
-	border-radius: 8px;
-
-}
-
 </style>
 </defs>
 	
@@ -898,1589 +1248,167 @@ body.dark-mode #SFctr td {
 
 
 <body>
-  <div class="container">
-      <div class="search-container">
-        <div class="search-controls">
-          <input type="text" id="searchInput1" class="search-bar" data-i18n="search.placeholder2" placeholder="Enter name of keeper..." />
-          <button id="searchButton1">+</button>
-        </div>
-        <div id="matchingNames"></div>
-      </div>
 
-    <div class="chart-wrapper">
+  <a href="https://datamb.football/proradargk/" target="_self" rel="noopener noreferrer">
+    <button class="button-1" role="button">GK</button></a>
+  <a href="https://datamb.football/proradarcb/" target="_self" rel="noopener noreferrer">
+    <button class="button-2" role="button">CB</button></a>
+  <a href="https://datamb.football/proradarfb/" target="_self" rel="noopener noreferrer">
+    <button class="button-3" role="button">FB</button></a>
+  <a href="https://datamb.football/proradarcm/" target="_self" rel="noopener noreferrer">
+    <button class="button-4" role="button">CM</button></a>
+  <a href="https://datamb.football/proradarfw/" target="_self" rel="noopener noreferrer">
+    <button class="button-5" role="button">FW</button></a>
+  <a href="https://datamb.football/proradarst/" target="_self" rel="noopener noreferrer">
+    <button class="button-6" role="button">ST</button></a>
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()"><div class="toggle-icon"></div></div>
 
-      <div id="resultsTable"></div>
-      
-      <div class="radar-container">
-        
-  <svg class="radar"><g><g class="axisWrapper">
+  <div class="searchcontainer">
+    <input type="text" id="searchInput1" class="search-bar" data-i18n="search.placeholder2" placeholder="Enter name of keeper..." />
+    &nbsp;<input type="button" id="searchButton1" value="+&nbsp;" />
+    </div>
+    <div class="screenshotcontainer">    <button onclick="takeScreenshot()" class="button-10"><div class="icon2"></div></button>
+
+      <div id="matchingNames"></div>
+	<div id="resultsTable"></div>  
+ <br><br>
+  <div class="maxcontainer">
+  <div class="toggle-container">
+    <label class="toggle-label"></label>
+    <label class="toggle-checkbox">
+      <input type="checkbox" id="toggleButton" onclick="toggleFilling()" unchecked>
+      <span class="toggle-slider"></span></label></div></div>
+
+
+  <svg class="radar"><g transform="translate(384.77,306)"><g class="axisWrapper">
   
     <g class="radar_label">
-        <text class="label" data-type="Aerial%" data-idx="0" data-i18n="radar.short" transform="translate(-39.02 -219.79) scale(1.3) rotate(-2)">Short%</text>
+        <text class="label" data-type="Aerial%" data-idx="0" data-i18n="radar.short" transform="translate(-51 -287.3) scale(1.3) rotate(-2)">Short%</text>
     </g>
     <g class="radar_label">
-        <text class="label" data-type="Long%" data-idx="6" data-i18n="radar.long" transform="matrix(0.65, -1.118, 1.118, 0.65, -197.76, -107.66) rotate(5)">Long%</text>
-    </g>
-    
-    <g class="radar_label">
-        <text class="label" data-type="Passes" data-idx="5" data-i18n="radar.passes" transform="matrix(-0.494, -1.209, 1.209, -0.494, -205.28, 83.27) rotate(4.7)">Passes</text>
+        <text class="label" data-type="Long%" data-idx="6" data-i18n="radar.long" transform="matrix(0.65, -1.118, 1.118, 0.65, -258.51, -140.73) rotate(5)">Long%</text>
     </g>
     
     <g class="radar_label">
-        <text class="label" data-type="Exits" data-idx="4" data-i18n="radar.exits" transform="translate(-108.03 208.20) scale(1.3) rotate(20)">Exits</text>
+        <text class="label" data-type="Passes" data-idx="5" data-i18n="radar.passes" transform="matrix(-0.494, -1.209, 1.209, -0.494, -268.34, 108.85) rotate(4.7)">Passes</text>
     </g>
     
     <g class="radar_label">
-        <text class="label" data-type="Aerial" data-idx="3" data-i18n="radar.aerial" transform="translate(94.68 214.38) scale(1.3) rotate(-28)">Aerial</text>
+        <text class="label" data-type="Exits" data-idx="4" data-i18n="radar.exits" transform="translate(-141.21 272.15) scale(1.3) rotate(20)">Exits</text>
     </g>
     
     <g class="radar_label">
-          <text class="label" data-type="Def Actions" data-idx="2" data-i18n="radar.defActions" transform="translate(224.15 0.14) scale(1.3) rotate(99.11)">Def Actions</text>
+        <text class="label" data-type="Aerial" data-idx="3" data-i18n="radar.aerial" transform="translate(123.76 280.24) scale(1.3) rotate(-28)">Aerial</text>
     </g>
     
     <g class="radar_label">
-        <text class="label" data-type="Shotstopping" data-idx="1" data-i18n="radar.shotstopping" transform="translate(140.18 -181.83) scale(1.3) rotate(51.5)">Shot-stopping</text>
+          <text class="label" data-type="Def Actions" data-idx="2" data-i18n="radar.defActions" transform="translate(293 0.19) scale(1.3) rotate(99.11)">Def Actions</text>
+    </g>
+    
+    <g class="radar_label">
+        <text class="label" data-type="Shotstopping" data-idx="1" data-i18n="radar.shotstopping" transform="translate(183.25 -237.68) scale(1.3) rotate(51.5)">Shot-stopping</text>
     </g>
     
   
   
 
-<circle class="blackCircle" r="214.2" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
-<circle class="gridCircle" r="214.2" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
-<circle class="gridCircle" r="171.36" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
-<circle class="gridCircle" r="128.52" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
-<circle class="gridCircle" r="85.68" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
-<circle class="gridCircle" r="42.84" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
+<circle class="blackCircle" r="280" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
+<circle class="gridCircle" r="280" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="224" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="168" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="112" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+<circle class="gridCircle" r="56" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
 
 
 
 
-<line x1="0" y1="0" x2="10.49" y2="213.6" stroke="#D3D3D3" stroke-width="1" transform="translate(-10.49, -213.6)"></line>
-<line x1="0" y1="0" x2="-159.81" y2="142.2" stroke="#D3D3D3" stroke-width="1" transform="translate(159.81, -142.2)"></line>
-<line x1="0" y1="0" x2="-210.79" y2="-36.31" stroke="#D3D3D3" stroke-width="1" transform="translate(210.79, 36.31)"></line>
-<line x1="0" y1="0" x2="-103.58" y2="-187.73" stroke="#D3D3D3" stroke-width="1" transform="translate(103.58, 187.73)"></line>
-<line x1="0" y1="0" x2="82.11" y2="-197.6" stroke="#D3D3D3" stroke-width="1" transform="translate(-82.11, 197.6)"></line>
-<line x1="1" y1="-2" x2="205.63" y2="-59.3" stroke="#D3D3D3" stroke-width="1" transform="translate(-205.63, 59.3)"></line>
-<line x1="0" y1="0" x2="174.15" y2="123.75" stroke="#D3D3D3" stroke-width="1" transform="translate(-174.15, -123.75)"></line>
+<line x1="0" y1="0" x2="13.72129" y2="279.2078525386" stroke="#D3D3D3" stroke-width="1" transform="translate(-13.72129, -279.2078525386)"></line>
+
+<line x1="0" y1="0" x2="-208.90866346666665" y2="185.88209152" stroke="#D3D3D3" stroke-width="1" transform="translate(208.90866346666665, -185.88209152)"></line>
+<line x1="0" y1="0" x2="-275.54098612266664" y2="-47.46205429333333" stroke="#D3D3D3" stroke-width="1" transform="translate(275.54098612266664, 47.46205429333333)"></line>
+<line x1="0" y1="0" x2="-135.39802988666668" y2="-245.39663354666668" stroke="#D3D3D3" stroke-width="1" transform="translate(135.39802988666668, 245.39663354666668)"></line>
+<line x1="0" y1="0" x2="107.32792554666666" y2="-258.3098914133333" stroke="#D3D3D3" stroke-width="1" transform="translate(-107.32792554666666, 258.3098914133333)"></line>
+<line x1="1" y1="-2" x2="268.7987482368" y2="-77.51274343679999" stroke="#D3D3D3" stroke-width="1" transform="translate(-268.7987482368, 77.51274343679999)"></line>
+
+<line x1="0" y1="0" x2="227.65277226666667" y2="161.769853039" stroke="#D3D3D3" stroke-width="1" transform="translate(-227.65277226666667, -161.769853039)"></line>
 
   <g class="radarWrapper"></g>
-  </g></g>
-        </svg>
-      </div>
-      <div id="insertHere"></div>
-
+  </g></g>    
+  <div id="insertHere"></div>
+</div>
+<script>
       
-      <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color); opacity: 0.5;">
-      
-      <div class="toggle-controls">
-        <div class="toggle-container">
-          <label class="toggle-label"></label>
-          <label class="toggle-checkbox">
-            <input type="checkbox" id="toggleButton" onclick="toggleFilling()" unchecked>
-            <span class="toggle-slider"></span>
-          </label>
-        </div>
-        <div class="position-switcher-container">
-          <span class="position-link active" style="user-select: none;">
-              <span>GK</span>
-          </span>
-          <a href="https://datamb.football/proradarcb/" target="_self" rel="noopener noreferrer" class="position-link">
-              <span>CB</span>
-          </a>
-          <a href="https://datamb.football/proradarfb/" target="_self" rel="noopener noreferrer" class="position-link">
-              <span>FB</span>
-          </a>
-          <a href="https://datamb.football/proradarcm/" target="_self" rel="noopener noreferrer" class="position-link">
-              <span>CM</span>
-          </a>
-          <a href="https://datamb.football/proradarfw/" target="_self" rel="noopener noreferrer" class="position-link">
-              <span>FW</span>
-          </a>
-          <a href="https://datamb.football/proradarst/" target="_self" rel="noopener noreferrer" class="position-link">
-              <span>ST</span>
-          </a>
-      
-    </div>
-        
-        <button onclick="takeScreenshot()" class="btn btn-outline btn-icon"><iconify-icon icon="ion:camera" style="color: var(--text-color); font-size: 18px;"></iconify-icon></button>
-      </div>
-      
-    </div>
-  </div>
-      
-  
-  <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-    <div class="toggle-icon"></div>
-  </div>
-
-  <script>
-      
-
-
-
-    const allData1 = [];
-    const allData2 = [];
-    const allData3 = [];
-    const allData4 = [];
-    const allData5 = [];
-    const allData6 = [];
-    const allData7 = [];
-  
-      let allDataAsString = '';
-      
-      
-  
-          
-          const urls1 = [
-          'https://datamb.football/database/CURRENT/RATOP72425/GK/GK.xlsx',
-      
-      ];
-      
-      const urls2 = [
-          'https://datamb.football/database/CURRENT/RAPRO2425/GK/GK.xlsx',
-      'https://datamb.football/database/CURRENT/RAPRO2025/GK/GK.xlsx',
-      ];
-      
-      const urls3 = [
-      'https://datamb.football/database/OLD/RATOP72324/GK/GK.xlsx',
-  
-      
-      
-      ];
-      
-      const urls4 = [
-      'https://datamb.football/database/OLD/RAPRO2324/GK/GK.xlsx',
-      'https://datamb.football/database/OLD/RAPRO2024/GK/GK.xlsx',
-  
-      
-      ];
-      
-      const urls5 = [
-  
-      'https://datamb.football/database/OLD/RATOP72223/GK/GK.xlsx',
-  
-      
-      ];
-      const urls6 = [
-  
-  
-      'https://datamb.football/database/OLD/RAPRO2223/GK/GK.xlsx',
-      'https://datamb.football/database/OLD/RAPRO2023/GK/GK.xlsx',
-      'https://datamb.football/database/OLD/RAPRO2022/GK/GK.xlsx',
-  
-      
-          ]
-  
-          const urls7 = [
-  
-      
-          'https://datamb.football/database/OLD/RATOP72122/GK/GK.xlsx',
-  
-          
-              ]
-    
-      
-  
-  
-              const fetchPromises1 = urls1.map(url => fetch(url).then(response => response.arrayBuffer()));
-              const fetchPromises2 = urls2.map(url => fetch(url).then(response => response.arrayBuffer()));
-              const fetchPromises3 = urls3.map(url => fetch(url).then(response => response.arrayBuffer()));
-                  const fetchPromises4 = urls4.map(url => fetch(url).then(response => response.arrayBuffer()));
-                  const fetchPromises5 = urls5.map(url => fetch(url).then(response => response.arrayBuffer()));
-                  const fetchPromises6 = urls6.map(url => fetch(url).then(response => response.arrayBuffer()));
-                  const fetchPromises7 = urls7.map(url => fetch(url).then(response => response.arrayBuffer()));
-              
-                  function processAndStoreData1(dataArray) {
-                      // Unique ID counter
-                      let uniqueIdCounter = 1;
-                  
-                                       dataArray.forEach((data, urlIndex) => {
-                          const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                          const sheetName = workbook.SheetNames[0];
-                          const sheet = workbook.Sheets[sheetName];
-                          const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                  
-                          const currentUrl = urls1[urlIndex];
-                          let seasonSuffix = '24/25'; // Default
-                          const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                          if (proMatch) {
-                              seasonSuffix = '20' + proMatch[1];
-                          }
-                           const dataWithoutHeader = jsonData.slice(1);
-                  
-                          // Perform transformations and add unique ID
-                          dataWithoutHeader.forEach(row => {
-                              // Generate unique ID and shift columns
-                              row.unshift(`${uniqueIdCounter++}`);
-                  
-                              // Shift columns as needed
-              
-                                    row.splice(12, 0, row.splice(4, 1)[0]);
-                                    row.splice(7, 0, row.splice(11, 1)[0]);
-                                    row.splice(9, 0, row.splice(10, 1)[0]);
-                                    row.splice(16, 1);
-                                    row[15] = `${row[1]} ${seasonSuffix}`;
-                  
-                                    const reorderedRow = [
-                                    row[0],
-                                    row[15],
-                                    row[2],
-                                    row[3],
-                                    row[4],
-                                    row[5],
-                                    row[11],
-                                    row[6],
-                                    row[10],
-                                    row[8],
-                                    row[9],
-                                    row[7]
-                                ];
-                              allData1.push(reorderedRow);
-              
-                          });
-                      });
-                  
-              
-                      // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                      const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                      const columnValues = columnsToConvert.map(col => allData1.map(row => parseFloat(row[col])));
-                  
-                      // Calculate percentiles
-                      const percentiles = columnValues.map(values => {
-                          const sorted = [...values].sort((a, b) => a - b);
-                          return values.map(value => {
-                              const rank = sorted.indexOf(value) + 1;
-                              return (rank / sorted.length);
-                          });
-                      });
-                  
-                      // Replace original values with percentiles
-                      allData1.forEach((row, rowIndex) => {
-                          columnsToConvert.forEach((col, colIndex) => {
-                              row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                          });
-                      });
-                  }
-              
-                  function processAndStoreData2(dataArray) {
-                      // Unique ID counter
-                      let uniqueIdCounter = 1;
-                  
-                                       dataArray.forEach((data, urlIndex) => {
-                          const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                          const sheetName = workbook.SheetNames[0];
-                          const sheet = workbook.Sheets[sheetName];
-                          const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                  
-                          const currentUrl = urls2[urlIndex];
-                          let seasonSuffix = '24/25'; // Default
-                          const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                          if (proMatch) {
-                              seasonSuffix = '20' + proMatch[1];
-                          }
-                          const dataWithoutHeader = jsonData.slice(1);
-                  
-                          // Perform transformations and add unique ID
-                          dataWithoutHeader.forEach(row => {
-                              // Generate unique ID and shift columns
-                              row.unshift(`${uniqueIdCounter++}`);
-                  
-                              // Shift columns as needed
-              
-                                    row.splice(12, 0, row.splice(4, 1)[0]);
-                                    row.splice(7, 0, row.splice(11, 1)[0]);
-                                    row.splice(9, 0, row.splice(10, 1)[0]);
-                                    row.splice(16, 1);
-                                    row[15] = `${row[1]} ${seasonSuffix}`;
-              
-                                    const reorderedRow = [
-                                    row[0],
-                                    row[15],
-                                    row[2],
-                                    row[3],
-                                    row[4],
-                                    row[5],
-                                    row[11],
-                                    row[6],
-                                    row[10],
-                                    row[8],
-                                    row[9],
-                                    row[7]
-                                ];
-                  
-                              allData2.push(reorderedRow);
-                          });
-                      });
-                  
-                      // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                      const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                      const columnValues = columnsToConvert.map(col => allData2.map(row => parseFloat(row[col])));
-                  
-                      // Calculate percentiles
-                      const percentiles = columnValues.map(values => {
-                          const sorted = [...values].sort((a, b) => a - b);
-                          return values.map(value => {
-                              const rank = sorted.indexOf(value) + 1;
-                              return (rank / sorted.length);
-                          });
-                      });
-                  
-                      // Replace original values with percentiles
-                      allData2.forEach((row, rowIndex) => {
-                          columnsToConvert.forEach((col, colIndex) => {
-                              row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                          });
-                      });
-                  }
-              
-                  function processAndStoreData3(dataArray) {
-                    // Unique ID counter
-                    let uniqueIdCounter = 1;
-                
-                                     dataArray.forEach((data, urlIndex) => {
-                        const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                        const sheetName = workbook.SheetNames[0];
-                        const sheet = workbook.Sheets[sheetName];
-                        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                
-                        const currentUrl = urls3[urlIndex];
-                        let seasonSuffix = '23/24'; // Default
-                        const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                        if (proMatch) {
-                            seasonSuffix = '20' + proMatch[1];
-                        }
-                        
-                        const dataWithoutHeader = jsonData.slice(1);
-                
-                        // Perform transformations and add unique ID
-                        dataWithoutHeader.forEach(row => {
-                            // Generate unique ID and shift columns
-                            row.unshift(`${uniqueIdCounter++}`);
-                
-                            // Shift columns as needed
-              
-                                row.splice(12, 0, row.splice(4, 1)[0]);
-                                row.splice(7, 0, row.splice(11, 1)[0]);
-                                row.splice(9, 0, row.splice(10, 1)[0]);
-                                row.splice(16, 1);
-                                row[15] = `${row[1]} ${seasonSuffix}`;
-              
-                                const reorderedRow = [
-                                row[0],
-                                row[15],
-                                row[2],
-                                row[3],
-                                row[4],
-                                row[5],
-                                row[11],
-                                row[6],
-                                row[10],
-                                row[8],
-                                row[9],
-                                row[7]
-                            ];
-                
-                            allData3.push(reorderedRow);
-                        });
-                    });
-                
-                    // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                    const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                    const columnValues = columnsToConvert.map(col => allData3.map(row => parseFloat(row[col])));
-                
-                    // Calculate percentiles
-                    const percentiles = columnValues.map(values => {
-                        const sorted = [...values].sort((a, b) => a - b);
-                        return values.map(value => {
-                            const rank = sorted.indexOf(value) + 1;
-                            return (rank / sorted.length);
-                        });
-                    });
-                
-                    // Replace original values with percentiles
-                    allData3.forEach((row, rowIndex) => {
-                        columnsToConvert.forEach((col, colIndex) => {
-                            row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                        });
-                    });
-                }
-                function processAndStoreData4(dataArray) {
-                  // Unique ID counter
-                  let uniqueIdCounter = 1;
-              
-                                   dataArray.forEach((data, urlIndex) => {
-                      const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                      const sheetName = workbook.SheetNames[0];
-                      const sheet = workbook.Sheets[sheetName];
-                      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-              
-                      const currentUrl = urls4[urlIndex];
-                      let seasonSuffix = '23/24'; // Default
-                      const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                      if (proMatch) {
-                          seasonSuffix = '20' + proMatch[1];
-                      }
-                      const dataWithoutHeader = jsonData.slice(1);
-              
-                      // Perform transformations and add unique ID
-                      dataWithoutHeader.forEach(row => {
-                          // Generate unique ID and shift columns
-                          row.unshift(`${uniqueIdCounter++}`);
-              
-                          // Shift columns as needed
-                            row.splice(12, 0, row.splice(4, 1)[0]);
-                            row.splice(7, 0, row.splice(11, 1)[0]);
-                            row.splice(9, 0, row.splice(10, 1)[0]);
-                            row.splice(16, 1);
-                            row[15] = `${row[1]} ${seasonSuffix}`;
-              
-              
-              
-                            const reorderedRow = [
-                                row[0],
-                                row[15],
-                                row[2],
-                                row[3],
-                                row[4],
-                                row[5],
-                                row[11],
-                                row[6],
-                                row[10],
-                                row[8],
-                                row[9],
-                                row[7]
-                            ];
-              
-                          allData4.push(reorderedRow);
-                      });
-                  });
-              
-                  // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                  const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                  const columnValues = columnsToConvert.map(col => allData4.map(row => parseFloat(row[col])));
-              
-                  // Calculate percentiles
-                  const percentiles = columnValues.map(values => {
-                      const sorted = [...values].sort((a, b) => a - b);
-                      return values.map(value => {
-                          const rank = sorted.indexOf(value) + 1;
-                          return (rank / sorted.length);
-                      });
-                  });
-              
-                  // Replace original values with percentiles
-                  allData4.forEach((row, rowIndex) => {
-                      columnsToConvert.forEach((col, colIndex) => {
-                          row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                      });
-                  });
-              }
-              function processAndStoreData5(dataArray) {
-                // Unique ID counter
-                let uniqueIdCounter = 1;
-              
-                                 dataArray.forEach((data, urlIndex) => {
-                    const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                    const sheetName = workbook.SheetNames[0];
-                    const sheet = workbook.Sheets[sheetName];
-                    const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-              
-                    const currentUrl = urls5[urlIndex];
-                    let seasonSuffix = '22/23'; // Default
-                    const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                    if (proMatch) {
-                        seasonSuffix = '20' + proMatch[1];
-                    }
-                    const dataWithoutHeader = jsonData.slice(1);
-              
-                    // Perform transformations and add unique ID
-                    dataWithoutHeader.forEach(row => {
-                        // Generate unique ID and shift columns
-                        row.unshift(`${uniqueIdCounter++}`);
-              
-                        // Shift columns as needed
-              
-                        row.splice(12, 0, row.splice(4, 1)[0]);
-                        row.splice(7, 0, row.splice(11, 1)[0]);
-                        row.splice(9, 0, row.splice(10, 1)[0]);
-                        row.splice(16, 1);
-                        row[15] = `${row[1]} ${seasonSuffix}`;
-                        row[3] = row[3] - 1;
-              
-                        const reorderedRow = [
-                        row[0],
-                        row[15],
-                        row[2],
-                        row[3],
-                        row[4],
-                        row[5],
-                        row[11],
-                        row[6],
-                        row[10],
-                        row[8],
-                        row[9],
-                        row[7]
-                    ];
-              
-                        allData5.push(reorderedRow);
-                    });
-                });
-              
-                
-              
-                // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                const columnValues = columnsToConvert.map(col => allData5.map(row => parseFloat(row[col])));
-              
-                // Calculate percentiles
-                const percentiles = columnValues.map(values => {
-                    const sorted = [...values].sort((a, b) => a - b);
-                    return values.map(value => {
-                        const rank = sorted.indexOf(value) + 1;
-                        return (rank / sorted.length);
-                    });
-                });
-              
-                // Replace original values with percentiles
-                allData5.forEach((row, rowIndex) => {
-                    columnsToConvert.forEach((col, colIndex) => {
-                        row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                    });
-                });
-              }
-              
-              
-              function processAndStoreData6(dataArray) {
-                // Unique ID counter
-                let uniqueIdCounter = 1;
-              
-                                 dataArray.forEach((data, urlIndex) => {
-                    const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                    const sheetName = workbook.SheetNames[0];
-                    const sheet = workbook.Sheets[sheetName];
-                    const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-              
-                    const currentUrl = urls6[urlIndex];
-                    let seasonSuffix = '22/23'; // Default
-                    const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                    if (proMatch) {
-                        seasonSuffix = '20' + proMatch[1];
-                    }
-                     const dataWithoutHeader = jsonData.slice(1);
-              
-                    // Perform transformations and add unique ID
-                    dataWithoutHeader.forEach(row => {
-                        // Generate unique ID and shift columns
-                        row.unshift(`${uniqueIdCounter++}`);
-              
-                        // Shift columns as needed
-              
-                        row.splice(12, 0, row.splice(4, 1)[0]);
-                        row.splice(7, 0, row.splice(11, 1)[0]);
-                        row.splice(9, 0, row.splice(10, 1)[0]);
-                        row.splice(16, 1);
-                        row[15] = `${row[1]} ${seasonSuffix}`;
-                        row[3] = row[3] - 1;
-              
-                        const reorderedRow = [
-                        row[0],
-                        row[15],
-                        row[2],
-                        row[3],
-                        row[4],
-                        row[5],
-                        row[11],
-                        row[6],
-                        row[10],
-                        row[8],
-                        row[9],
-                        row[7]
-                    ];
-              
-                        allData6.push(reorderedRow);
-                    });
-                });
-              
-                
-                
-              
-                // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                const columnValues = columnsToConvert.map(col => allData6.map(row => parseFloat(row[col])));
-              
-                // Calculate percentiles
-                const percentiles = columnValues.map(values => {
-                    const sorted = [...values].sort((a, b) => a - b);
-                    return values.map(value => {
-                        const rank = sorted.indexOf(value) + 1;
-                        return (rank / sorted.length);
-                    });
-                });
-              
-                // Replace original values with percentiles
-                allData6.forEach((row, rowIndex) => {
-                    columnsToConvert.forEach((col, colIndex) => {
-                        row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                    });
-                });
-              }
-              
-              function processAndStoreData7(dataArray) {
-                // Unique ID counter
-                let uniqueIdCounter = 1;
-              
-                                 dataArray.forEach((data, urlIndex) => {
-                    const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-                    const sheetName = workbook.SheetNames[0];
-                    const sheet = workbook.Sheets[sheetName];
-                    const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-              
-                    const currentUrl = urls7[urlIndex];
-                    let seasonSuffix = '21/22'; // Default
-                    const proMatch = currentUrl.match(/PRO20(\d{2})/);
-                    if (proMatch) {
-                        seasonSuffix = '20' + proMatch[1];
-                    }
-                     const dataWithoutHeader = jsonData.slice(1);
-              
-                    // Perform transformations and add unique ID
-                    dataWithoutHeader.forEach(row => {
-                        // Generate unique ID and shift columns
-                        row.unshift(`${uniqueIdCounter++}`);
-              
-                        // Shift columns as needed
-              
-                        row.splice(12, 0, row.splice(4, 1)[0]);
-                        row.splice(7, 0, row.splice(11, 1)[0]);
-                        row.splice(9, 0, row.splice(10, 1)[0]);
-                        row.splice(16, 1);
-                        row[15] = `${row[1]} ${seasonSuffix}`;
-                        row[3] = row[3] - 2;
-              
-              
-              
-                        const reorderedRow = [
-                        row[0],
-                        row[15],
-                        row[2],
-                        row[3],
-                        row[4],
-                        row[5],
-                        row[11],
-                        row[6],
-                        row[10],
-                        row[8],
-                        row[9],
-                        row[7]
-                    ];
-              
-                        allData7.push(reorderedRow);
-                    });
-                });
-              
-                
-                
-              
-                // Extract values from columns 4, 5, 6, 7, 8, 9, and 10
-                const columnsToConvert = [4, 5, 6, 7, 8, 9, 10];
-                const columnValues = columnsToConvert.map(col => allData7.map(row => parseFloat(row[col])));
-              
-                // Calculate percentiles
-                const percentiles = columnValues.map(values => {
-                    const sorted = [...values].sort((a, b) => a - b);
-                    return values.map(value => {
-                        const rank = sorted.indexOf(value) + 1;
-                        return (rank / sorted.length);
-                    });
-                });
-              
-                // Replace original values with percentiles
-                allData7.forEach((row, rowIndex) => {
-                    columnsToConvert.forEach((col, colIndex) => {
-                        row[col] = percentiles[colIndex][rowIndex].toFixed(3);
-                    });
-                });
-              }
-                  
-                  Promise.all(fetchPromises1)
-                      .then(responses => {
-                          processAndStoreData1(responses);
-                          // Fetch and process the remaining files
-                          Promise.all(fetchPromises2)
-                              .then(responses2 => {
-                                  processAndStoreData2(responses2);
-                  
-                                  Promise.all(fetchPromises3)
-                                  .then(responses3 => {
-                                      processAndStoreData3(responses3);
-                                      Promise.all(fetchPromises4)
-                                      .then(responses4 => {
-                                          processAndStoreData4(responses4);
-                                          Promise.all(fetchPromises5)
-                                          .then(responses5 => {
-                                              processAndStoreData5(responses5);
-                                              Promise.all(fetchPromises6)
-                                              .then(responses6 => {
-                                                  processAndStoreData6(responses6);
-                                                  Promise.all(fetchPromises7)
-                                                  .then(responses7 => {
-                                                      processAndStoreData7(responses7);
-              
-                                  // Concatenate intermediate data with new data
-                                  const finalData = allData1.concat(allData2).concat(allData3).concat(allData4).concat(allData5).concat(allData6).concat(allData7);
-                  
-                                  // Reset and assign new unique IDs
-                                  finalData.forEach((row, index) => {
-                                      row[0] = `${index + 1}`;
-                                  });
-                                  
-                                  finalData.forEach(row => {
-                                      allDataAsString += row.join(',') + '\n';
-                                  });
-                  
-                  
-                                  const inputLines = allDataAsString.trim().split('\n');
-                  const outputLines = [];
-              
-              // Process each line
-              for (const line of inputLines) {
-                  // Split the line by comma
-                const parts = line.split(',');
-              
-                // Extract the desired fields
-                const name = parts[1];
-                const age = parts[3];
-                const club = parts[2];
-              
-                // Create the formatted string
-                const outputLine = `${name},${age},${club}`;
-              
-                // Add the formatted string to the output array
-                outputLines.push(outputLine);
-              }
-              
-              
-              
-                  const names = outputLines;
-                      const searchInput = document.getElementById('searchInput1');
-                      searchInput.setAttribute("autocomplete", "off");
-               const matchingNamesContainer = document.getElementById("matchingNames");
-              const searchButton = document.getElementById("searchButton");
-              
-              
-              
-              
-              function isMobileDevice() {
-                const userAgent = navigator.userAgent;
-                return /Android|iPhone/i.test(userAgent);
-              }
-              
-              function updateMatchingNames() {
-                const searchQuery = removeSpecialChars(searchInput.value.toLowerCase());
-              
-                // Preprocess searchQuery once
-                const searchQueryNormalized = removeSpecialChars(searchQuery);
-              
-                // Filter names and teams efficiently
-                const matchingNames = names.filter(name => {
-                  const [fullName, team, age] = name.split(",");
-                  const normalizedFullName = removeSpecialChars(fullName.toLowerCase());
-                  const normalizedTeam = removeSpecialChars(team.toLowerCase());
-              
-                  // Check if both fullName and team match the query
-                  return normalizedFullName.includes(searchQueryNormalized) || normalizedTeam.includes(searchQueryNormalized);
-                });
-              
-                matchingNamesContainer.innerHTML = "";
-              
-                if (searchQuery === "" || matchingNames.length === 0) {
-                  matchingNamesContainer.style.display = "none";
-                  return;
-                }
-              
-                matchingNames.forEach(name => {
-                  const [fullName, team, age] = name.split(",");
-              
-                  const nameElement = document.createElement("div");
-                  nameElement.classList.add("name");
-              
-                  nameElement.innerHTML = `
-                  <span class="fullName">${fullName}</span>
-                  <span class="age"> (${age}, </span>
-                  <span class="team">${team})</span>
-                `;
-                
-                  // Add event listener to handle selection
-                  nameElement.addEventListener("click", () => {
-                    searchInput.value = fullName + "," + team + "," + age; // Set full query as input value
-                    const enterKeyEvent = new KeyboardEvent("keyup", { key: "Enter" });
-                    searchInput.dispatchEvent(enterKeyEvent); // Dispatch Enter key event
-                  });
-              
-
-                  matchingNamesContainer.appendChild(nameElement);
-                              });
-                            
-                              if (searchQuery === "" && matchingNames.length === 0) {
-                                matchingNamesContainer.style.display = "none";
-                              } else {
-                                const searchInputWidth = searchInput.offsetWidth;
-                                matchingNamesContainer.style.display = "block";
-                                matchingNamesContainer.style.padding = "8px";
-                                matchingNamesContainer.style.position = "relative";
-                                matchingNamesContainer.style.zIndex = "9999"; // Set a high z-index value
-                                matchingNamesContainer.style.width = searchInputWidth + "px";
-                                matchingNamesContainer.style.maxHeight = "267px"; // Limit height for long lists
-                                matchingNamesContainer.style.overflowY = "auto"; // Enable scrolling if content exceeds height
-                          
-                                matchingNamesContainer.style.border = "1px solid #e0e0e0"; // Light gray border
-                              }
-                             
-                              if (searchQuery === "") {
-                                matchingNamesContainer.style.display = "none";
-                              }
-                            }
-              
-              searchInput.addEventListener("input", updateMatchingNames);
-              searchInput.addEventListener("keyup", function(event) {
-                if (event.key === "Enter") {
-                  searchButton1.click(); // Trigger the search button click event
-                } else if (event.key === "Backspace") {
-                  updateMatchingNames();
-                }
-              });
-                  
-              const csvData = allDataAsString;
-              let dataArray = csvData.trim().split('\n').map(line => line.split(','));
-              
-              
-              
-                          function calculateEuclideanDifference(data1, data2) {
-                            let difference = 0;
-                            for (let i = 4; i <= 10; i++) {
-                              const metric1 = parseFloat(data1[i]);
-                              const metric2 = parseFloat(data2[i]);
-                              difference += Math.pow(metric1 - metric2, 2);
-                            }
-                            return Math.sqrt(difference);
-                          }
-                          
-                          
-                          const colorClasses = ['result-color-1', 'result-color-2', 'result-color-3', 'result-color-4', 'result-color-5', 'result-color-6', 'result-color-7', 'result-color-8', 'result-color-9', 'result-color-10', 'result-color-11', 'result-color-12', 'result-color-13', 'result-color-14', 'result-color-15', 'result-color-16', 'result-color-17', 'result-color-18', 'result-color-19', 'result-color-20', 'result-color-21', 'result-color-22', 'result-color-23', 'result-color-24', 'result-color-25', 'result-color-26', 'result-color-27', 'result-color-28', 'result-color-29', 'result-color-30', 'result-color-31', 'result-color-32', 'result-color-33', 'result-color-34', 'result-color-35', 'result-color-36', 'result-color-37'];
-                          
-                          let searchResults = []; // Declare the search results variable
-                          
-                          function removeSpecialChars(str) {
-                            return str.normalize('NFD').replace(/[\u0300-\u036f\s]/g, '') 
-                            .replace(/Ø/g, 'O')
-                            .replace(/ø/g, 'o')
-                            .replace(/ı/g, 'i');
-                          }
-                          
-                          function search(query) {
-                            const queryParts = query.split(',').map(part => part.trim()); // Split the query by commas and trim whitespace
-                            const name = queryParts[0]; // Extract the name part
-                            let age, team;
-                            
-                            // Extract age and team if they exist
-                            if (queryParts.length > 1) {
-                              age = queryParts[1].trim(); // Trim any leading or trailing spaces
-                              if (queryParts.length > 2) {
-                                team = queryParts[2].trim(); // Trim any leading or trailing spaces
-                              }
-                            }
-                          
-                          
-                            const results = dataArray.filter(data => {
-                              const normalizedName = removeSpecialChars(data[1].toLowerCase());
-                              const normalizedTeam = removeSpecialChars(data[2].toLowerCase());
-                              const normalizedAge = data[3].trim().toLowerCase(); // Trim any leading or trailing spaces
-                          
-                              // Check if the name matches
-                              const nameMatches = normalizedName.includes(removeSpecialChars(name.toLowerCase()));
-                          
-                              // Check if the age matches (or if age is not provided)
-                              const ageMatches = !age || normalizedAge === removeSpecialChars(age.toLowerCase());
-                          
-                              // Check if the team matches (or if team is not provided)
-                              const teamMatches = !team || normalizedTeam === removeSpecialChars(team.toLowerCase());
-                          
-                              // Return true if name matches and either age or team matches
-                              return nameMatches && ageMatches && teamMatches;
-                            });
-                          
-                            return results;
-                          }
-                          
-                          function createTable(teamName, teamIndex, color) {
-        const resultsTable = document.getElementById('resultsTable');
-        const headerNames = [
-        '',
-        '<span data-i18n="table.percentiles">Percentiles</span>',
-        '',
-        '<span data-i18n="table.age">Age</span>',
-        '<span data-i18n="table.defActions">Def Actions</span>',
-        '<span data-i18n="table.aerial">Aerials</span>',
-        '<span data-i18n="table.exits">Exits</span>',
-        '<span data-i18n="table.passes">Passes</span>',
-        '<span data-i18n="table.long">Long%</span>',
-        '<span data-i18n="table.short">Short%</span>',
-        '<span data-i18n="table.shotstopping">PSxG-GA</span>',
-        '<span data-i18n="table.minutes">Minutes played</span>',
-    ];
-    
-    
-      
-      
-        // Check if table headers exist
-        const headersExist = resultsTable.querySelector('th') !== null;
-      
-        const table = headersExist ? resultsTable.querySelector('table') : document.createElement('table');
-        table.classList.add('metrics-table');
-      
-        if (!headersExist) {
-          // Create the table header
-          const headerRow = document.createElement('tr');
-         
-      for (let i = 1; i < headerNames.length; i++) {
-        const th = document.createElement('th');
-        th.innerHTML = headerNames[i];
-        // Set specific widths for columns
-        if (i === 1) {
-          th.style.width = '18%'; // Name column gets more space
-          th.style.textAlign = 'center'; // Center align the header
-        } else if (i === 3) {
-          th.style.width = '7%'; // Numeric columns get less space
-        }
-        else if (i === 2) {
-          th.style.width = '10%'; // Numeric columns get less space
-          
-        }
-        headerRow.appendChild(th);
-      }
-      // Add a separate table header for the "x" column
-      const xHeader = document.createElement('th');
-      xHeader.textContent = '';
-      xHeader.style.width = '4%'; // X column gets minimal space
-      headerRow.appendChild(xHeader);
-          table.appendChild(headerRow);
-        }
-      
-      
-      
-      const teamData = dataArray[teamIndex];
-      const dataRow = document.createElement('tr');
-      for (let i = 1; i < teamData.length; i++) {
-        const td = document.createElement('td');
-        if (i >= 4 && i <= 10) {
-          const value = parseFloat(teamData[i]) * 100;
-          td.textContent = value.toFixed(1);
-          td.style.fontWeight = '500'; // Make percentile values slightly bolder
-        } else {
-          td.textContent = teamData[i];
-        }
-        td.classList.add(color);
-        
-        // Apply special styling to the first cell (name column)
-        if (i === 1) {
-          td.style.textAlign = 'center'; /* Center align the text */
-          td.style.whiteSpace = 'normal'; /* Allow text to wrap */
-          td.style.overflow = 'visible';
-          td.style.textOverflow = 'clip';
-          td.style.minHeight = '50px'; /* Increase minimum height */
-          td.style.height = 'auto';
-          td.style.verticalAlign = 'top';
-          
-          // Format the name cell to display name and team more clearly
-          const nameText = teamData[i];
-          
-          // Parse the player information from the name string
-          // Format: "Player Name 24/25 (Team, Age) - Minutes min"
-          const nameMatch = nameText.match(/(.*?)\s+(\d+\/\d+)\s+\((.*?),\s+(.*?)\)\s+-\s+(\d+)\s+min/);
-          
-          if (nameMatch) {
-            const playerName = nameMatch[1];
-            const season = nameMatch[2];
-            const team = nameMatch[3];
-            const age = nameMatch[4];
-            
-            // Create a formatted display with better spacing and centered content
-            td.innerHTML = `
-              <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 4px; align-items: center; text-align: center;">
-                <div style="font-weight: 600; font-size: 13px;">${playerName}</div>
-                <div style="color: #777; font-size: 11px; margin-top: 2px;">${team}, ${age} <span style="opacity: 0.8;">${season}</span></div>
-              </div>
-            `;
-          }
-        }
-        if (i === 2) {
-          td.style.whiteSpace = 'normal'; /* Allow text to wrap */
-
-
-
-        }
-
-        
-        // Apply special styling to the minutes column
-        if (i === 11) {
-          td.style.fontSize = '11px';
-          td.style.color = '#777';
-        }
-        
-        dataRow.appendChild(td);
-      }
-      
-      // Add a separate table cell for the "x" column
-      const xCell = document.createElement('td');
-      const xButton = document.createElement('button');
-      xButton.textContent = 'x';
-      xButton.style.backgroundColor = 'transparent';
-      xButton.style.border = 'none';
-      xButton.style.color = '#999';
-      xButton.style.fontSize = '14px';
-      xButton.style.cursor = 'pointer';
-      xButton.style.width = '4px';
-      xButton.style.height = '24px';
-      xButton.style.borderRadius = '50%';
-      xButton.style.display = 'flex';
-      xButton.style.alignItems = 'center';
-      xButton.style.justifyContent = 'center';
-      xButton.style.transition = 'all 0.2s';
-      
-      xButton.addEventListener('click', function () {
-        dataRow.remove(); // Remove the corresponding row from the table
-        const radarPolygons = document.querySelectorAll(`.radarPolygon.${color}`);
-        const radarLines = document.querySelectorAll(`.radarLines.${color}`);
-        const radarCircles = document.querySelectorAll(`.radarCircle.${color}`);
-      
-        radarPolygons.forEach((polygon) => polygon.remove()); // Remove radar polygons with the specified color
-        radarLines.forEach((line) => line.remove()); // Remove radar lines with the specified color
-        radarCircles.forEach((circle) => circle.remove()); // Remove radar circles with the specified color
-        const remainingRows = document.querySelectorAll('.metrics-table tr:not(:first-child)');
-
-    
-        if (remainingRows.length > 0) {
-            const lastRow = remainingRows[remainingRows.length - 1];
-            const lastPlayerName = lastRow.firstChild.textContent.split(',')[0];
-            const lastPlayerData = dataArray.find(player => player[1] === lastPlayerName);
-            if (lastPlayerData) {
-                updateSimilarPlayers(lastPlayerData);
-            }
-        } else {
-            const similarPlayersContainer = document.getElementById('similarPlayersContainer');
-            if (similarPlayersContainer) {
-                similarPlayersContainer.innerHTML = '';
-            }
-        }
-      });
-      
-      xCell.appendChild(xButton);
-      dataRow.appendChild(xCell);
-      
-      table.appendChild(dataRow);
-      
-        if (!headersExist) {
-          resultsTable.appendChild(table);
-        }
-                          
-                          
-                            const combResults = dataArray[teamIndex].join(', ');
-                          
-                            const outerRadius = 214.2;
-                            const center = [0, 0];
-                            const angles = [
-                              0,
-                              (2 * Math.PI) / 7,
-                              (4 * Math.PI) / 7,
-                              (6 * Math.PI) / 7,
-                              (8 * Math.PI) / 7,
-                              (10 * Math.PI) / 7,
-                              (12 * Math.PI) / 7
-                            ];
-                          
-                            function axisValueToCartesian(axis, value) {
-                              let angle = angles[axis - 1];
-                              angle += (2 * Math.PI / 7) * 0.2;
-                              const x = 214.2 * value * Math.cos(angle);
-                              const y = 214.2 * value * Math.sin(angle);
-                              return { x, y };
-                            }
-                          
-                          const svg = document.querySelector('.radar');
-                          const radarWrapper = svg.appendChild(
-                            document.createElementNS('http://www.w3.org/2000/svg', 'g')
-                          );
-                          radarWrapper.innerHTML = '';
-                        
-                          const data = [];
-                          const rowCols = combResults.split(',');
-                          for (let i = 4; i < 11; i++) {
-                            data.push({ axis: i - 3, value: parseFloat(rowCols[i]) });
-                          }
-                          
-                          const points = data
-                            .map(({ axis, value }) => {
-                              const { x, y } = axisValueToCartesian(axis, value);
-                              return `${x},${y}`;
-                            })
-                            .join(' ');
-                          
-                          const polyline = document.createElementNS(
-                            'http://www.w3.org/2000/svg',
-                            'polyline'
-                          );
-                          polyline.setAttribute('class', `radarLines ${color}`);
-                          polyline.setAttribute('points', `${points} ${points.split(' ')[0]}`);
-                          polyline.setAttribute('stroke-width', '3');
-                          polyline.setAttribute('fill', 'none');
-                          radarWrapper.appendChild(polyline);
-                        
-                          const polygon = document.createElementNS(
-                            'http://www.w3.org/2000/svg',
-                            'polygon'
-                          );
-                          polygon.setAttribute('class', `radarPolygon ${color}`);
-                          polygon.setAttribute('points', points);
-                          polygon.style.fillOpacity = '0.2';
-                          radarWrapper.appendChild(polygon);
-                        
-                          data.forEach(({ axis, value }) => {
-                            const { x, y } = axisValueToCartesian(axis, value);
-                            const circle = document.createElementNS(
-                              'http://www.w3.org/2000/svg',
-                              'circle'
-                            );
-                            circle.setAttribute('class', `radarCircle ${color}`);
-                            circle.style.fillOpacity = '0.86';
-                            circle.setAttribute('r', '7.6');
-                            circle.setAttribute('cx', x);
-                            circle.setAttribute('cy', y);
-                            radarWrapper.appendChild(circle);
-                          });
-                        }
-                        
-                        
-              
-                        
-                        
-                          const teamNames = new Set();
-                          
-                          
-                          function createTableForTeam1() {
-                            const searchInput = document.getElementById('searchInput1');
-                            const searchButton = document.getElementById('searchButton1');
-                            const resultsTable = document.getElementById('resultsTable');
-                            const teamNamesList = document.createElement('ul');
-                            teamNamesList.style.fontFamily = 'Arial, sans-serif';
-                            teamNamesList.style.listStyleType = 'none';
-                            teamNamesList.style.paddingLeft = '9px';
-                            resultsTable.appendChild(teamNamesList);
-                            let searchCounter = 0;
-                          
-                            searchButton.addEventListener('click', function () {
-                              const searchQuery = searchInput.value;
-                              const results = search(searchQuery);
-                          
-                              // Reset the toggle state before performing a new search
-                              const radarPolygons = document.querySelectorAll('.radarPolygon');
-                              radarPolygons.forEach(polygon => {
-                                polygon.style.fill = '';
-                              });
-                          
-                              if (results) {
-                                const teamId = parseInt(results[0]);
-                                const teamName =
-                                  results[1] + ' (' + results[2] + ', ' + results[3] + ') - ' + results[11] + ' min';
-                                const color = colorClasses[searchCounter % colorClasses.length];
-                          
-                                createTable(teamName, teamId - 1, color);
-                          
-                                searchCounter++;
-                              }
-                            });
-                          }
-                          
-                          createTableForTeam1();
-                          
-                          
-                          
-                          const similarPlayersContainer = document.createElement("div");
-                          similarPlayersContainer.id = "similarPlayersContainer";
-                          const insertHere = document.getElementById("insertHere");
-                          insertHere.appendChild(similarPlayersContainer);
-                          
-                          let colorIndex = 0; // Initialize color index
-                          
-                          searchButton1.addEventListener("click", function() {
-                            const searchQuery = searchInput.value;
-                            const searchedPlayer = search(searchQuery);
-                            if (searchedPlayer.length > 0) {
-                              const searchedPlayerData = searchedPlayer[0];
-                              updateSimilarPlayers(searchedPlayerData);
-                              colorIndex++;
-                          }
-                          searchInput.value = '';
-                          updateMatchingNames();
-                      });
-              
-              function updateSimilarPlayers(playerData) {
-              const searchedPlayerIndex = parseInt(playerData[0]) - 1;
-              const similarPlayers = [];
-              const playerRows = document.querySelectorAll('.metrics-table tr:not(:first-child)');
-              
-              let playerColor = '';
-              
-              if (playerRows.length > 0) {
-                  const lastPlayerRow = playerRows[playerRows.length - 1];
-                  const lastPlayerCell = lastPlayerRow.querySelector('td:first-child');
-                  const classes = Array.from(lastPlayerCell.classList);
-                  playerColor = classes.find(cls => cls.startsWith('result-color-'));
-              }
-              
-              // Store current selector values before clearing container
-              const existingSelectors = similarPlayersContainer.querySelector('.league-selector');
-              const previousLeague = existingSelectors ? existingSelectors.value : 'all';
-              const previousSeason = existingSelectors ? similarPlayersContainer.querySelectorAll('.league-selector')[1].value : 'all';
-              const previousAge = existingSelectors ? similarPlayersContainer.querySelectorAll('.league-selector')[2].value : 'all';
-              
-              // Clear container
-              similarPlayersContainer.innerHTML = '';
-              
-              const similarPlayerTable = document.createElement("table");
-              similarPlayerTable.classList.add("similar-table");
-              
-              const headerRow = document.createElement("tr");
-              const headerCell = document.createElement("th");
-              headerCell.setAttribute("colspan", "5");
-              
-              // Create container for header content
-              const headerContent = document.createElement("div");
-              headerContent.style.position = "relative";
-              headerContent.style.display = "flex";
-              headerContent.style.flexDirection = "column";
-              headerContent.style.gap = "8px";
-              
-              // Add title
-              const title = document.createElement("span");
-  title.innerHTML = `<span data-i18n="similar.to" class="similar-text">Similar data to</span> <span class="player-text">${playerData[1]}</span>`;
-              title.classList.add(playerColor || colorClasses[colorIndex % colorClasses.length]);
-              
-              // Create selector container
-              const selectorContainer = document.createElement("div");
-              selectorContainer.style.display = "flex";
-              selectorContainer.style.gap = "8px";
-              selectorContainer.style.justifyContent = "center";
-              
-              // Add league selector
-              const leagueSelect = document.createElement("select");
-              leagueSelect.classList.add("league-selector");
-              
-              // Add options
-              const allOption = document.createElement("option");
-              allOption.value = "all";
-              allOption.textContent = "All Leagues";
-              leagueSelect.appendChild(allOption);
-              
-              const top7Option = document.createElement("option");
-              top7Option.value = "top7";
-              top7Option.textContent = "Top 7 Leagues";
-              leagueSelect.appendChild(top7Option);
-              
-              const outsideTop7Option = document.createElement("option");
-              outsideTop7Option.value = "outside";
-              outsideTop7Option.textContent = "Outside Top 7";
-              leagueSelect.appendChild(outsideTop7Option);
-              
-              // Add season selector
-              const seasonSelect = document.createElement("select");
-              seasonSelect.classList.add("league-selector");
-              
-              // Add options for season
-              const allSeasonsOption = document.createElement("option");
-              allSeasonsOption.value = "all";
-              allSeasonsOption.textContent = "All Seasons";
-              seasonSelect.appendChild(allSeasonsOption);
-              
-              const currentSeasonOption = document.createElement("option");
-              currentSeasonOption.value = "current";
-              currentSeasonOption.textContent = "Current Season";
-              seasonSelect.appendChild(currentSeasonOption);
-              
-              // Add age filter selector
-              const ageSelect = document.createElement("select");
-              ageSelect.classList.add("league-selector");
-              
-              // Add options for age filter
-              const allAgesOption = document.createElement("option");
-              allAgesOption.value = "all";
-              allAgesOption.textContent = "All Ages";
-              ageSelect.appendChild(allAgesOption);
-              
-              const u30Option = document.createElement("option");
-              u30Option.value = "u30";
-              u30Option.textContent = "Under 30";
-              ageSelect.appendChild(u30Option);
-              
-              const u25Option = document.createElement("option");
-              u25Option.value = "u25";
-              u25Option.textContent = "Under 25";
-              ageSelect.appendChild(u25Option);
-              
-              const u23Option = document.createElement("option");
-              u23Option.value = "u23";
-              u23Option.textContent = "Under 23";
-              ageSelect.appendChild(u23Option);
-              
-              const u21Option = document.createElement("option");
-              u21Option.value = "u21";
-              u21Option.textContent = "Under 21";
-              ageSelect.appendChild(u21Option);
-              
-              // Set previous values
-              leagueSelect.value = previousLeague;
-              seasonSelect.value = previousSeason;
-              ageSelect.value = previousAge;
-              
-              // Add selectors to selector container
-              selectorContainer.appendChild(leagueSelect);
-              selectorContainer.appendChild(seasonSelect);
-              selectorContainer.appendChild(ageSelect);
-              
-              // Add everything to header content
-              headerContent.appendChild(title);
-              headerContent.appendChild(selectorContainer);
-              headerCell.appendChild(headerContent);
-              headerRow.appendChild(headerCell);
-              similarPlayerTable.appendChild(headerRow);
-              
-              // Update event listeners
-              leagueSelect.addEventListener('change', function() {
-                  const selectedLeague = this.value;
-                  const selectedSeason = seasonSelect.value;
-                  const selectedAge = ageSelect.value;
-                  updateSimilarPlayersTable(playerData, selectedLeague, selectedSeason, selectedAge, similarPlayerTable);
-              });
-              
-              seasonSelect.addEventListener('change', function() {
-                  const selectedLeague = leagueSelect.value;
-                  const selectedSeason = this.value;
-                  const selectedAge = ageSelect.value;
-                  updateSimilarPlayersTable(playerData, selectedLeague, selectedSeason, selectedAge, similarPlayerTable);
-              });
-              
-              ageSelect.addEventListener('change', function() {
-                  const selectedLeague = leagueSelect.value;
-                  const selectedSeason = seasonSelect.value;
-                  const selectedAge = this.value;
-                  updateSimilarPlayersTable(playerData, selectedLeague, selectedSeason, selectedAge, similarPlayerTable);
-              });
-              
-              // Initial table population with previous values
-              updateSimilarPlayersTable(playerData, previousLeague, previousSeason, previousAge, similarPlayerTable);
-              similarPlayersContainer.appendChild(similarPlayerTable);
-              }
-              
-              // Add these global variables after data loading
-              let playerLookup = {
-                  top7: new Set(),
-                  outside: new Set(),
-  
-              };
-              
-              // Add this after all data is loaded (in the Promise.all chain)
-              function buildPlayerLookup() {
-                  // Build lookup tables for faster searching
-                  allData1.concat(allData3, allData5, allData7).forEach(p => {
-                      playerLookup.top7.add(p[1]);
-                  });
-                  
-                  allData2.concat(allData4, allData6).forEach(p => {
-                      playerLookup.outside.add(p[1]);
-                  });
-                  
-            
-              }
-              
-              function updateSimilarPlayersTable(playerData, selectedLeague, selectedSeason, selectedAge, table) {
-                  // Clear existing rows except header
-                  while (table.rows.length > 1) {
-                      table.deleteRow(1);
-                  }
-              
-                  const searchedPlayerIndex = parseInt(playerData[0]) - 1;
-                  const similarPlayers = [];
-                  
-                  // Process all players
-                  dataArray.forEach((player, index) => {
-                      if (index === searchedPlayerIndex) return;
-              
-                      const playerName = player[1];
-                      const playerAge = parseInt(player[3]);
-                      const seasonYear = player[1].split(' ').pop(); // Extract year from name
-              
-                      // Apply filters
-                      if (!passesFilters(playerName, playerAge, seasonYear, selectedLeague, selectedSeason, selectedAge)) {
-                          return;
-                      }
-              
-                      const difference = calculateEuclideanDifference(playerData, player);
-                      similarPlayers.push({ index, difference });
-                  });
-              
-                  // Sort and get top 5
-                  const mostSimilarPlayers = similarPlayers
-                      .sort((a, b) => a.difference - b.difference)
-                      .slice(0, 5);
-              
-                  // Create and append the row
-                  const similarPlayerRow = document.createElement("tr");
-                  similarPlayerRow.innerHTML = mostSimilarPlayers
-                      .map(({ index }) => {
-                          const player = dataArray[index];
-                          const playerName = player[1]
-                          return `<td style="font-size: 10.8px; cursor: pointer;">${playerName}</td>`;
-                      })
-                      .join('');
-              
-                  // Add click handlers
-                  similarPlayerRow.querySelectorAll('td').forEach(cell => {
-                      cell.addEventListener("click", () => {
-                          const playerInfo = cell.textContent;
-                          document.getElementById('searchInput1').value = playerInfo;
-                          document.getElementById('searchButton1').click();
-                      });
-                  });
-              
-                  table.appendChild(similarPlayerRow);
-              }
-              
-              function passesFilters(playerName, playerAge, seasonYear, selectedLeague, selectedSeason, selectedAge) {
-                  // League filter
-                  if (selectedLeague !== 'all') {
-                      const isTop7 = playerLookup.top7.has(playerName);
-                      if (selectedLeague === 'top7' && !isTop7) return false;
-                      if (selectedLeague === 'outside' && isTop7) return false;
-                  }
-              
-                  // Season filter
-                                  if (
-                      selectedSeason === 'current' && 
-                      !playerName.includes('24/25') && 
-                !playerName.includes('2025')
-                  ) {
-                      return false;
-                  }
-              
-                  // Age filter
-                  switch(selectedAge) {
-                      case 'u30': if (playerAge >= 30) return false; break;
-                      case 'u25': if (playerAge >= 25) return false; break;
-                      case 'u23': if (playerAge >= 23) return false; break;
-                      case 'u21': if (playerAge >= 21) return false; break;
-                  }
-              
-                  return true;
-              }
-              
-              // Make sure to call buildPlayerLookup after data loading
-              Promise.all([fetchPromises1, fetchPromises2, fetchPromises3, fetchPromises4, fetchPromises5, fetchPromises6, fetchPromises7])
-                  .then(() => {
-                      buildPlayerLookup();
-                  });
-              
-              })})})})})})})
-                          .catch(error => {
-                              console.error('Error fetching or processing data:', error);
-                          });
-                        
-                        </script>
+function _0x1e79(_0x1157db,_0x1d15c6){const _0x3f670f=_0x3f67();return _0x1e79=function(_0x1e79a8,_0x4dcd60){_0x1e79a8=_0x1e79a8-0x1e5;let _0x5902b0=_0x3f670f[_0x1e79a8];return _0x5902b0;},_0x1e79(_0x1157db,_0x1d15c6);}const _0x34da65=_0x1e79;(function(_0x29f73e,_0x3a251f){const _0x6990c=_0x1e79,_0x49de06=_0x29f73e();while(!![]){try{const _0x321831=parseInt(_0x6990c(0x219))/0x1+parseInt(_0x6990c(0x261))/0x2*(-parseInt(_0x6990c(0x22d))/0x3)+parseInt(_0x6990c(0x1e9))/0x4*(parseInt(_0x6990c(0x28b))/0x5)+parseInt(_0x6990c(0x20e))/0x6+-parseInt(_0x6990c(0x2a1))/0x7*(-parseInt(_0x6990c(0x26e))/0x8)+-parseInt(_0x6990c(0x218))/0x9*(parseInt(_0x6990c(0x269))/0xa)+parseInt(_0x6990c(0x21b))/0xb;if(_0x321831===_0x3a251f)break;else _0x49de06['push'](_0x49de06['shift']());}catch(_0x5669ac){_0x49de06['push'](_0x49de06['shift']());}}}(_0x3f67,0xbbbf2));const allData1=[],allData2=[],allData3=[],allData4=[],allData5=[],allData6=[],allData7=[];let allDataAsString='';const urls1=[_0x34da65(0x1e6)],urls2=[_0x34da65(0x2ac),_0x34da65(0x1f5)],urls3=['https://datamb.football/database/OLD/RATOP72324/GK/GK.xlsx'],urls4=[_0x34da65(0x22e),_0x34da65(0x293)],urls5=['https://datamb.football/database/OLD/RATOP72223/GK/GK.xlsx'],urls6=[_0x34da65(0x2b5),_0x34da65(0x1ed),_0x34da65(0x270)],urls7=[_0x34da65(0x21a)],fetchPromises1=urls1[_0x34da65(0x1fc)](_0x3aed6b=>fetch(_0x3aed6b)['then'](_0x1917ba=>_0x1917ba[_0x34da65(0x26f)]())),fetchPromises2=urls2[_0x34da65(0x1fc)](_0x22ed9a=>fetch(_0x22ed9a)[_0x34da65(0x25f)](_0x5544f0=>_0x5544f0[_0x34da65(0x26f)]())),fetchPromises3=urls3[_0x34da65(0x1fc)](_0x47e63=>fetch(_0x47e63)[_0x34da65(0x25f)](_0x106da6=>_0x106da6[_0x34da65(0x26f)]())),fetchPromises4=urls4['map'](_0x12aeba=>fetch(_0x12aeba)['then'](_0x390065=>_0x390065[_0x34da65(0x26f)]())),fetchPromises5=urls5[_0x34da65(0x1fc)](_0x37996e=>fetch(_0x37996e)[_0x34da65(0x25f)](_0x263789=>_0x263789['arrayBuffer']())),fetchPromises6=urls6[_0x34da65(0x1fc)](_0x1950a7=>fetch(_0x1950a7)['then'](_0x36bc71=>_0x36bc71[_0x34da65(0x26f)]())),fetchPromises7=urls7[_0x34da65(0x1fc)](_0x2e89dc=>fetch(_0x2e89dc)[_0x34da65(0x25f)](_0x4f828e=>_0x4f828e[_0x34da65(0x26f)]()));function processAndStoreData1(_0x4ac16f){const _0x5259ac=_0x34da65;let _0x362576=0x1;_0x4ac16f[_0x5259ac(0x1f4)]((_0x1bda47,_0x22b9e9)=>{const _0x5c3e36=_0x5259ac,_0x3afd11=XLSX[_0x5c3e36(0x201)](new Uint8Array(_0x1bda47),{'type':_0x5c3e36(0x283)}),_0x2a3b77=_0x3afd11['SheetNames'][0x0],_0x4f1625=_0x3afd11[_0x5c3e36(0x216)][_0x2a3b77],_0x12ebbc=XLSX[_0x5c3e36(0x2af)][_0x5c3e36(0x22b)](_0x4f1625,{'header':0x1}),_0x51d69d=urls1[_0x22b9e9];let _0x51123e=_0x5c3e36(0x285);const _0x5f09dd=_0x51d69d[_0x5c3e36(0x263)](/PRO20(\d{2})/);_0x5f09dd&&(_0x51123e='20'+_0x5f09dd[0x1]);const _0x372714=_0x12ebbc[_0x5c3e36(0x282)](0x1);_0x372714[_0x5c3e36(0x1f4)](_0x1f9cd4=>{const _0xfd3db=_0x5c3e36;_0x1f9cd4['unshift'](''+_0x362576++),_0x1f9cd4['splice'](0xc,0x0,_0x1f9cd4[_0xfd3db(0x20c)](0x4,0x1)[0x0]),_0x1f9cd4[_0xfd3db(0x20c)](0x7,0x0,_0x1f9cd4[_0xfd3db(0x20c)](0xb,0x1)[0x0]),_0x1f9cd4[_0xfd3db(0x20c)](0x9,0x0,_0x1f9cd4[_0xfd3db(0x20c)](0xa,0x1)[0x0]),_0x1f9cd4[_0xfd3db(0x20c)](0x10,0x1),_0x1f9cd4[0xf]=_0x1f9cd4[0x1]+'\x20'+_0x51123e;const _0x3f7a8e=[_0x1f9cd4[0x0],_0x1f9cd4[0xf],_0x1f9cd4[0x2],_0x1f9cd4[0x3],_0x1f9cd4[0x4],_0x1f9cd4[0x5],_0x1f9cd4[0xb],_0x1f9cd4[0x6],_0x1f9cd4[0xa],_0x1f9cd4[0x8],_0x1f9cd4[0x9],_0x1f9cd4[0x7]];allData1[_0xfd3db(0x24a)](_0x3f7a8e);});});const _0x32ec86=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x4409ea=_0x32ec86[_0x5259ac(0x1fc)](_0x4d1d2d=>allData1[_0x5259ac(0x1fc)](_0x585698=>parseFloat(_0x585698[_0x4d1d2d]))),_0x54108e=_0x4409ea['map'](_0x5ee7dd=>{const _0x28f806=_0x5259ac,_0x31d3f0=[..._0x5ee7dd][_0x28f806(0x1fb)]((_0x26504e,_0x22d8f6)=>_0x26504e-_0x22d8f6);return _0x5ee7dd['map'](_0x1a5f19=>{const _0x40a971=_0x31d3f0['indexOf'](_0x1a5f19)+0x1;return _0x40a971/_0x31d3f0['length'];});});allData1[_0x5259ac(0x1f4)]((_0x1d5275,_0x5997a6)=>{const _0x2b0bb7=_0x5259ac;_0x32ec86[_0x2b0bb7(0x1f4)]((_0x546fb6,_0x43c774)=>{const _0x5e6806=_0x2b0bb7;_0x1d5275[_0x546fb6]=_0x54108e[_0x43c774][_0x5997a6][_0x5e6806(0x252)](0x3);});});}function _0x3f67(){const _0x42bfa2=['overflowY','4.5px','<span\x20data-i18n=\x22table.aerial\x22>Aerials</span>','keyup','select','.radarLines.','deleteRow','Error\x20fetching\x20or\x20processing\x20data:','result-color-5','getElementById','result-color-3','.league-selector','remove','result-color-4','flexDirection','8px','name','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22age\x22>\x20(','length','add','setAttribute','result-color-24','off','span','<span\x20data-i18n=\x22table.short\x22>Short%</span>','<td\x20style=\x22font-size:\x2010.8px;\x20cursor:\x20pointer;\x22>','createElementNS','push','Outside\x20Top\x207','All\x20Seasons','Under\x2025','all','result-color-47','All\x20Leagues','stroke-width','toFixed','join','result-color-green','polyline','<span\x20data-i18n=\x22table.minutes\x22>Minutes\x20played</span>',',\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22team\x22>','http://www.w3.org/2000/svg','9999','startsWith','<span\x20data-i18n=\x22table.long\x22>Long%</span>','querySelector','\x20min','matchingNames','then','Enter','2ESuBeF','outside','match','concat','textContent','gap','relative','has','1990BySLcS','difference','listStyleType','block','Top\x207\x20Leagues','40kalVYY','arrayBuffer','https://datamb.football/database/OLD/RAPRO2022/GK/GK.xlsx','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22fullName\x22>','.radar','auto','createElement','top7','pow','radarLines\x20','Under\x2030','u25','result-color-19','current','flex','style','metrics-table','padding','indexOf','result-color-45','slice','array','result-color-15','24/25','catch','result-color-pink','toLowerCase','</td>','result-color-orange','20bKDIZA','<span\x20data-i18n=\x22table.exits\x22>Exits</span>','pop','div','click','innerHTML','includes','from','https://datamb.football/database/OLD/RAPRO2024/GK/GK.xlsx','430px','result-color-8','result-color-13','result-color-20','result-color-39','result-color-7','appendChild','result-color-35','searchInput1','split','classList','maxHeight','SheetNames','1083649LYXwAw','.radarPolygon','.metrics-table\x20tr:not(:first-child)','paddingLeft','userAgent','change','u21','filter','result-color-41','0.2','result-color-37','https://datamb.football/database/CURRENT/RAPRO2425/GK/GK.xlsx','<span\x20data-i18n=\x22table.age\x22>Age</span>','result-color-23','utils','radarCircle\x20',')</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','u23','similar-table','test','https://datamb.football/database/OLD/RAPRO2223/GK/GK.xlsx','display','22/23','circle','rows','result-color-bleu','zIndex','https://datamb.football/database/CURRENT/RATOP72425/GK/GK.xlsx','result-color-rose','result-color-','798484tuucFk','radarPolygon\x20','result-color-29','searchButton1','https://datamb.football/database/OLD/RAPRO2023/GK/GK.xlsx','option','cos','addEventListener','resultsTable','<span\x20data-i18n=\x22similar.to\x22>Similar\x20data\x20to</span>\x20','<span\x20data-i18n=\x22table.shotstopping\x22>PSxG-GA</span>','forEach','https://datamb.football/database/CURRENT/RAPRO2025/GK/GK.xlsx','Under\x2021','polygon','result-color-blue','replace','similarPlayersContainer','sort','map','Current\x20Season','colspan','value','result-color-36','read','width','result-color-44','<span\x20data-i18n=\x22table.defActions\x22>Def.\x20Actions</span>','querySelectorAll','u30','8.4','result-color-48','position','table','class','splice','translate(384.77,306)','4786998wDfTfR','result-color-16','result-color-21','result-color-31','result-color-14','none','result-color-27','td:first-child','Sheets','result-color-26','33552JudgFm','440544cCLNhB','https://datamb.football/database/OLD/RATOP72122/GK/GK.xlsx','2120965ZNTnIy','NFD','trim','result-color-43','unshift','23/24','result-color-40','result-color-42','result-color-28','league-selector','result-color-1','key','normalize','result-color-9','points','fill','sheet_to_json','error','4478487ygIGKl','https://datamb.football/database/OLD/RAPRO2324/GK/GK.xlsx'];_0x3f67=function(){return _0x42bfa2;};return _0x3f67();}function processAndStoreData2(_0x264b04){const _0x48475a=_0x34da65;let _0x141fc6=0x1;_0x264b04[_0x48475a(0x1f4)]((_0x1daf11,_0x56e3ad)=>{const _0x332bd5=_0x48475a,_0x108266=XLSX[_0x332bd5(0x201)](new Uint8Array(_0x1daf11),{'type':_0x332bd5(0x283)}),_0x59cd5a=_0x108266['SheetNames'][0x0],_0x56a11c=_0x108266[_0x332bd5(0x216)][_0x59cd5a],_0x5683de=XLSX[_0x332bd5(0x2af)][_0x332bd5(0x22b)](_0x56a11c,{'header':0x1}),_0x3b09e7=urls2[_0x56e3ad];let _0x30ea91=_0x332bd5(0x285);const _0x53fe3f=_0x3b09e7[_0x332bd5(0x263)](/PRO20(\d{2})/);_0x53fe3f&&(_0x30ea91='20'+_0x53fe3f[0x1]);const _0x1b654d=_0x5683de['slice'](0x1);_0x1b654d[_0x332bd5(0x1f4)](_0x3bbfdc=>{const _0x198edc=_0x332bd5;_0x3bbfdc['unshift'](''+_0x141fc6++),_0x3bbfdc[_0x198edc(0x20c)](0xc,0x0,_0x3bbfdc['splice'](0x4,0x1)[0x0]),_0x3bbfdc[_0x198edc(0x20c)](0x7,0x0,_0x3bbfdc[_0x198edc(0x20c)](0xb,0x1)[0x0]),_0x3bbfdc[_0x198edc(0x20c)](0x9,0x0,_0x3bbfdc[_0x198edc(0x20c)](0xa,0x1)[0x0]),_0x3bbfdc[_0x198edc(0x20c)](0x10,0x1),_0x3bbfdc[0xf]=_0x3bbfdc[0x1]+'\x20'+_0x30ea91;const _0x53d275=[_0x3bbfdc[0x0],_0x3bbfdc[0xf],_0x3bbfdc[0x2],_0x3bbfdc[0x3],_0x3bbfdc[0x4],_0x3bbfdc[0x5],_0x3bbfdc[0xb],_0x3bbfdc[0x6],_0x3bbfdc[0xa],_0x3bbfdc[0x8],_0x3bbfdc[0x9],_0x3bbfdc[0x7]];allData2[_0x198edc(0x24a)](_0x53d275);});});const _0x5131fe=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x1e5082=_0x5131fe[_0x48475a(0x1fc)](_0x3a5dfb=>allData2[_0x48475a(0x1fc)](_0x305262=>parseFloat(_0x305262[_0x3a5dfb]))),_0x57aa72=_0x1e5082[_0x48475a(0x1fc)](_0x214851=>{const _0x4da096=_0x48475a,_0x18099e=[..._0x214851][_0x4da096(0x1fb)]((_0x3990ed,_0x5574c1)=>_0x3990ed-_0x5574c1);return _0x214851[_0x4da096(0x1fc)](_0x43727d=>{const _0x45990f=_0x4da096,_0x3e1c04=_0x18099e[_0x45990f(0x280)](_0x43727d)+0x1;return _0x3e1c04/_0x18099e['length'];});});allData2[_0x48475a(0x1f4)]((_0x167f9e,_0xae177b)=>{const _0x3575c5=_0x48475a;_0x5131fe[_0x3575c5(0x1f4)]((_0x465303,_0x5ddd6e)=>{_0x167f9e[_0x465303]=_0x57aa72[_0x5ddd6e][_0xae177b]['toFixed'](0x3);});});}function processAndStoreData3(_0x4b0889){const _0x1c79c0=_0x34da65;let _0x325f2b=0x1;_0x4b0889[_0x1c79c0(0x1f4)]((_0x3107d4,_0x37a25f)=>{const _0x589c70=_0x1c79c0,_0x18e804=XLSX[_0x589c70(0x201)](new Uint8Array(_0x3107d4),{'type':_0x589c70(0x283)}),_0x228dd4=_0x18e804[_0x589c70(0x2a0)][0x0],_0x831252=_0x18e804[_0x589c70(0x216)][_0x228dd4],_0x84d690=XLSX['utils'][_0x589c70(0x22b)](_0x831252,{'header':0x1}),_0x59e266=urls3[_0x37a25f];let _0x2cad16=_0x589c70(0x220);const _0x2d0e64=_0x59e266['match'](/PRO20(\d{2})/);_0x2d0e64&&(_0x2cad16='20'+_0x2d0e64[0x1]);const _0x1a4070=_0x84d690[_0x589c70(0x282)](0x1);_0x1a4070[_0x589c70(0x1f4)](_0x170436=>{const _0x5acbe0=_0x589c70;_0x170436[_0x5acbe0(0x21f)](''+_0x325f2b++),_0x170436[_0x5acbe0(0x20c)](0xc,0x0,_0x170436[_0x5acbe0(0x20c)](0x4,0x1)[0x0]),_0x170436[_0x5acbe0(0x20c)](0x7,0x0,_0x170436[_0x5acbe0(0x20c)](0xb,0x1)[0x0]),_0x170436[_0x5acbe0(0x20c)](0x9,0x0,_0x170436[_0x5acbe0(0x20c)](0xa,0x1)[0x0]),_0x170436[_0x5acbe0(0x20c)](0x10,0x1),_0x170436[0xf]=_0x170436[0x1]+'\x20'+_0x2cad16;const _0x3a0924=[_0x170436[0x0],_0x170436[0xf],_0x170436[0x2],_0x170436[0x3],_0x170436[0x4],_0x170436[0x5],_0x170436[0xb],_0x170436[0x6],_0x170436[0xa],_0x170436[0x8],_0x170436[0x9],_0x170436[0x7]];allData3[_0x5acbe0(0x24a)](_0x3a0924);});});const _0x433ee8=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x11b7dc=_0x433ee8['map'](_0xec2399=>allData3[_0x1c79c0(0x1fc)](_0x541014=>parseFloat(_0x541014[_0xec2399]))),_0x46f2f5=_0x11b7dc[_0x1c79c0(0x1fc)](_0xb982cb=>{const _0x5126f5=_0x1c79c0,_0x5f3b26=[..._0xb982cb][_0x5126f5(0x1fb)]((_0x5851f1,_0x53a190)=>_0x5851f1-_0x53a190);return _0xb982cb[_0x5126f5(0x1fc)](_0xe59c76=>{const _0x5e7c98=_0x5126f5,_0x222167=_0x5f3b26[_0x5e7c98(0x280)](_0xe59c76)+0x1;return _0x222167/_0x5f3b26[_0x5e7c98(0x241)];});});allData3[_0x1c79c0(0x1f4)]((_0x1ccb6f,_0x17339c)=>{const _0x1c7e61=_0x1c79c0;_0x433ee8[_0x1c7e61(0x1f4)]((_0x19db1a,_0xfa1b35)=>{_0x1ccb6f[_0x19db1a]=_0x46f2f5[_0xfa1b35][_0x17339c]['toFixed'](0x3);});});}function processAndStoreData4(_0x23b592){const _0x50c6ab=_0x34da65;let _0x1b3908=0x1;_0x23b592[_0x50c6ab(0x1f4)]((_0x35d4aa,_0x8d3eda)=>{const _0x4382a6=_0x50c6ab,_0xeda875=XLSX[_0x4382a6(0x201)](new Uint8Array(_0x35d4aa),{'type':_0x4382a6(0x283)}),_0x2a8b39=_0xeda875[_0x4382a6(0x2a0)][0x0],_0x53855d=_0xeda875[_0x4382a6(0x216)][_0x2a8b39],_0x5dbecf=XLSX[_0x4382a6(0x2af)]['sheet_to_json'](_0x53855d,{'header':0x1}),_0x5c0792=urls4[_0x8d3eda];let _0x4be70b=_0x4382a6(0x220);const _0x4c9470=_0x5c0792['match'](/PRO20(\d{2})/);_0x4c9470&&(_0x4be70b='20'+_0x4c9470[0x1]);const _0x1b9527=_0x5dbecf['slice'](0x1);_0x1b9527[_0x4382a6(0x1f4)](_0x22af77=>{const _0x276ae0=_0x4382a6;_0x22af77[_0x276ae0(0x21f)](''+_0x1b3908++),_0x22af77[_0x276ae0(0x20c)](0xc,0x0,_0x22af77[_0x276ae0(0x20c)](0x4,0x1)[0x0]),_0x22af77['splice'](0x7,0x0,_0x22af77[_0x276ae0(0x20c)](0xb,0x1)[0x0]),_0x22af77[_0x276ae0(0x20c)](0x9,0x0,_0x22af77[_0x276ae0(0x20c)](0xa,0x1)[0x0]),_0x22af77[_0x276ae0(0x20c)](0x10,0x1),_0x22af77[0xf]=_0x22af77[0x1]+'\x20'+_0x4be70b;const _0x16509d=[_0x22af77[0x0],_0x22af77[0xf],_0x22af77[0x2],_0x22af77[0x3],_0x22af77[0x4],_0x22af77[0x5],_0x22af77[0xb],_0x22af77[0x6],_0x22af77[0xa],_0x22af77[0x8],_0x22af77[0x9],_0x22af77[0x7]];allData4[_0x276ae0(0x24a)](_0x16509d);});});const _0x4182a7=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x37166a=_0x4182a7[_0x50c6ab(0x1fc)](_0x7c398b=>allData4[_0x50c6ab(0x1fc)](_0x1a4d7a=>parseFloat(_0x1a4d7a[_0x7c398b]))),_0x55c53c=_0x37166a['map'](_0x54f3d1=>{const _0x4539ac=_0x50c6ab,_0x4716bd=[..._0x54f3d1]['sort']((_0x4745bd,_0x54eb75)=>_0x4745bd-_0x54eb75);return _0x54f3d1[_0x4539ac(0x1fc)](_0x4e516a=>{const _0x2c0f90=_0x4539ac,_0xdb5979=_0x4716bd['indexOf'](_0x4e516a)+0x1;return _0xdb5979/_0x4716bd[_0x2c0f90(0x241)];});});allData4[_0x50c6ab(0x1f4)]((_0x3847e2,_0x2119c0)=>{const _0x1fb5fc=_0x50c6ab;_0x4182a7[_0x1fb5fc(0x1f4)]((_0x29b6f8,_0x25cc8c)=>{const _0x1fa919=_0x1fb5fc;_0x3847e2[_0x29b6f8]=_0x55c53c[_0x25cc8c][_0x2119c0][_0x1fa919(0x252)](0x3);});});}function processAndStoreData5(_0x31fdc8){const _0x453698=_0x34da65;let _0x2c2f64=0x1;_0x31fdc8['forEach']((_0x2c3adb,_0x47d3b5)=>{const _0x116ad1=_0x1e79,_0x3f51a9=XLSX[_0x116ad1(0x201)](new Uint8Array(_0x2c3adb),{'type':_0x116ad1(0x283)}),_0x20f9ff=_0x3f51a9[_0x116ad1(0x2a0)][0x0],_0x29d6bf=_0x3f51a9['Sheets'][_0x20f9ff],_0x365592=XLSX[_0x116ad1(0x2af)][_0x116ad1(0x22b)](_0x29d6bf,{'header':0x1}),_0x29c194=urls5[_0x47d3b5];let _0xf36b2b=_0x116ad1(0x2b7);const _0x330334=_0x29c194['match'](/PRO20(\d{2})/);_0x330334&&(_0xf36b2b='20'+_0x330334[0x1]);const _0x5cb2b0=_0x365592[_0x116ad1(0x282)](0x1);_0x5cb2b0['forEach'](_0x4d604f=>{const _0x17ad78=_0x116ad1;_0x4d604f[_0x17ad78(0x21f)](''+_0x2c2f64++),_0x4d604f[_0x17ad78(0x20c)](0xc,0x0,_0x4d604f[_0x17ad78(0x20c)](0x4,0x1)[0x0]),_0x4d604f[_0x17ad78(0x20c)](0x7,0x0,_0x4d604f['splice'](0xb,0x1)[0x0]),_0x4d604f[_0x17ad78(0x20c)](0x9,0x0,_0x4d604f[_0x17ad78(0x20c)](0xa,0x1)[0x0]),_0x4d604f[_0x17ad78(0x20c)](0x10,0x1),_0x4d604f[0xf]=_0x4d604f[0x1]+'\x20'+_0xf36b2b,_0x4d604f[0x3]=_0x4d604f[0x3]-0x1;const _0x3632e5=[_0x4d604f[0x0],_0x4d604f[0xf],_0x4d604f[0x2],_0x4d604f[0x3],_0x4d604f[0x4],_0x4d604f[0x5],_0x4d604f[0xb],_0x4d604f[0x6],_0x4d604f[0xa],_0x4d604f[0x8],_0x4d604f[0x9],_0x4d604f[0x7]];allData5[_0x17ad78(0x24a)](_0x3632e5);});});const _0x5f4865=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x2e56d3=_0x5f4865[_0x453698(0x1fc)](_0x790e73=>allData5[_0x453698(0x1fc)](_0x26a833=>parseFloat(_0x26a833[_0x790e73]))),_0x4d102d=_0x2e56d3[_0x453698(0x1fc)](_0x358e25=>{const _0x1bcc33=_0x453698,_0x4f6e54=[..._0x358e25][_0x1bcc33(0x1fb)]((_0x3c954b,_0x18ab68)=>_0x3c954b-_0x18ab68);return _0x358e25[_0x1bcc33(0x1fc)](_0x5941ae=>{const _0x14d154=_0x1bcc33,_0x1e810e=_0x4f6e54['indexOf'](_0x5941ae)+0x1;return _0x1e810e/_0x4f6e54[_0x14d154(0x241)];});});allData5[_0x453698(0x1f4)]((_0x4558f8,_0x5a478d)=>{_0x5f4865['forEach']((_0x4bc432,_0x3256b8)=>{const _0x473e64=_0x1e79;_0x4558f8[_0x4bc432]=_0x4d102d[_0x3256b8][_0x5a478d][_0x473e64(0x252)](0x3);});});}function processAndStoreData6(_0x48a24c){const _0x15e2e6=_0x34da65;let _0xc5cd11=0x1;_0x48a24c[_0x15e2e6(0x1f4)]((_0x4b8b9e,_0x4ceb34)=>{const _0x220909=_0x15e2e6,_0x5231d5=XLSX[_0x220909(0x201)](new Uint8Array(_0x4b8b9e),{'type':'array'}),_0x46aa2d=_0x5231d5[_0x220909(0x2a0)][0x0],_0x5def3a=_0x5231d5[_0x220909(0x216)][_0x46aa2d],_0x100f8=XLSX['utils'][_0x220909(0x22b)](_0x5def3a,{'header':0x1}),_0x47907f=urls6[_0x4ceb34];let _0x53b46c=_0x220909(0x2b7);const _0x496ca1=_0x47907f[_0x220909(0x263)](/PRO20(\d{2})/);_0x496ca1&&(_0x53b46c='20'+_0x496ca1[0x1]);const _0x2ec283=_0x100f8[_0x220909(0x282)](0x1);_0x2ec283['forEach'](_0x3c3b70=>{const _0x1667aa=_0x220909;_0x3c3b70[_0x1667aa(0x21f)](''+_0xc5cd11++),_0x3c3b70[_0x1667aa(0x20c)](0xc,0x0,_0x3c3b70['splice'](0x4,0x1)[0x0]),_0x3c3b70[_0x1667aa(0x20c)](0x7,0x0,_0x3c3b70[_0x1667aa(0x20c)](0xb,0x1)[0x0]),_0x3c3b70[_0x1667aa(0x20c)](0x9,0x0,_0x3c3b70[_0x1667aa(0x20c)](0xa,0x1)[0x0]),_0x3c3b70[_0x1667aa(0x20c)](0x10,0x1),_0x3c3b70[0xf]=_0x3c3b70[0x1]+'\x20'+_0x53b46c,_0x3c3b70[0x3]=_0x3c3b70[0x3]-0x1;const _0x5162ad=[_0x3c3b70[0x0],_0x3c3b70[0xf],_0x3c3b70[0x2],_0x3c3b70[0x3],_0x3c3b70[0x4],_0x3c3b70[0x5],_0x3c3b70[0xb],_0x3c3b70[0x6],_0x3c3b70[0xa],_0x3c3b70[0x8],_0x3c3b70[0x9],_0x3c3b70[0x7]];allData6[_0x1667aa(0x24a)](_0x5162ad);});});const _0x3af70a=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x57c2e2=_0x3af70a[_0x15e2e6(0x1fc)](_0x2e1960=>allData6[_0x15e2e6(0x1fc)](_0x45cf9a=>parseFloat(_0x45cf9a[_0x2e1960]))),_0x1d802b=_0x57c2e2['map'](_0x39a4b8=>{const _0x164e5c=_0x15e2e6,_0x1b7a6a=[..._0x39a4b8][_0x164e5c(0x1fb)]((_0x10a494,_0x5aa21f)=>_0x10a494-_0x5aa21f);return _0x39a4b8[_0x164e5c(0x1fc)](_0x10e062=>{const _0x4eb716=_0x164e5c,_0x30afbb=_0x1b7a6a[_0x4eb716(0x280)](_0x10e062)+0x1;return _0x30afbb/_0x1b7a6a[_0x4eb716(0x241)];});});allData6['forEach']((_0x259e8c,_0x3c91c8)=>{_0x3af70a['forEach']((_0x2c8d24,_0xf70a53)=>{_0x259e8c[_0x2c8d24]=_0x1d802b[_0xf70a53][_0x3c91c8]['toFixed'](0x3);});});}function processAndStoreData7(_0x4ea677){const _0x44fda4=_0x34da65;let _0x47c3e9=0x1;_0x4ea677[_0x44fda4(0x1f4)]((_0xaf316b,_0x537b82)=>{const _0x54c884=_0x44fda4,_0x40a491=XLSX[_0x54c884(0x201)](new Uint8Array(_0xaf316b),{'type':'array'}),_0x46b77e=_0x40a491[_0x54c884(0x2a0)][0x0],_0x297f00=_0x40a491[_0x54c884(0x216)][_0x46b77e],_0x13a4cc=XLSX[_0x54c884(0x2af)]['sheet_to_json'](_0x297f00,{'header':0x1}),_0x11b149=urls7[_0x537b82];let _0x4a0766='21/22';const _0x481369=_0x11b149['match'](/PRO20(\d{2})/);_0x481369&&(_0x4a0766='20'+_0x481369[0x1]);const _0x4483cd=_0x13a4cc[_0x54c884(0x282)](0x1);_0x4483cd['forEach'](_0x435ffa=>{const _0x5bc537=_0x54c884;_0x435ffa[_0x5bc537(0x21f)](''+_0x47c3e9++),_0x435ffa[_0x5bc537(0x20c)](0xc,0x0,_0x435ffa[_0x5bc537(0x20c)](0x4,0x1)[0x0]),_0x435ffa[_0x5bc537(0x20c)](0x7,0x0,_0x435ffa[_0x5bc537(0x20c)](0xb,0x1)[0x0]),_0x435ffa['splice'](0x9,0x0,_0x435ffa[_0x5bc537(0x20c)](0xa,0x1)[0x0]),_0x435ffa[_0x5bc537(0x20c)](0x10,0x1),_0x435ffa[0xf]=_0x435ffa[0x1]+'\x20'+_0x4a0766,_0x435ffa[0x3]=_0x435ffa[0x3]-0x2;const _0x3cd9c0=[_0x435ffa[0x0],_0x435ffa[0xf],_0x435ffa[0x2],_0x435ffa[0x3],_0x435ffa[0x4],_0x435ffa[0x5],_0x435ffa[0xb],_0x435ffa[0x6],_0x435ffa[0xa],_0x435ffa[0x8],_0x435ffa[0x9],_0x435ffa[0x7]];allData7[_0x5bc537(0x24a)](_0x3cd9c0);});});const _0x219418=[0x4,0x5,0x6,0x7,0x8,0x9,0xa],_0x1b7f2c=_0x219418[_0x44fda4(0x1fc)](_0x17b5e2=>allData7[_0x44fda4(0x1fc)](_0x595259=>parseFloat(_0x595259[_0x17b5e2]))),_0x5286cd=_0x1b7f2c['map'](_0x37d976=>{const _0x16f0b8=_0x44fda4,_0x249724=[..._0x37d976][_0x16f0b8(0x1fb)]((_0x48c45c,_0x369736)=>_0x48c45c-_0x369736);return _0x37d976[_0x16f0b8(0x1fc)](_0x40d63b=>{const _0x3bdf5e=_0x16f0b8,_0x3e5b71=_0x249724[_0x3bdf5e(0x280)](_0x40d63b)+0x1;return _0x3e5b71/_0x249724[_0x3bdf5e(0x241)];});});allData7[_0x44fda4(0x1f4)]((_0x36dadd,_0x5375fd)=>{_0x219418['forEach']((_0x4ef6e0,_0x25d44c)=>{const _0x3b26db=_0x1e79;_0x36dadd[_0x4ef6e0]=_0x5286cd[_0x25d44c][_0x5375fd][_0x3b26db(0x252)](0x3);});});}Promise['all'](fetchPromises1)[_0x34da65(0x25f)](_0x4ae439=>{const _0x3dc585=_0x34da65;processAndStoreData1(_0x4ae439),Promise[_0x3dc585(0x24e)](fetchPromises2)[_0x3dc585(0x25f)](_0x235358=>{const _0x222491=_0x3dc585;processAndStoreData2(_0x235358),Promise[_0x222491(0x24e)](fetchPromises3)[_0x222491(0x25f)](_0x562b14=>{const _0x348869=_0x222491;processAndStoreData3(_0x562b14),Promise['all'](fetchPromises4)[_0x348869(0x25f)](_0x5bc47a=>{const _0x2c67bf=_0x348869;processAndStoreData4(_0x5bc47a),Promise[_0x2c67bf(0x24e)](fetchPromises5)[_0x2c67bf(0x25f)](_0x18b901=>{const _0x52cb85=_0x2c67bf;processAndStoreData5(_0x18b901),Promise['all'](fetchPromises6)[_0x52cb85(0x25f)](_0x10ed20=>{const _0x53c7e7=_0x52cb85;processAndStoreData6(_0x10ed20),Promise[_0x53c7e7(0x24e)](fetchPromises7)[_0x53c7e7(0x25f)](_0x36e525=>{const _0x4e19fd=_0x53c7e7;processAndStoreData7(_0x36e525);const _0x18ebaf=allData1['concat'](allData2)[_0x4e19fd(0x264)](allData3)[_0x4e19fd(0x264)](allData4)[_0x4e19fd(0x264)](allData5)[_0x4e19fd(0x264)](allData6)['concat'](allData7);_0x18ebaf['forEach']((_0x199794,_0x377d66)=>{_0x199794[0x0]=''+(_0x377d66+0x1);}),_0x18ebaf['forEach'](_0x419046=>{const _0x4258ba=_0x4e19fd;allDataAsString+=_0x419046[_0x4258ba(0x253)](',')+'\x0a';});const _0x51dbe6=allDataAsString['trim']()['split']('\x0a'),_0x162f7b=[];for(const _0x5ab272 of _0x51dbe6){const _0x590c8a=_0x5ab272[_0x4e19fd(0x29d)](','),_0x3833f2=_0x590c8a[0x1],_0x3ac86a=_0x590c8a[0x3],_0x2da15f=_0x590c8a[0x2],_0x579cfd=_0x3833f2+','+_0x3ac86a+','+_0x2da15f;_0x162f7b[_0x4e19fd(0x24a)](_0x579cfd);}const _0x2a5dc4=_0x162f7b,_0x3d204f=document[_0x4e19fd(0x238)](_0x4e19fd(0x29c));_0x3d204f[_0x4e19fd(0x243)]('autocomplete',_0x4e19fd(0x245));const _0x219881=document['getElementById'](_0x4e19fd(0x25e)),_0x1bccd4=document[_0x4e19fd(0x238)]('searchButton');function _0x3c8354(){const _0x4f12f0=_0x4e19fd,_0x5da751=navigator[_0x4f12f0(0x2a5)];return/Android|iPhone/i[_0x4f12f0(0x2b4)](_0x5da751);}function _0x365131(){const _0x10e2ef=_0x4e19fd,_0x4c8a4a=_0x3f25c6(_0x3d204f['value']['toLowerCase']()),_0x1ecbdf=_0x3f25c6(_0x4c8a4a),_0x58d95c=_0x2a5dc4[_0x10e2ef(0x2a8)](_0x422521=>{const _0x2aed7f=_0x10e2ef,[_0x4dc014,_0x368ff5,_0x2d046c]=_0x422521['split'](','),_0x18794f=_0x3f25c6(_0x4dc014[_0x2aed7f(0x288)]()),_0x22f7bf=_0x3f25c6(_0x368ff5[_0x2aed7f(0x288)]());return _0x18794f[_0x2aed7f(0x291)](_0x1ecbdf)||_0x22f7bf[_0x2aed7f(0x291)](_0x1ecbdf);});_0x219881[_0x10e2ef(0x290)]='';if(_0x4c8a4a===''||_0x58d95c[_0x10e2ef(0x241)]===0x0){_0x219881[_0x10e2ef(0x27d)][_0x10e2ef(0x2b6)]=_0x10e2ef(0x213);return;}_0x58d95c[_0x10e2ef(0x1f4)](_0x495ef2=>{const _0x3b2a49=_0x10e2ef,[_0x5b9eeb,_0x4ab7f4,_0x31d207]=_0x495ef2[_0x3b2a49(0x29d)](','),_0x186ca5=document[_0x3b2a49(0x274)]('div');_0x186ca5['classList'][_0x3b2a49(0x242)](_0x3b2a49(0x23f)),_0x186ca5[_0x3b2a49(0x290)]=_0x3b2a49(0x271)+_0x5b9eeb+_0x3b2a49(0x240)+_0x31d207+_0x3b2a49(0x257)+_0x4ab7f4+_0x3b2a49(0x2b1),_0x186ca5[_0x3b2a49(0x1f0)](_0x3b2a49(0x28f),()=>{const _0x38c4fa=_0x3b2a49;_0x3d204f['value']=_0x5b9eeb+','+_0x4ab7f4+','+_0x31d207;const _0x1c261b=new KeyboardEvent(_0x38c4fa(0x232),{'key':'Enter'});_0x3d204f['dispatchEvent'](_0x1c261b);}),_0x219881['appendChild'](_0x186ca5);}),_0x4c8a4a===''&&_0x58d95c[_0x10e2ef(0x241)]===0x0?_0x219881[_0x10e2ef(0x27d)][_0x10e2ef(0x2b6)]='none':(_0x219881['style'][_0x10e2ef(0x2b6)]=_0x10e2ef(0x26c),_0x219881['style'][_0x10e2ef(0x27f)]='8px',_0x219881[_0x10e2ef(0x27d)][_0x10e2ef(0x209)]=_0x10e2ef(0x267),_0x219881[_0x10e2ef(0x27d)]['left']=_0x10e2ef(0x230),_0x219881[_0x10e2ef(0x27d)][_0x10e2ef(0x1e5)]=_0x10e2ef(0x259),_0x219881[_0x10e2ef(0x27d)][_0x10e2ef(0x202)]=_0x10e2ef(0x294),_0x219881['style'][_0x10e2ef(0x29f)]='267px',_0x219881['style'][_0x10e2ef(0x22f)]=_0x10e2ef(0x273),_0x219881['style']['border']='1px\x20solid\x20#e0e0e0'),_0x4c8a4a===''&&(_0x219881[_0x10e2ef(0x27d)]['display']=_0x10e2ef(0x213));}_0x3d204f[_0x4e19fd(0x1f0)]('input',_0x365131),_0x3d204f[_0x4e19fd(0x1f0)](_0x4e19fd(0x232),function(_0x26721a){const _0x1b1b74=_0x4e19fd;if(_0x26721a[_0x1b1b74(0x226)]===_0x1b1b74(0x260))searchButton1[_0x1b1b74(0x28f)]();else _0x26721a[_0x1b1b74(0x226)]==='Backspace'&&_0x365131();});const _0x3ddb07=allDataAsString;let _0x33ac9d=_0x3ddb07['trim']()[_0x4e19fd(0x29d)]('\x0a')[_0x4e19fd(0x1fc)](_0x1562cf=>_0x1562cf[_0x4e19fd(0x29d)](','));function _0xe98afe(_0x4c2741,_0x22ab10){const _0x5e35c8=_0x4e19fd;let _0x990367=0x0;for(let _0x224d06=0x4;_0x224d06<=0xa;_0x224d06++){const _0x16ee51=parseFloat(_0x4c2741[_0x224d06]),_0x4dae1b=parseFloat(_0x22ab10[_0x224d06]);_0x990367+=Math[_0x5e35c8(0x276)](_0x16ee51-_0x4dae1b,0x2);}return Math['sqrt'](_0x990367);}const _0xb7ec38=[_0x4e19fd(0x1f8),_0x4e19fd(0x287),_0x4e19fd(0x28a),_0x4e19fd(0x254),_0x4e19fd(0x2ba),_0x4e19fd(0x1e7),_0x4e19fd(0x225),'result-color-2',_0x4e19fd(0x239),_0x4e19fd(0x23c),_0x4e19fd(0x237),'result-color-6',_0x4e19fd(0x299),_0x4e19fd(0x295),_0x4e19fd(0x228),'result-color-10','result-color-11','result-color-12',_0x4e19fd(0x296),_0x4e19fd(0x212),_0x4e19fd(0x284),_0x4e19fd(0x20f),'result-color-17','result-color-18',_0x4e19fd(0x27a),_0x4e19fd(0x297),_0x4e19fd(0x210),'result-color-22',_0x4e19fd(0x2ae),_0x4e19fd(0x244),'result-color-25',_0x4e19fd(0x217),_0x4e19fd(0x214),_0x4e19fd(0x223),_0x4e19fd(0x1eb),'result-color-30',_0x4e19fd(0x211),'result-color-32','result-color-33','result-color-34',_0x4e19fd(0x29b),_0x4e19fd(0x200),_0x4e19fd(0x2ab),'result-color-38',_0x4e19fd(0x298),_0x4e19fd(0x221),_0x4e19fd(0x2a9),_0x4e19fd(0x222),_0x4e19fd(0x21e),_0x4e19fd(0x203),_0x4e19fd(0x281),'result-color-46',_0x4e19fd(0x24f),_0x4e19fd(0x208)];let _0x4a444c=[];function _0x3f25c6(_0x241707){const _0x484e64=_0x4e19fd;return _0x241707[_0x484e64(0x227)](_0x484e64(0x21c))[_0x484e64(0x1f9)](/[\u0300-\u036f\s]/g,'')[_0x484e64(0x1f9)](/Ø/g,'O')[_0x484e64(0x1f9)](/ø/g,'o')['replace'](/ı/g,'i');}function _0x259a99(_0x4cd7d8){const _0x2005dc=_0x4e19fd,_0x35b4e7=_0x4cd7d8['split'](',')[_0x2005dc(0x1fc)](_0x3c8910=>_0x3c8910[_0x2005dc(0x21d)]()),_0x329656=_0x35b4e7[0x0];let _0x2e6af6,_0x17cca3;_0x35b4e7[_0x2005dc(0x241)]>0x1&&(_0x2e6af6=_0x35b4e7[0x1][_0x2005dc(0x21d)](),_0x35b4e7[_0x2005dc(0x241)]>0x2&&(_0x17cca3=_0x35b4e7[0x2][_0x2005dc(0x21d)]()));const _0x1a0ff0=_0x33ac9d[_0x2005dc(0x2a8)](_0xb4437d=>{const _0x25a6ba=_0x2005dc,_0xcd562a=_0x3f25c6(_0xb4437d[0x1][_0x25a6ba(0x288)]()),_0x5267e3=_0x3f25c6(_0xb4437d[0x2][_0x25a6ba(0x288)]()),_0x472e8=_0xb4437d[0x3][_0x25a6ba(0x21d)]()[_0x25a6ba(0x288)](),_0x12fb31=_0xcd562a[_0x25a6ba(0x291)](_0x3f25c6(_0x329656[_0x25a6ba(0x288)]())),_0x143405=!_0x2e6af6||_0x472e8===_0x3f25c6(_0x2e6af6['toLowerCase']()),_0x235e90=!_0x17cca3||_0x5267e3===_0x3f25c6(_0x17cca3[_0x25a6ba(0x288)]());return _0x12fb31&&_0x143405&&_0x235e90;});return _0x1a0ff0;}function _0x212129(_0x11bb44,_0xe4e56e,_0x599879){const _0xe2f1ce=_0x4e19fd,_0x1af650=document[_0xe2f1ce(0x238)](_0xe2f1ce(0x1f1)),_0x321e2c=['','<span\x20data-i18n=\x22table.percentiles\x22>Percentiles</span>','',_0xe2f1ce(0x2ad),_0xe2f1ce(0x204),_0xe2f1ce(0x231),_0xe2f1ce(0x28c),'<span\x20data-i18n=\x22table.passes\x22>Passes</span>',_0xe2f1ce(0x25b),_0xe2f1ce(0x247),_0xe2f1ce(0x1f3),_0xe2f1ce(0x256)],_0x478ef6=_0x1af650[_0xe2f1ce(0x25c)]('th')!==null,_0x4c7b9f=_0x478ef6?_0x1af650[_0xe2f1ce(0x25c)](_0xe2f1ce(0x20a)):document[_0xe2f1ce(0x274)](_0xe2f1ce(0x20a));_0x4c7b9f[_0xe2f1ce(0x29e)]['add'](_0xe2f1ce(0x27e));if(!_0x478ef6){const _0x3a4fd0=document['createElement']('tr');for(let _0x2d69f6=0x1;_0x2d69f6<_0x321e2c[_0xe2f1ce(0x241)];_0x2d69f6++){const _0x5836e3=document[_0xe2f1ce(0x274)]('th');_0x5836e3[_0xe2f1ce(0x290)]=_0x321e2c[_0x2d69f6],_0x3a4fd0[_0xe2f1ce(0x29a)](_0x5836e3);}const _0x3fbd22=document[_0xe2f1ce(0x274)]('th');_0x3fbd22[_0xe2f1ce(0x265)]='',_0x3a4fd0[_0xe2f1ce(0x29a)](_0x3fbd22),_0x4c7b9f[_0xe2f1ce(0x29a)](_0x3a4fd0);}const _0x45125c=_0x33ac9d[_0xe4e56e],_0x22bc39=document[_0xe2f1ce(0x274)]('tr');for(let _0x2cad4a=0x1;_0x2cad4a<_0x45125c[_0xe2f1ce(0x241)];_0x2cad4a++){const _0x2e4772=document[_0xe2f1ce(0x274)]('td');if(_0x2cad4a>=0x4&&_0x2cad4a<=0xa){const _0x28ab26=parseFloat(_0x45125c[_0x2cad4a])*0x64;_0x2e4772['textContent']=_0x28ab26['toFixed'](0x1);}else _0x2e4772[_0xe2f1ce(0x265)]=_0x45125c[_0x2cad4a];_0x2e4772[_0xe2f1ce(0x29e)][_0xe2f1ce(0x242)](_0x599879),_0x22bc39[_0xe2f1ce(0x29a)](_0x2e4772);}const _0x1e368f=document[_0xe2f1ce(0x274)]('td'),_0x2c9485=document['createElement']('button');_0x2c9485[_0xe2f1ce(0x265)]='x',_0x2c9485['addEventListener'](_0xe2f1ce(0x28f),function(){const _0x4ace59=_0xe2f1ce;_0x22bc39[_0x4ace59(0x23b)]();const _0x31b586=document[_0x4ace59(0x205)]('.radarPolygon.'+_0x599879),_0x1704c6=document['querySelectorAll'](_0x4ace59(0x234)+_0x599879),_0x235de1=document[_0x4ace59(0x205)]('.radarCircle.'+_0x599879);_0x31b586[_0x4ace59(0x1f4)](_0x139685=>_0x139685['remove']()),_0x1704c6[_0x4ace59(0x1f4)](_0x1b1e26=>_0x1b1e26[_0x4ace59(0x23b)]()),_0x235de1[_0x4ace59(0x1f4)](_0x2db8cb=>_0x2db8cb['remove']());const _0x3b5755=document[_0x4ace59(0x205)](_0x4ace59(0x2a3));if(_0x3b5755[_0x4ace59(0x241)]>0x0){const _0x2f3720=_0x3b5755[_0x3b5755[_0x4ace59(0x241)]-0x1],_0xb8398a=_0x2f3720['firstChild']['textContent'][_0x4ace59(0x29d)](',')[0x0],_0x57dc13=_0x33ac9d['find'](_0x288ab0=>_0x288ab0[0x1]===_0xb8398a);_0x57dc13&&_0x1c29f3(_0x57dc13);}else{const _0x261f02=document[_0x4ace59(0x238)](_0x4ace59(0x1fa));_0x261f02&&(_0x261f02[_0x4ace59(0x290)]='');}}),_0x1e368f[_0xe2f1ce(0x29a)](_0x2c9485),_0x22bc39[_0xe2f1ce(0x29a)](_0x1e368f),_0x4c7b9f[_0xe2f1ce(0x29a)](_0x22bc39);!_0x478ef6&&_0x1af650[_0xe2f1ce(0x29a)](_0x4c7b9f);const _0x268363=_0x33ac9d[_0xe4e56e]['join'](',\x20'),_0x279563=0x118,_0x17d544=[0x0,0x0],_0xb32d65=[0x0,0x2*Math['PI']/0x7,0x4*Math['PI']/0x7,0x6*Math['PI']/0x7,0x8*Math['PI']/0x7,0xa*Math['PI']/0x7,0xc*Math['PI']/0x7];function _0x337bef(_0x1a2a22,_0x533525){const _0x2e102b=_0xe2f1ce;let _0x1da76e=_0xb32d65[_0x1a2a22-0x1];_0x1da76e+=0x2*Math['PI']/0x7*0.2;const _0x360015=0x118*_0x533525*Math[_0x2e102b(0x1ef)](_0x1da76e),_0x2a4f98=0x118*_0x533525*Math['sin'](_0x1da76e);return{'x':_0x360015,'y':_0x2a4f98};}const _0x2d5721=document[_0xe2f1ce(0x25c)](_0xe2f1ce(0x272)),_0x3a6854=_0x2d5721['appendChild'](document[_0xe2f1ce(0x249)](_0xe2f1ce(0x258),'g'));_0x3a6854[_0xe2f1ce(0x243)]('transform',_0xe2f1ce(0x20d)),_0x3a6854[_0xe2f1ce(0x290)]='';const _0x5d1939=[],_0x7800f0=_0x268363[_0xe2f1ce(0x29d)](',');for(let _0x4060e1=0x4;_0x4060e1<0xb;_0x4060e1++){_0x5d1939[_0xe2f1ce(0x24a)]({'axis':_0x4060e1-0x3,'value':parseFloat(_0x7800f0[_0x4060e1])});}const _0xe13a6d=_0x5d1939[_0xe2f1ce(0x1fc)](({axis:_0x290e8f,value:_0x450a62})=>{const {x:_0x3d9f82,y:_0xcb3165}=_0x337bef(_0x290e8f,_0x450a62);return _0x3d9f82+','+_0xcb3165;})[_0xe2f1ce(0x253)]('\x20'),_0x51f84c=document[_0xe2f1ce(0x249)](_0xe2f1ce(0x258),_0xe2f1ce(0x255));_0x51f84c[_0xe2f1ce(0x243)](_0xe2f1ce(0x20b),_0xe2f1ce(0x277)+_0x599879),_0x51f84c[_0xe2f1ce(0x243)](_0xe2f1ce(0x229),_0xe13a6d+'\x20'+_0xe13a6d['split']('\x20')[0x0]),_0x51f84c[_0xe2f1ce(0x243)](_0xe2f1ce(0x251),'3'),_0x51f84c[_0xe2f1ce(0x243)](_0xe2f1ce(0x22a),_0xe2f1ce(0x213)),_0x3a6854[_0xe2f1ce(0x29a)](_0x51f84c);const _0x5e50b8=document[_0xe2f1ce(0x249)]('http://www.w3.org/2000/svg',_0xe2f1ce(0x1f7));_0x5e50b8[_0xe2f1ce(0x243)](_0xe2f1ce(0x20b),_0xe2f1ce(0x1ea)+_0x599879),_0x5e50b8[_0xe2f1ce(0x243)]('points',_0xe13a6d),_0x5e50b8[_0xe2f1ce(0x27d)]['fillOpacity']=_0xe2f1ce(0x2aa),_0x3a6854['appendChild'](_0x5e50b8),_0x5d1939[_0xe2f1ce(0x1f4)](({axis:_0x434f3c,value:_0x309c90})=>{const _0x470adf=_0xe2f1ce,{x:_0x5dbfce,y:_0x21e590}=_0x337bef(_0x434f3c,_0x309c90),_0x2c4deb=document[_0x470adf(0x249)](_0x470adf(0x258),_0x470adf(0x2b8));_0x2c4deb['setAttribute'](_0x470adf(0x20b),_0x470adf(0x2b0)+_0x599879),_0x2c4deb[_0x470adf(0x27d)]['fillOpacity']='0.86',_0x2c4deb['setAttribute']('r',_0x470adf(0x207)),_0x2c4deb[_0x470adf(0x243)]('cx',_0x5dbfce),_0x2c4deb[_0x470adf(0x243)]('cy',_0x21e590),_0x3a6854[_0x470adf(0x29a)](_0x2c4deb);});}const _0x245adc=new Set();function _0x5a218c(){const _0x3a23b6=_0x4e19fd,_0x4e438e=document[_0x3a23b6(0x238)]('searchInput1'),_0x1c5773=document['getElementById'](_0x3a23b6(0x1ec)),_0x540f62=document[_0x3a23b6(0x238)]('resultsTable'),_0x3a0980=document[_0x3a23b6(0x274)]('ul');_0x3a0980[_0x3a23b6(0x27d)]['fontFamily']='Arial,\x20sans-serif',_0x3a0980['style'][_0x3a23b6(0x26b)]=_0x3a23b6(0x213),_0x3a0980[_0x3a23b6(0x27d)][_0x3a23b6(0x2a4)]='9px',_0x540f62[_0x3a23b6(0x29a)](_0x3a0980);let _0xb11b27=0x0;_0x1c5773['addEventListener']('click',function(){const _0x1ff01f=_0x3a23b6,_0x58e242=_0x4e438e['value'],_0x30e0cb=_0x259a99(_0x58e242),_0x19366d=document[_0x1ff01f(0x205)](_0x1ff01f(0x2a2));_0x19366d[_0x1ff01f(0x1f4)](_0x54be2c=>{const _0xdc102a=_0x1ff01f;_0x54be2c[_0xdc102a(0x27d)][_0xdc102a(0x22a)]='';});if(_0x30e0cb){const _0x39ead2=parseInt(_0x30e0cb[0x0]),_0x20e263=_0x30e0cb[0x1]+'\x20('+_0x30e0cb[0x2]+',\x20'+_0x30e0cb[0x3]+')\x20-\x20'+_0x30e0cb[0xb]+_0x1ff01f(0x25d),_0x39cda3=_0xb7ec38[_0xb11b27%_0xb7ec38[_0x1ff01f(0x241)]];_0x212129(_0x20e263,_0x39ead2-0x1,_0x39cda3),_0xb11b27++;}});}_0x5a218c();const _0x481180=document[_0x4e19fd(0x274)](_0x4e19fd(0x28e));_0x481180['id']=_0x4e19fd(0x1fa);const _0xfd7be9=document['getElementById']('insertHere');_0xfd7be9[_0x4e19fd(0x29a)](_0x481180);let _0x8bedc=0x0;searchButton1[_0x4e19fd(0x1f0)](_0x4e19fd(0x28f),function(){const _0x1decb9=_0x4e19fd,_0x435bb4=_0x3d204f[_0x1decb9(0x1ff)],_0xcf9bff=_0x259a99(_0x435bb4);if(_0xcf9bff[_0x1decb9(0x241)]>0x0){const _0x52de69=_0xcf9bff[0x0];_0x1c29f3(_0x52de69),_0x8bedc++;}_0x3d204f['value']='',_0x365131();});function _0x1c29f3(_0x34320d){const _0x4c4d1b=_0x4e19fd,_0x2cba29=parseInt(_0x34320d[0x0])-0x1,_0x3b9613=[],_0xd6e21d=document[_0x4c4d1b(0x205)](_0x4c4d1b(0x2a3));let _0x2d7257='';if(_0xd6e21d['length']>0x0){const _0x5df74d=_0xd6e21d[_0xd6e21d['length']-0x1],_0x119e3f=_0x5df74d[_0x4c4d1b(0x25c)](_0x4c4d1b(0x215)),_0x224235=Array[_0x4c4d1b(0x292)](_0x119e3f[_0x4c4d1b(0x29e)]);_0x2d7257=_0x224235['find'](_0x45e5dc=>_0x45e5dc[_0x4c4d1b(0x25a)](_0x4c4d1b(0x1e8)));}const _0x2a419c=_0x481180[_0x4c4d1b(0x25c)](_0x4c4d1b(0x23a)),_0x226fcb=_0x2a419c?_0x2a419c[_0x4c4d1b(0x1ff)]:_0x4c4d1b(0x24e),_0x4b212d=_0x2a419c?_0x481180[_0x4c4d1b(0x205)](_0x4c4d1b(0x23a))[0x1][_0x4c4d1b(0x1ff)]:_0x4c4d1b(0x24e),_0x3bef9b=_0x2a419c?_0x481180[_0x4c4d1b(0x205)]('.league-selector')[0x2][_0x4c4d1b(0x1ff)]:_0x4c4d1b(0x24e);_0x481180[_0x4c4d1b(0x290)]='';const _0x3497f3=document['createElement'](_0x4c4d1b(0x20a));_0x3497f3[_0x4c4d1b(0x29e)][_0x4c4d1b(0x242)](_0x4c4d1b(0x2b3));const _0x29e7ad=document[_0x4c4d1b(0x274)]('tr'),_0x1a853a=document[_0x4c4d1b(0x274)]('th');_0x1a853a[_0x4c4d1b(0x243)](_0x4c4d1b(0x1fe),'5');const _0x261467=document['createElement'](_0x4c4d1b(0x28e));_0x261467[_0x4c4d1b(0x27d)][_0x4c4d1b(0x209)]=_0x4c4d1b(0x267),_0x261467[_0x4c4d1b(0x27d)][_0x4c4d1b(0x2b6)]=_0x4c4d1b(0x27c),_0x261467[_0x4c4d1b(0x27d)][_0x4c4d1b(0x23d)]='column',_0x261467[_0x4c4d1b(0x27d)][_0x4c4d1b(0x266)]='8px';const _0x13e6b6=document[_0x4c4d1b(0x274)](_0x4c4d1b(0x246));_0x13e6b6[_0x4c4d1b(0x290)]=_0x4c4d1b(0x1f2)+_0x34320d[0x1],_0x13e6b6['classList'][_0x4c4d1b(0x242)](_0x2d7257||_0xb7ec38[_0x8bedc%_0xb7ec38[_0x4c4d1b(0x241)]]);const _0x13bb05=document['createElement'](_0x4c4d1b(0x28e));_0x13bb05[_0x4c4d1b(0x27d)]['display']=_0x4c4d1b(0x27c),_0x13bb05[_0x4c4d1b(0x27d)][_0x4c4d1b(0x266)]=_0x4c4d1b(0x23e);const _0x5cbcca=document[_0x4c4d1b(0x274)](_0x4c4d1b(0x233));_0x5cbcca[_0x4c4d1b(0x29e)]['add']('league-selector');const _0x5748b4=document[_0x4c4d1b(0x274)](_0x4c4d1b(0x1ee));_0x5748b4[_0x4c4d1b(0x1ff)]='all',_0x5748b4[_0x4c4d1b(0x265)]=_0x4c4d1b(0x250),_0x5cbcca[_0x4c4d1b(0x29a)](_0x5748b4);const _0x261012=document[_0x4c4d1b(0x274)]('option');_0x261012[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x275),_0x261012[_0x4c4d1b(0x265)]=_0x4c4d1b(0x26d),_0x5cbcca['appendChild'](_0x261012);const _0x58f6cc=document['createElement'](_0x4c4d1b(0x1ee));_0x58f6cc['value']='outside',_0x58f6cc[_0x4c4d1b(0x265)]=_0x4c4d1b(0x24b),_0x5cbcca[_0x4c4d1b(0x29a)](_0x58f6cc);const _0x168963=document['createElement'](_0x4c4d1b(0x233));_0x168963[_0x4c4d1b(0x29e)]['add'](_0x4c4d1b(0x224));const _0x4e692b=document[_0x4c4d1b(0x274)](_0x4c4d1b(0x1ee));_0x4e692b[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x24e),_0x4e692b[_0x4c4d1b(0x265)]=_0x4c4d1b(0x24c),_0x168963['appendChild'](_0x4e692b);const _0x553f39=document[_0x4c4d1b(0x274)](_0x4c4d1b(0x1ee));_0x553f39[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x27b),_0x553f39[_0x4c4d1b(0x265)]=_0x4c4d1b(0x1fd),_0x168963['appendChild'](_0x553f39);const _0x331395=document[_0x4c4d1b(0x274)]('select');_0x331395[_0x4c4d1b(0x29e)]['add'](_0x4c4d1b(0x224));const _0x275507=document['createElement'](_0x4c4d1b(0x1ee));_0x275507[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x24e),_0x275507[_0x4c4d1b(0x265)]='All\x20Ages',_0x331395[_0x4c4d1b(0x29a)](_0x275507);const _0x4a1233=document['createElement'](_0x4c4d1b(0x1ee));_0x4a1233[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x206),_0x4a1233[_0x4c4d1b(0x265)]=_0x4c4d1b(0x278),_0x331395['appendChild'](_0x4a1233);const _0x958382=document['createElement'](_0x4c4d1b(0x1ee));_0x958382[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x279),_0x958382[_0x4c4d1b(0x265)]=_0x4c4d1b(0x24d),_0x331395[_0x4c4d1b(0x29a)](_0x958382);const _0x55e335=document['createElement'](_0x4c4d1b(0x1ee));_0x55e335[_0x4c4d1b(0x1ff)]=_0x4c4d1b(0x2b2),_0x55e335[_0x4c4d1b(0x265)]='Under\x2023',_0x331395[_0x4c4d1b(0x29a)](_0x55e335);const _0x15175f=document['createElement'](_0x4c4d1b(0x1ee));_0x15175f[_0x4c4d1b(0x1ff)]='u21',_0x15175f['textContent']=_0x4c4d1b(0x1f6),_0x331395[_0x4c4d1b(0x29a)](_0x15175f),_0x5cbcca[_0x4c4d1b(0x1ff)]=_0x226fcb,_0x168963['value']=_0x4b212d,_0x331395[_0x4c4d1b(0x1ff)]=_0x3bef9b,_0x13bb05[_0x4c4d1b(0x29a)](_0x5cbcca),_0x13bb05[_0x4c4d1b(0x29a)](_0x168963),_0x13bb05[_0x4c4d1b(0x29a)](_0x331395),_0x261467[_0x4c4d1b(0x29a)](_0x13e6b6),_0x261467[_0x4c4d1b(0x29a)](_0x13bb05),_0x1a853a[_0x4c4d1b(0x29a)](_0x261467),_0x29e7ad[_0x4c4d1b(0x29a)](_0x1a853a),_0x3497f3[_0x4c4d1b(0x29a)](_0x29e7ad),_0x5cbcca['addEventListener'](_0x4c4d1b(0x2a6),function(){const _0x2bf6f0=_0x4c4d1b,_0x5505d0=this[_0x2bf6f0(0x1ff)],_0x284f2b=_0x168963['value'],_0x24a0fd=_0x331395[_0x2bf6f0(0x1ff)];_0x3b8544(_0x34320d,_0x5505d0,_0x284f2b,_0x24a0fd,_0x3497f3);}),_0x168963[_0x4c4d1b(0x1f0)](_0x4c4d1b(0x2a6),function(){const _0x3ce53c=_0x4c4d1b,_0x118602=_0x5cbcca[_0x3ce53c(0x1ff)],_0x5f41f1=this[_0x3ce53c(0x1ff)],_0x5b6b6f=_0x331395[_0x3ce53c(0x1ff)];_0x3b8544(_0x34320d,_0x118602,_0x5f41f1,_0x5b6b6f,_0x3497f3);}),_0x331395[_0x4c4d1b(0x1f0)](_0x4c4d1b(0x2a6),function(){const _0x46e969=_0x4c4d1b,_0x18ac5c=_0x5cbcca[_0x46e969(0x1ff)],_0x121511=_0x168963[_0x46e969(0x1ff)],_0xd550c1=this['value'];_0x3b8544(_0x34320d,_0x18ac5c,_0x121511,_0xd550c1,_0x3497f3);}),_0x3b8544(_0x34320d,_0x226fcb,_0x4b212d,_0x3bef9b,_0x3497f3),_0x481180['appendChild'](_0x3497f3);}let _0x3be0a1={'top7':new Set(),'outside':new Set()};function _0x33a3ac(){const _0x31fd8b=_0x4e19fd;allData1[_0x31fd8b(0x264)](allData3,allData5,allData7)[_0x31fd8b(0x1f4)](_0xa6d710=>{const _0x3a3014=_0x31fd8b;_0x3be0a1[_0x3a3014(0x275)][_0x3a3014(0x242)](_0xa6d710[0x1]);}),allData2[_0x31fd8b(0x264)](allData4,allData6)[_0x31fd8b(0x1f4)](_0x2abca6=>{const _0xe693fa=_0x31fd8b;_0x3be0a1[_0xe693fa(0x262)][_0xe693fa(0x242)](_0x2abca6[0x1]);});}function _0x3b8544(_0x19a3c9,_0xdbf534,_0x557490,_0x3a11fd,_0x5c6cdc){const _0x5ee5e7=_0x4e19fd;while(_0x5c6cdc[_0x5ee5e7(0x2b9)][_0x5ee5e7(0x241)]>0x1){_0x5c6cdc[_0x5ee5e7(0x235)](0x1);}const _0x325b48=parseInt(_0x19a3c9[0x0])-0x1,_0x353955=[];_0x33ac9d[_0x5ee5e7(0x1f4)]((_0x4726b6,_0x39a7a6)=>{const _0x204d4d=_0x5ee5e7;if(_0x39a7a6===_0x325b48)return;const _0x2a5ce2=_0x4726b6[0x1],_0x43aeb0=parseInt(_0x4726b6[0x3]),_0x2b2cdf=_0x4726b6[0x1]['split']('\x20')[_0x204d4d(0x28d)]();if(!_0x5617f5(_0x2a5ce2,_0x43aeb0,_0x2b2cdf,_0xdbf534,_0x557490,_0x3a11fd))return;const _0x326807=_0xe98afe(_0x19a3c9,_0x4726b6);_0x353955['push']({'index':_0x39a7a6,'difference':_0x326807});});const _0x3d7484=_0x353955[_0x5ee5e7(0x1fb)]((_0xba4dcb,_0x4ab6fd)=>_0xba4dcb[_0x5ee5e7(0x26a)]-_0x4ab6fd[_0x5ee5e7(0x26a)])[_0x5ee5e7(0x282)](0x0,0x5),_0x319cc8=document['createElement']('tr');_0x319cc8[_0x5ee5e7(0x290)]=_0x3d7484[_0x5ee5e7(0x1fc)](({index:_0x1f335a})=>{const _0x18f2de=_0x5ee5e7,_0x327aa9=_0x33ac9d[_0x1f335a],_0x2f460f=_0x327aa9[0x1];return _0x18f2de(0x248)+_0x2f460f+_0x18f2de(0x289);})['join'](''),_0x319cc8[_0x5ee5e7(0x205)]('td')['forEach'](_0x5ae054=>{const _0x5cd2fb=_0x5ee5e7;_0x5ae054['addEventListener'](_0x5cd2fb(0x28f),()=>{const _0x5ec68c=_0x5cd2fb,_0x390f7e=_0x5ae054['textContent'];document[_0x5ec68c(0x238)]('searchInput1')[_0x5ec68c(0x1ff)]=_0x390f7e,document[_0x5ec68c(0x238)](_0x5ec68c(0x1ec))['click']();});}),_0x5c6cdc[_0x5ee5e7(0x29a)](_0x319cc8);}function _0x5617f5(_0x107139,_0x442c3d,_0x3dd5a4,_0x2de017,_0x430cd7,_0x35d4bf){const _0x2f3164=_0x4e19fd;if(_0x2de017!==_0x2f3164(0x24e)){const _0x3df57f=_0x3be0a1[_0x2f3164(0x275)][_0x2f3164(0x268)](_0x107139);if(_0x2de017===_0x2f3164(0x275)&&!_0x3df57f)return![];if(_0x2de017===_0x2f3164(0x262)&&_0x3df57f)return![];}if(_0x430cd7===_0x2f3164(0x27b)&&!_0x107139[_0x2f3164(0x291)]('24/25')&&!_0x107139[_0x2f3164(0x291)]('2025'))return![];switch(_0x35d4bf){case _0x2f3164(0x206):if(_0x442c3d>=0x1e)return![];break;case _0x2f3164(0x279):if(_0x442c3d>=0x19)return![];break;case _0x2f3164(0x2b2):if(_0x442c3d>=0x17)return![];break;case _0x2f3164(0x2a7):if(_0x442c3d>=0x15)return![];break;}return!![];}Promise[_0x4e19fd(0x24e)]([fetchPromises1,fetchPromises2,fetchPromises3,fetchPromises4,fetchPromises5,fetchPromises6,fetchPromises7])[_0x4e19fd(0x25f)](()=>{_0x33a3ac();});});});});});});});})[_0x34da65(0x286)](_0x405f23=>{const _0x1da548=_0x34da65;console[_0x1da548(0x22c)](_0x1da548(0x236),_0x405f23);});
+                      </script>
 	  
 <script>
+	
+async function takeScreenshot() {
+  const body = document.querySelector('body');
+  const isDarkMode = body.classList.contains('dark-mode');
+  const backgroundColor = isDarkMode ? '#0F0F0E' : '#ffffff'; 
+  
 
-function getPreferredLanguage() {
-// PRIORITY 1: Check URL parameter first
-const urlParams = new URLSearchParams(window.location.search);
-const langParam = urlParams.get('lang');
-if (langParam) {
-  return langParam;
-}
-// PRIORITY 2: Check localStorage
-const storedLang = localStorage.getItem('preferredLanguage');
-if (storedLang) {
-  return storedLang;
-}
-// PRIORITY 3: Use browser language
-return getBrowserLanguage() || 'en';
-}
 
-function getBrowserLanguage() {
-return navigator.language.slice(0, 2);
-}
+  try {
+    // Save the current zoom value and temporarily remove it if on iOS
+    let originalZoom = null;
+      originalZoom = body.style.zoom;
+      body.style.zoom = '1';
+    
 
-function applyLanguage(language) {
-    console.log(language);
-
-    if (language === 'en') {
-        return;
+    const element = document.querySelector('.screenshotcontainer'); // Capture the screenshotcontainer using the class name
+    if (!element) {
+      throw new Error('screenshotcontainer element not found');
     }
 
-    fetch(`locales/${language}.json`)
-        .then(response => {
-            // Don't throw an error, just return null if response is not OK
-            return response.ok ? response.json() : null;
-        })
-        .then(translations => {
-            // Only proceed if translations exist
-            if (translations) {
-                // Store translations globally
-                window.currentTranslations = translations;
-                
-                // Then translate everything else
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const keys = element.getAttribute('data-i18n').split('.');
-                    let value = translations;
-                    for (const key of keys) {
-                        if (value === undefined || value === null) break;
-                        value = value[key];
-                    }
-                    if (value) {
-                        if (element.tagName === 'META') {
-                            element.setAttribute('content', value);
-                        } else if (element.tagName === 'INPUT') {
-                            element.setAttribute('placeholder', value);
-                        } else if (value.includes('<')) {
-                            element.innerHTML = value;
-                        } else {
-                            element.textContent = value;
-                        }
-                    }
-                });
-            }
-        })
-        .catch(() => {
-            // Completely empty catch block to silently ignore any errors
-        });
+    const canvas = await html2canvas(element, {
+      width: 794,
+      height: element.offsetHeight -66, 
+      y: -10,
+      x: -10,  
+      useCORS: true,
+      backgroundColor: backgroundColor, // Set the background color based on mode
+      scale: window.devicePixelRatio,
+      logging: false, // Disable logging for production
+      foreignObjectRendering: false,
+    });
+
+    canvas.toBlob(blob => {
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'screenshot.png';
+      link.click();
+    }, 'image/png');
+
+      body.style.zoom = originalZoom;
+    
+  } catch (error) {
+    console.error('Error in takeScreenshot:', error);
+  }
 }
 
-const preferredLanguage = getPreferredLanguage();
-applyLanguage(preferredLanguage);
 
-function toggleDarkMode() {
-      const body = document.querySelector("body");
-      body.classList.toggle("dark-mode");
-            const isDarkMode = body.classList.contains("dark-mode");
-      localStorage.setItem("darkMode", isDarkMode);
-        }
-    document.addEventListener('DOMContentLoaded', function() {
-      const storedDarkMode = localStorage.getItem("darkMode");
-      if (storedDarkMode === "true") {
-          const body = document.querySelector("body");
-          body.classList.add("dark-mode");
-      }
-      
 
-  });
+  // Function to toggle dark mode
+  function toggleDarkMode() {
+    const body = document.querySelector("body");
+    body.classList.toggle("dark-mode");
 
+    // Store the user's preference in local storage
+    const isDarkMode = body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+  }
+
+  // Check if user has a stored preference for dark mode
+  const storedDarkMode = localStorage.getItem("darkMode");
+
+  if (storedDarkMode === "true") {
+    const body = document.querySelector("body");
+    body.classList.add("dark-mode");
+  }
+
+              
   function toggleFilling() {
     const radarPolygons = document.querySelectorAll('.radarPolygon');
     radarPolygons.forEach(polygon => {
@@ -2488,75 +1416,82 @@ function toggleDarkMode() {
     });
   }
 
-  
-  function takeScreenshot() {
-  const chartWrapper = document.querySelector('.chart-wrapper');
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  chartWrapper.classList.add('screenshot-capture');
-    
-  const options = {
-    scale: 2, 
-    backgroundColor: isDarkMode ? '#1a1a1a' : '#ffffff',
-    allowTaint: true,
-    useCORS: true,
-    logging: false,
-    onclone: function(clonedDocument) {
-      const clonedWrapper = clonedDocument.querySelector('.chart-wrapper');
-      const clonedSimilarContainer = clonedDocument.getElementById('similarPlayersContainer');
-      if (clonedSimilarContainer) {
-        clonedSimilarContainer.style.display = 'none';
-      }
-      const horizontalLine = clonedWrapper.querySelector('hr');
-      if (horizontalLine) horizontalLine.style.display = 'none';
-      const toggleControls = clonedWrapper.querySelector('.toggle-controls');
-      if (toggleControls) toggleControls.style.display = 'none';
-      const radar = clonedWrapper.querySelector('.radar');
-      if (radar) {
-        radar.style.display = 'block';
-        radar.style.margin = '0 auto';
-      }
-    }
-  };
-  
-  html2canvas(chartWrapper, options).then(canvas => {
-    const finalCanvas = document.createElement('canvas');
-    finalCanvas.width = canvas.width;
-    finalCanvas.height = canvas.height;
-    const finalCtx = finalCanvas.getContext('2d');
-    
-    finalCtx.drawImage(canvas, 0, 0);
-    
-    const watermarkImg = new Image();
-    watermarkImg.crossOrigin = "Anonymous";
-    watermarkImg.src = 'https://datamb.football/logo.png';
-    
-    watermarkImg.onload = function() {
-      const watermarkWidth = 80;
-      const watermarkHeight = (watermarkWidth / watermarkImg.width) * watermarkImg.height;
-      const x = 20;
-      const y = finalCanvas.height - watermarkHeight - 20;
-      
-      finalCtx.save();
-      finalCtx.globalAlpha = 0.8;
-      finalCtx.drawImage(watermarkImg, x, y, watermarkWidth, watermarkHeight);
-      finalCtx.restore();
-      
-      const imageUrl = finalCanvas.toDataURL('image/png');
-      const downloadLink = document.createElement('a');
-      downloadLink.href = imageUrl;
-      downloadLink.download = 'DataMB Screenshot.png';
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    };
 
-    chartWrapper.classList.remove('screenshot-capture');
-  }).catch(error => {
-  });
-}
 
 
 </script>
+
+<script>
+
+  
+  function getPreferredLanguage() {
+    // PRIORITY 1: Check URL parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam) {
+      return langParam;
+    }
+    // PRIORITY 2: Check localStorage
+    const storedLang = localStorage.getItem('preferredLanguage');
+    if (storedLang) {
+      return storedLang;
+    }
+    // PRIORITY 3: Use browser language
+    return getBrowserLanguage() || 'en';
+  }
+
+  function getBrowserLanguage() {
+    return navigator.language.slice(0, 2);
+  }
+
+  function applyLanguage(language) {
+    console.log(language);
+
+    if (language === 'en') {
+      return;
+    }
+
+    
+    fetch(`locales/${language}.json`)
+      .then(response => {
+        // Don't throw an error, just return null if response is not OK
+        return response.ok ? response.json() : null;
+      })
+      .then(translations => {
+        // Only proceed if translations exist
+        if (translations) {
+          document.querySelectorAll('[data-i18n]').forEach(element => {
+            const keys = element.getAttribute('data-i18n').split('.');
+            let value = translations;
+            for (const key of keys) {
+              if (value === undefined || value === null) break;
+              value = value[key];
+            }
+            if (value) {
+              if (element.tagName === 'META') {
+              element.setAttribute('content', value);
+          } else if (value.includes('<')) {
+              element.innerHTML = value;
+          } else {
+              element.textContent = value;
+          }          }
+          });
+        }
+      })
+      .catch(() => {
+        // Completely empty catch block to silently ignore any errors
+      });
+  }
+  
+  const preferredLanguage = getPreferredLanguage();
+  applyLanguage(preferredLanguage);
+  
+  </script>
+<br>
+<br>
+<br><br><br><br>
+<br>
+
 
 </body>
 </html>
