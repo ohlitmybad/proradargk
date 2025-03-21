@@ -9,9 +9,9 @@
     "long": "Long%",
     "passes": "Passes",
     "exits": "Sorties",
-    "aerial": "Aériens",
+    "aerial": "Duels aériens",
     "defActions": "Actions déf.",
-    "shotstopping": "PSxG-GA",
+    "shotstopping": "Buts évités",
     "minutes": "Minutes jouées"
   },
   "radar": {
@@ -21,7 +21,7 @@
     "exits": "Sorties",
     "aerial": "Aérien",
     "defActions": "Actions déf",
-    "shotstopping": "Arrêt de tir"
+    "shotstopping": "Buts évités"
   },
   "similar": {
     "to": "Données similaires à"
