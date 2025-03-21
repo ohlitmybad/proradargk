@@ -1,0 +1,29 @@
+{
+  "search": {
+    "placeholder2": "Cherchez un gardien..."
+  },
+  "table": {
+    "percentiles": "Centiles",
+    "age": "Âge",
+    "short": "Court%",
+    "long": "Long%",
+    "passes": "Passes",
+    "exits": "Sorties",
+    "aerial": "Aériens",
+    "defActions": "Actions déf.",
+    "shotstopping": "PSxG-GA",
+    "minutes": "Minutes jouées"
+  },
+  "radar": {
+    "short": "Court%",
+    "long": "Long%",
+    "passes": "Passes",
+    "exits": "Sorties",
+    "aerial": "Aérien",
+    "defActions": "Actions déf",
+    "shotstopping": "Arrêt de tir"
+  },
+  "similar": {
+    "to": "Données similaires à"
+  }
+} 
