@@ -1,0 +1,29 @@
+{
+  "search": {
+    "placeholder2": "Chercher un gardien..."
+  },
+  "table": {
+    "percentiles": "Centiles",
+    "age": "Âge",
+    "short": "Court%",
+    "long": "Long%",
+    "passes": "Passes",
+    "exits": "Sorties",
+    "aerial": "Duels aériens",
+    "defActions": "Actions déf",
+    "shotstopping": "Buts empêchés",
+    "minutes": "Minutes jouées"
+  },
+  "radar": {
+    "short": "Court%",
+    "long": "Long%",
+    "passes": "Passes",
+    "exits": "Sorties",
+    "aerial": "Aériens",
+    "defActions": "Actions Déf",
+    "shotstopping": "Buts Empêchés"
+  },
+  "similar": {
+    "to": "Données similaires à"
+  }
+} 
