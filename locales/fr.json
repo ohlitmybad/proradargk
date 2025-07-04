@@ -5,23 +5,23 @@
   "table": {
     "percentiles": "Centiles",
     "age": "Âge",
-    "short": "Court%",
+    "passes": "Passes cmp",
     "long": "Long%",
-    "passes": "Passes",
-    "exits": "Sorties",
-    "aerial": "Duels aériens",
-    "defActions": "Actions déf",
-    "shotstopping": "Buts empêchés",
-    "minutes": "Minutes jouées"
+    "short": "Court%",
+    "save": "% Arrêts",
+    "prevented": "PSxG-GA",
+    "aerial": "Aériens gagnés",
+    "int": "Int (PAdj)",
+    "minutes": "Minutes"
   },
   "radar": {
     "short": "Court%",
     "long": "Long%",
     "passes": "Passes",
-    "exits": "Sorties",
+    "int": "Interceptions",
     "aerial": "Aériens",
-    "defActions": "Actions Déf",
-    "shotstopping": "Buts Empêchés"
+    "save": "% Arrêts",
+    "prevented": "PSxG-GA"
   },
   "similar": {
     "to": "Données similaires à"
