@@ -1,0 +1,39 @@
+{
+  "search": {
+    "placeholder2": "Kaleci adı girin..."
+  },
+  "table": {
+    "percentiles": "Yüzdelikler",
+    "age": "Yaş",
+    "save": "Kurtarış%",
+    "aerial": "Kazanılan hava topları",
+    "int": "Müdahale (PAdj)",
+    "passes": "Paslar",
+    "long": "Uzun%",
+    "short": "Kısa%",
+    "prevented": "PSxG-GA",
+    "minutes": "Dakika"
+  },
+  "radar": {
+    "short": "Kısa%",
+    "long": "Uzun%",
+    "passes": "Paslar",
+    "int": "Müdahaleler",
+    "aerial": "Kazanılan hava topları",
+    "save": "Kurtarış%",
+    "prevented": "PSxG-GA"
+  },
+  "similar": {
+    "to": "Benzer veri"
+  },
+"season_all": "Tüm Sezonlar", 
+"season_current": "Mevcut Sezon",
+"league_all": "Tüm Ligler",
+"league_top7": "En İyi 7 Lig",
+"league_outside": "En İyi 7 Dışında", 
+"age_all": "Tüm Yaşlar",
+"age_u30": "30 Yaş Altı",
+"age_u25": "25 Yaş Altı",
+"age_u23": "23 Yaş Altı",
+"age_u21": "21 Yaş Altı"
+} 
