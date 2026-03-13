@@ -1,0 +1,39 @@
+{
+  "search": {
+    "placeholder2": "Inserisci nome del portiere..."
+  },
+  "table": {
+    "percentiles": "Percentili",
+    "age": "Età",
+    "save": "Parate%",
+    "aerial": "Aerei vinti",
+    "int": "Int. (PAdj)",
+    "passes": "Passaggi riusc.",
+    "long": "Lunghi%",
+    "short": "Corti%",
+    "prevented": "PSxG-GA",
+    "minutes": "Minuti"
+  },
+  "radar": {
+    "short": "Corti%",
+    "long": "Lunghi%",
+    "passes": "Passaggi",
+    "int": "Intercetti",
+    "aerial": "Aerei vinti",
+    "save": "Parate%",
+    "prevented": "PSxG-GA"
+  },
+  "similar": {
+    "to": "Dati simili a"
+  },
+  "season_all": "Tutte le Stagioni",
+  "season_current": "Stagione Corrente",
+  "league_all": "Tutti i Campionati",
+  "league_top7": "Top 7 Leghe",
+  "league_outside": "Fuori Top 7",
+  "age_all": "Tutte le Età",
+  "age_u30": "Sotto i 30",
+  "age_u25": "Sotto i 25",
+  "age_u23": "Sotto i 23",
+  "age_u21": "Sotto i 21"
+}
